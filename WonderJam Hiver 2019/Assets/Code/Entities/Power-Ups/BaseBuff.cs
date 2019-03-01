@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseBuff : ScriptableObject
+public abstract class BaseBuff : ScriptableObject
 {
     // Start is called before the first frame update
     void Start()
