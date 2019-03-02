@@ -146,9 +146,9 @@ public class EnemySpawner : MonoBehaviour
                 { //Always spawn the biggest enemy you can if the screen was cleared
                     Spawn(Random.Range(0, ThisLevelChoices[LargestPointsAvailable - 1].Count - 1));
                 }
-                else if (CurPoints < Mathf.Log(10 * CurLevel) + 1)
+                else if (CurPoints < (int)Mathf.Log(10 * CurLevel) + 1)
                 {
-                    Spawn(Mathf.Max(LargestPointsAvailable, Random.Range(0, ThisLevelChoices[LargestPointsAvailable - 1].Count - 1) + (int)Mathf.Log10(CurLevel)));
+                    Spawn(Mathf.Max(LargestPointsAvailable - 1, Random.Range(0, ThisLevelChoices[LargestPointsAvailable - 1].Count - 1) + (int)Mathf.Log10(CurLevel)));
                 }
             } else if(SpawnedEnemies.Count == 0) { Active = false; }
         }
