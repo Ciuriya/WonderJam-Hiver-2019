@@ -21,3 +21,4 @@ MonoBehaviour:
   m_faceAtTarget: 1
   m_spriteRotation: -90
   m_behaviours: []
+  m_fireAudioEvent: {fileID: 11400000, guid: 4e1ae1314da33434dbf12fca943b7029, type: 2}

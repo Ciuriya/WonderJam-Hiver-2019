@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class Projectile : MonoBehaviour 
 {
-
 	[HideInInspector] public ProjectileInfo m_info;
 	[HideInInspector] public BehaviourManager m_behaviourManager;
 	[HideInInspector] public Shooter m_shooter;
@@ -57,6 +56,7 @@ public class Projectile : MonoBehaviour
 		if(relay) Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), relay.GetComponent<BoxCollider2D>());
 
 		gameObject.SetActive(true);
+		m_info.m_fireAudioEvent.Play(p_shooter.m_audioSource);
 
 		m_behaviourManager.Init(this);
 		Game.m_projPool.AddProjectileToJob(this);

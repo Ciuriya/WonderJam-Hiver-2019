@@ -31,4 +31,7 @@ public class ProjectileInfo : ScriptableObject
 	[Tooltip("The behaviours this projectile will use throughout its lifetime")]
 	public List<ProjectileBehaviour> m_behaviours;
 
+	[Tooltip("The audio event fired whenever the projectile is shot")]
+	public SimpleAudioEvent m_fireAudioEvent;
+
 }
