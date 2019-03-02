@@ -9,7 +9,7 @@ public class TopDown2DCharacterController : CharController
 
 	public override void Move(Vector2 p_move) {
 		float targetX = p_move.x * (m_speed / Time.fixedDeltaTime);
-		float targetY = (p_move.y - m_downwardVelocity * Time.fixedDeltaTime) * (m_speed / Time.fixedDeltaTime);
+		float targetY = p_move.y * (m_speed / Time.fixedDeltaTime);
 		float totalSpeed = Mathf.Abs(targetX) + Mathf.Abs(targetY);
 
 		// scale back target X and Y speeds to fit within the speed limit
