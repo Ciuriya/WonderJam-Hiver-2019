@@ -43,7 +43,7 @@ public class Player : Entity
         }
         else if(m_canDie == false && collision.collider.tag == "Enemy")
         {
-            Destroy(collision.collider.gameObject);
+            collision.collider.gameObject.GetComponent<Entity>().Kill();
         }
     }
 
@@ -55,10 +55,11 @@ public class Player : Entity
 
     protected override void Die()
     {
-            //On teleporte le joueur a une position de spawn (Setuper arbitrairement pour le moment)
-            gameObject.transform.position = new Vector3(0, -2, 0);
-            m_OnPlayerDeath.Raise();
-            Debug.Log("U got murdered");
+        //On teleporte le joueur a une position de spawn (Setuper arbitrairement pour le moment)
+        GameObject respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
+        gameObject.transform.position = respawnPoint.transform.position;
+        m_OnPlayerDeath.Raise();
+        Debug.Log("U got murdered");
 
     }
 
