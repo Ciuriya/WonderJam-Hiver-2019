@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class Entity : MonoBehaviour 
 {
+	[Tooltip("The entity's movement controller")]
+	public CharController m_controller;
+
 	[Tooltip("If this entity can die")]
 	public bool m_canDie;
 	[HideInInspector] public bool m_isDead;
@@ -17,13 +20,19 @@ public class Entity : MonoBehaviour
 	[Tooltip("Event called when the entity dies")]
 	public UnityEvent m_deathEvent;
 
+    [HideInInspector] public SpriteRenderer m_renderer;
+	[HideInInspector] public Shooter m_shooter;
+	[HideInInspector] public CollisionRelay m_collisionRelay;
 	[HideInInspector] public UnitHealth m_health;
 	[HideInInspector] public StateController m_ai;
 
-	public virtual void Awake() 
-	{
-		m_health = GetComponent<UnitHealth>();
+    public virtual void Awake()
+    {
+        m_health = GetComponent<UnitHealth>();
+        m_shooter = GetComponent<Shooter>();
+        m_renderer = GetComponent<SpriteRenderer>();
 
+		if(m_shooter) m_shooter.Init(this);
 		if(m_health) m_health.Init(this);
 	}
 
@@ -55,14 +64,17 @@ public class Entity : MonoBehaviour
 		if(m_ai && p_damager) m_ai.m_target = p_damager;
 	}
 
-	public void Kill() {
-		if(m_canDie && !m_isDead) {
+	public void Kill() 
+	{
+		if(m_canDie && !m_isDead) 
+		{
 			m_isDead = true;
 			Die();
 		}
 	}
 
-	protected virtual void Die() {
+	protected virtual void Die() 
+	{
 		Destroy(m_ai);
 
 		m_deathEvent.Invoke();
