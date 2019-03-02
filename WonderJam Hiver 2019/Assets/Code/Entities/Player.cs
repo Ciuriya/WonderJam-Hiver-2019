@@ -12,6 +12,9 @@ public class Player : Entity
     [Tooltip("The speed boost added to the speed of the player")]
     [Range(0, 60)] public float m_SpeedBoost = 3f;
 
+    public ValueManager m_lifeManager;
+
+
     public override void Start()
 	{
 		base.Start();
@@ -50,14 +53,14 @@ public class Player : Entity
     //Override pour eviter que le player devienne Dead (On ne peut plus le tuer s'il est dead)
     public override void Kill()
     {
+        m_lifeManager.UpdateValue(-1);
         Die();
     }
 
     protected override void Die()
     {
         //On teleporte le joueur a une position de spawn (Setuper arbitrairement pour le moment)
-        GameObject respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
-        gameObject.transform.position = respawnPoint.transform.position;
+        gameObject.transform.position = new Vector3(0,-2,0);
         m_OnPlayerDeath.Raise();
         Debug.Log("U got murdered");
 
