@@ -14,7 +14,7 @@ public abstract class ShotPattern : ScriptableObject
 	public List<ProjectileBehaviour> m_behaviours;
 
 	[Tooltip("Amount of shots to include in this pattern")]
-	[Range(1, 10000)] public int m_shots;
+	[Range(1, 1000)] public int m_shots;
 
 	[Tooltip("If the shot happens instantly")]
 	public bool m_instant;
