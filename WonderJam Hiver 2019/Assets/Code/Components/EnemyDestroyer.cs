@@ -10,7 +10,7 @@ public class EnemyDestroyer : MonoBehaviour
         if(collision.collider.tag == "Enemy")
         {
             m_OnEnemyPassed.Raise();
-            Destroy(collision.collider);
+            Destroy(collision.gameObject);
         }
     }
 }
