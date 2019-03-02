@@ -10,6 +10,7 @@ public class EnemyDictEntry
     public int Points;
 }
 
+[System.Serializable]
 public class SpawnableEnemy
 {
     public GameObject Object;
@@ -31,7 +32,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public bool Active = false;
     public SpawnableEnemy[] EnemyChoices;
-    public float SpawnWidth = 4f;
+    //TODO: SpawnWeights
+    public float SpawnWidth = 3f;
 
     List<System.Tuple<SpawnableEnemy, GameObject>> SpawnedEnemies;
 
@@ -93,7 +95,7 @@ public class EnemySpawner : MonoBehaviour
         {
             EnemyDict.Add(JsonUtility.FromJson<EnemyDictEntry>(JSON));
         }
-
+        
         //Order the list by the number of points it has
         EnemyDict.Sort(new System.Comparison<EnemyDictEntry>((EnemyDictEntry first, EnemyDictEntry second) => { return first.Points - second.Points; }));
 
