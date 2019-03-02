@@ -1408,13 +1408,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1955414875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65689b2245e91c94bb08065ce820be2c, type: 3}
+  m_Script: {fileID: 11500000, guid: a541cd3707e294946b1558271652160c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_text: {fileID: 1955414879}
   m_value: {fileID: 11400000, guid: 57d483d7cd75843489b3db358258ec87, type: 2}
+  m_displayedValue: {fileID: 11400000, guid: 41cffd5ce60f93b4dbf53e0407c05a88, type: 2}
   m_maxValue: {fileID: 11400000, guid: b129776eb5db9b34193c017ab8ccbadb, type: 2}
   m_padding: 9
+  m_updateSpeed: 100
 --- !u!1 &2023048053
 GameObject:
   m_ObjectHideFlags: 0
@@ -7416,7 +7418,7 @@ GameObject:
   - component: {fileID: 4747893690813415637}
   - component: {fileID: 717777554917069117}
   - component: {fileID: 4785241933022953119}
-  - component: {fileID: 8582287107714650624}
+  - component: {fileID: 4881155490210959948}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -7502,7 +7504,7 @@ MonoBehaviour:
   m_response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8582287107714650624}
+      - m_Target: {fileID: 4881155490210959948}
         m_MethodName: UpdateText
         m_Mode: 1
         m_Arguments:
@@ -7515,7 +7517,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &8582287107714650624
+--- !u!114 &4881155490210959948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7524,13 +7526,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4881155490210959947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65689b2245e91c94bb08065ce820be2c, type: 3}
+  m_Script: {fileID: 11500000, guid: a541cd3707e294946b1558271652160c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_text: {fileID: 717777554917069117}
   m_value: {fileID: 11400000, guid: 3a1100bbd991b374b9231a5aa9a37b10, type: 2}
+  m_displayedValue: {fileID: 11400000, guid: a904078430170aa459226051ce71e30c, type: 2}
   m_maxValue: {fileID: 11400000, guid: b129776eb5db9b34193c017ab8ccbadb, type: 2}
   m_padding: 9
+  m_updateSpeed: 100
 --- !u!1 &4939106450281054326
 GameObject:
   m_ObjectHideFlags: 0
