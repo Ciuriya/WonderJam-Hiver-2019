@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674f4e8c9e7c7324ba94c4cfd8cc84eb, type: 3}
+  m_Name: NukePowerUp
+  m_EditorClassIdentifier: 
+  m_icon: {fileID: 0}
+  m_pickupAudioEvent: {fileID: 11400000, guid: c8ac6366b388af44f90aba2e2fe1f8a4, type: 2}
+  enemies:
+  - {fileID: 0}
