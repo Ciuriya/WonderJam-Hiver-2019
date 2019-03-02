@@ -17,13 +17,17 @@ public class Entity : MonoBehaviour
 	[Tooltip("Event called when the entity dies")]
 	public UnityEvent m_deathEvent;
 
+	[HideInInspector] public Shooter m_shooter;
+	[HideInInspector] public CollisionRelay m_collisionRelay;
 	[HideInInspector] public UnitHealth m_health;
 	[HideInInspector] public StateController m_ai;
 
 	public virtual void Awake() 
 	{
 		m_health = GetComponent<UnitHealth>();
+		m_shooter = GetComponent<Shooter>();
 
+		if(m_shooter) m_shooter.Init(this);
 		if(m_health) m_health.Init(this);
 	}
 
@@ -55,14 +59,17 @@ public class Entity : MonoBehaviour
 		if(m_ai && p_damager) m_ai.m_target = p_damager;
 	}
 
-	public void Kill() {
-		if(m_canDie && !m_isDead) {
+	public void Kill() 
+	{
+		if(m_canDie && !m_isDead) 
+		{
 			m_isDead = true;
 			Die();
 		}
 	}
 
-	protected virtual void Die() {
+	protected virtual void Die() 
+	{
 		Destroy(m_ai);
 
 		m_deathEvent.Invoke();
