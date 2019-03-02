@@ -884,7 +884,7 @@ MonoBehaviour:
   m_smoothTime: 0.03
   m_speed: 2.5
   m_diagonalSpeedPercentage: 0.75
-  m_downwardVelocity: 0.5
+  m_downwardVelocity: 1.5
 --- !u!114 &2090872699
 MonoBehaviour:
   m_ObjectHideFlags: 0
