@@ -18,5 +18,5 @@ MonoBehaviour:
     Min: 0.5
     Max: 1
   m_pitch:
-    Min: 1
+    Min: 0.4979368
     Max: 1

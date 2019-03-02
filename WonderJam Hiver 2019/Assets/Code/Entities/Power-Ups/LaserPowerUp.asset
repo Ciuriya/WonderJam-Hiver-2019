@@ -15,4 +15,4 @@ MonoBehaviour:
   m_icon: {fileID: 0}
   m_pickupAudioEvent: {fileID: 11400000, guid: 634f01fde90f03948b74665f44b78b61, type: 2}
   m_powerUpPattern: {fileID: 11400000, guid: 2d5c801319e847c4da223b1208884cb3, type: 2}
-  m_duration: 60
+  m_duration: 10

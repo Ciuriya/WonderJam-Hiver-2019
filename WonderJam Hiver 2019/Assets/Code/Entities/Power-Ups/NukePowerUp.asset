@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: NukePowerUp
   m_EditorClassIdentifier: 
   m_icon: {fileID: 0}
-  m_pickupAudioEvent: {fileID: 0}
-  ennemies: []
+  m_pickupAudioEvent: {fileID: 11400000, guid: c8ac6366b388af44f90aba2e2fe1f8a4, type: 2}
+  enemies:
+  - {fileID: 0}

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2581eb554244943b0754c6e90d4dcc, type: 3}
   m_Name: LaserPattern
   m_EditorClassIdentifier: 
-  m_projectile: {fileID: 6879974211082016899, guid: 7202ef1db52506c4e8670cb4e5b015e5,
+  m_projectile: {fileID: 733175078221444750, guid: 199e9e2e663ee46498cabce6d5486200,
     type: 3}
   m_projectileInfo: {fileID: 11400000, guid: af86e0d7b5200ac4d95e14a9a5ae2cb7, type: 2}
   m_behaviours:
   - {fileID: 11400000, guid: 0356ad6be9fa611418d4c7e2b1f7c2d0, type: 2}
-  m_shots: 1
-  m_instant: 1
+  m_shots: 1000
+  m_instant: 0
   m_loop: 0
-  m_loopsBeforeSwitch: 0
-  m_patternCooldown: 0.5
+  m_loopsBeforeSwitch: 3
+  m_patternCooldown: 3
   m_bypassShooterCooldown: 0
   m_stepDelay: 0
   m_nextPatterns: []
@@ -29,4 +29,4 @@ MonoBehaviour:
   m_flipShootOrigin: 0
   m_angleRange: 0
   m_angleOffset: 0
-  m_centeredOnDirection: 0
+  m_centeredOnDirection: 1

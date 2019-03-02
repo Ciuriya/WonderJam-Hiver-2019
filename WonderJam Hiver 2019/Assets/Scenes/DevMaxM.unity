@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eeda23f57701f54aae59ef064c9051b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_powerUpToGive: {fileID: 11400000, guid: d85224c684707c14395d07c2ca0da9c7, type: 2}
+  m_powerUpToGive: {fileID: 11400000, guid: 4f912f971747cc14c91faadf680ea556, type: 2}
 --- !u!50 &718239846
 Rigidbody2D:
   serializedVersion: 4
@@ -1317,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1652807111, guid: 8862e6bd608a86c45bf4a494b28ada59, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 103.4
+      value: 103.3999
       objectReference: {fileID: 0}
     - target: {fileID: 1652807111, guid: 8862e6bd608a86c45bf4a494b28ada59, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1503,6 +1503,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657439564360169166, guid: c8402538d6d23ba49ac09f3ad07625d5,
+        type: 3}
+      propertyPath: m_canDie
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657439564360169166, guid: c8402538d6d23ba49ac09f3ad07625d5,
+        type: 3}
+      propertyPath: m_InvincibilityTime
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8402538d6d23ba49ac09f3ad07625d5, type: 3}
