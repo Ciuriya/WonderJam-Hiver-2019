@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2581eb554244943b0754c6e90d4dcc, type: 3}
   m_Name: ShotgunPattern
   m_EditorClassIdentifier: 
-  m_projectile: {fileID: 904768965044621364, guid: 3394a436ec9bc46479de4a7b86fe8868,
+  m_projectile: {fileID: 733175078221444750, guid: 199e9e2e663ee46498cabce6d5486200,
     type: 3}
   m_projectileInfo: {fileID: 11400000, guid: 2e00817b84f85f44fb101d97e6e991df, type: 2}
   m_behaviours:
@@ -26,6 +26,7 @@ MonoBehaviour:
   m_stepDelay: 0
   m_nextPatterns: []
   m_nextPatternSwitchDelay: 0
+  m_flipShootOrigin: 0
   m_angleRange: 90
   m_angleOffset: 0
   m_centeredOnDirection: 1

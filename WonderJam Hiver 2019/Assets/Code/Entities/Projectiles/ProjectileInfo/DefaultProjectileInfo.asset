@@ -17,7 +17,7 @@ MonoBehaviour:
   m_range: 10
   m_speed: 6
   m_rotate: 1
-  m_rotationSpeed: 100
+  m_rotationSpeed: 10000
   m_faceAtTarget: 1
   m_spriteRotation: -90
   m_behaviours: []

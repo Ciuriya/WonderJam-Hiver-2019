@@ -18,6 +18,6 @@ MonoBehaviour:
   m_speed: 5
   m_rotate: 0
   m_rotationSpeed: 0
-  m_faceAtTarget: 0
-  m_spriteRotation: 0
+  m_faceAtTarget: 1
+  m_spriteRotation: -90
   m_behaviours: []

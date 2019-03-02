@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7ef3c75f5c63e49ba3a4b51e968ce3, type: 3}
   m_Name: BurstPattern
   m_EditorClassIdentifier: 
-  m_projectile: {fileID: 0}
-  m_projectileInfo: {fileID: 0}
-  m_behaviours: []
-  m_shots: 0
-  m_instant: 0
-  m_loop: 0
-  m_loopsBeforeSwitch: 0
-  m_patternCooldown: 0
+  m_projectile: {fileID: 733175078221444750, guid: 199e9e2e663ee46498cabce6d5486200,
+    type: 3}
+  m_projectileInfo: {fileID: 11400000, guid: 59384be8db51d99418dba46d3bf88f69, type: 2}
+  m_behaviours:
+  - {fileID: 11400000, guid: 0356ad6be9fa611418d4c7e2b1f7c2d0, type: 2}
+  m_shots: 1
+  m_instant: 1
+  m_loop: 1
+  m_loopsBeforeSwitch: 3
+  m_patternCooldown: 0.1
   m_bypassShooterCooldown: 0
   m_stepDelay: 0
   m_nextPatterns: []

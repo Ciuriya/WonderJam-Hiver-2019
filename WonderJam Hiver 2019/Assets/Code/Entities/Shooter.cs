@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Shooter : MonoBehaviour 
 {
@@ -15,6 +16,7 @@ public class Shooter : MonoBehaviour
 	[Tooltip("Event called when the entity shoots.")]
 	public UnityEvent m_shotEvent;
 
+    [HideInInspector] public LinkedList<ShotPatternPowerUpWrapper> m_spPowerUps;
 	[HideInInspector] public Entity m_entity;
 	private Dictionary<ShotPattern, DataHolder> m_patterns;
 
@@ -22,6 +24,7 @@ public class Shooter : MonoBehaviour
 	{
 		m_entity = p_entity;
 		m_patterns = new Dictionary<ShotPattern, DataHolder>();
+        m_spPowerUps = new LinkedList<ShotPatternPowerUpWrapper>();
 	}
 
 	public bool CanShoot(ShotPattern p_pattern)
@@ -44,6 +47,49 @@ public class Shooter : MonoBehaviour
 
 		return lastLoopTimeObj == null ? true : Time.time * 1000 >= (float) lastLoopTimeObj + patternCooldown * 1000;
 	}
+
+    public ShotPattern GetCurrentPattern()
+    {
+        if(m_spPowerUps.Count == 0)
+        {
+            return m_patternToShoot;
+        }
+        else
+        {
+            return m_spPowerUps.Last.Value.shotPatternPowerUp.m_powerUpPattern;
+        }
+    }
+
+    public void AddShotPatternPowerUp(ShotPatternPowerUp p_shotPatternPowerUp)
+    {
+        if(m_spPowerUps.Any(s => s.shotPatternPowerUp == p_shotPatternPowerUp))
+        {
+            ShotPatternPowerUpWrapper wrapper = m_spPowerUps.Last(s => s.shotPatternPowerUp == p_shotPatternPowerUp);
+            wrapper.time = Time.time * 1000;
+            m_spPowerUps.Remove(wrapper);
+            m_spPowerUps.AddLast(wrapper);
+        }
+        else
+        {
+            ShotPatternPowerUpWrapper wrapper = new ShotPatternPowerUpWrapper(p_shotPatternPowerUp);
+            m_spPowerUps.AddLast(wrapper);
+            StartCoroutine(RemoveShotPatternPowerUp(wrapper, p_shotPatternPowerUp.m_duration));
+        }   
+    }
+
+    IEnumerator RemoveShotPatternPowerUp(ShotPatternPowerUpWrapper p_shotPatternPowerUp, float p_duration)
+    {
+        yield return new WaitForSeconds(p_duration);
+        if(Time.time * 1000 < p_shotPatternPowerUp.time + p_shotPatternPowerUp.shotPatternPowerUp.m_duration * 1000)
+        {
+            StartCoroutine(RemoveShotPatternPowerUp(p_shotPatternPowerUp, (p_shotPatternPowerUp.time + p_shotPatternPowerUp.shotPatternPowerUp.m_duration * 1000 - Time.time * 1000)/1000));
+        }
+        else
+        {
+            m_spPowerUps.Remove(p_shotPatternPowerUp);
+            p_shotPatternPowerUp.shotPatternPowerUp.End(this);
+        }
+    }
 
 	public void Shoot(ShotPattern p_pattern) 
 	{
@@ -120,4 +166,16 @@ public class Shooter : MonoBehaviour
 
 		p_entity.Damage(m_entity, finalDamage, false);
 	}
+}
+
+public class ShotPatternPowerUpWrapper
+{
+    public ShotPatternPowerUp shotPatternPowerUp;
+    public float time;
+
+    public ShotPatternPowerUpWrapper(ShotPatternPowerUp p_shotPatternPowerUp)
+    {
+        shotPatternPowerUp = p_shotPatternPowerUp;
+        time = Time.time * 1000;
+    }
 }

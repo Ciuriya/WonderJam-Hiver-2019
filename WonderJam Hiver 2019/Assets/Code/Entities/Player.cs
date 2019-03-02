@@ -13,7 +13,7 @@ public class Player : Entity
 
 		if(fire) 
 		{
-			ShotPattern toFire = m_shooter.m_patternToShoot;
+			ShotPattern toFire = m_shooter.GetCurrentPattern();
 
 			if(toFire == null) return;
 
