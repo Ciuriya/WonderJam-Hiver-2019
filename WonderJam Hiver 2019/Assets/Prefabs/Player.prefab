@@ -116,6 +116,7 @@ MonoBehaviour:
   m_ai: {fileID: 0}
   m_playerController: {fileID: 0}
   m_OnPlayerDeath: {fileID: 11400000, guid: 3a164138e8fddc749a17a3f92331c36d, type: 2}
+  m_lifeManager: {fileID: 11400000, guid: 9ad7f8df680d9a8428658bc5a0db6d1d, type: 2}
 --- !u!114 &5657439564360169167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +147,7 @@ MonoBehaviour:
   m_smoothTime: 0.03
   m_speed: 2.5
   m_diagonalSpeedPercentage: 0.75
-  m_downwardVelocity: 1.5
+  m_downwardVelocity: 0.4
 --- !u!114 &5657439564360169153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +167,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  m_audioSource: {fileID: 0}
   m_entity: {fileID: 0}
 --- !u!61 &5657439564360169154
 BoxCollider2D:
