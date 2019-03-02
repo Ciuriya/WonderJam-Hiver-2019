@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4ac71058d4aea47a5ba28fcc6e93b7, type: 3}
+  m_Name: LifeManager
+  m_EditorClassIdentifier: 
+  m_value:
+    m_useConstant: 0
+    m_constantValue: 0
+    m_variable: {fileID: 11400000, guid: 0f84604660bd2c249b7e712ac9442000, type: 2}
+  m_minValue:
+    m_useConstant: 1
+    m_constantValue: 0
+    m_variable: {fileID: 0}
+  m_maxValue:
+    m_useConstant: 0
+    m_constantValue: 0
+    m_variable: {fileID: 11400000, guid: 6d9cf40fd41547f47be1b59f0d09fc0e, type: 2}
+  m_updateEvent: {fileID: 11400000, guid: 56eb6facd57cbf245865654fb40785b7, type: 2}

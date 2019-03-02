@@ -32,11 +32,6 @@ public abstract class CharController : MonoBehaviour
 
 	protected abstract void OnAwake();
 
-	void FixedUpdate()
-	{
-		transform.position += new Vector3(0, -m_downwardVelocity * Time.fixedDeltaTime, 0);
-	}
-
 	public abstract void Move(Vector2 p_move);
 
 	public void Stop() 

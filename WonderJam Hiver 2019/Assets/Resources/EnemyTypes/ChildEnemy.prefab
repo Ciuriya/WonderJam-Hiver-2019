@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8136100162165550228}
-  - component: {fileID: 8136100162165550231}
   - component: {fileID: 8136100162165550230}
   - component: {fileID: 8136100162165550229}
+  - component: {fileID: 8136100162165550231}
   m_Layer: 10
   m_Name: Collision Relay
   m_TagString: Untagged
@@ -33,19 +33,6 @@ Transform:
   m_Father: {fileID: 8136100163231584439}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8136100162165550231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8136100162165550235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9658632d737b364e9eeb41f50475db3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_entity: {fileID: 8136100163231584442}
 --- !u!61 &8136100162165550230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -93,6 +80,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8136100162165550231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8136100162165550235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9658632d737b364e9eeb41f50475db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_entity: {fileID: 925689517927026744}
 --- !u!1 &8136100163231584441
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,13 +103,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8136100163231584439}
   - component: {fileID: 8136100163231584438}
-  - component: {fileID: 8136100163231584437}
   - component: {fileID: 8136100163231584436}
   - component: {fileID: 8136100163231584443}
-  - component: {fileID: 8136100163231584442}
+  - component: {fileID: 8136100163231584437}
   - component: {fileID: 8136100163231584432}
+  - component: {fileID: 925689517927026744}
   m_Layer: 9
-  m_Name: TestEnemy
+  m_Name: ChildEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,24 +178,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8136100163231584437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8136100163231584441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401c97be7afce6f4b97b7aed3ea07d68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_directionX: 0
-  m_directionY: 0
-  m_smoothTime: 0.03
-  m_speed: 2.5
-  m_diagonalSpeedPercentage: 0.75
-  m_downwardVelocity: 1.5
 --- !u!61 &8136100163231584436
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,7 +225,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8136100163231584442
+--- !u!114 &8136100163231584437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,24 +234,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8136100163231584441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e61ebe2bc04937a43bc75b77167094ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 401c97be7afce6f4b97b7aed3ea07d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_controller: {fileID: 8136100163231584437}
-  m_canDie: 1
-  m_isDead: 0
-  m_look: {fileID: 0}
-  m_runtimeSets: []
-  m_deathEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_renderer: {fileID: 0}
-  m_shooter: {fileID: 0}
-  m_collisionRelay: {fileID: 0}
-  m_health: {fileID: 0}
-  m_ai: {fileID: 0}
+  m_directionX: 0
+  m_directionY: 0
+  m_smoothTime: 0.03
+  m_speed: 2.5
+  m_diagonalSpeedPercentage: 0.75
+  m_downwardVelocity: 1.5
 --- !u!114 &8136100163231584432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,3 +272,37 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_entity: {fileID: 0}
+--- !u!114 &925689517927026744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8136100163231584441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5248a6e9e254d0e4689c86fd04705acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_controller: {fileID: 8136100163231584437}
+  m_canDie: 1
+  m_isDead: 0
+  m_look: {fileID: 0}
+  m_runtimeSets: []
+  m_deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_renderer: {fileID: 0}
+  m_shooter: {fileID: 0}
+  m_collisionRelay: {fileID: 0}
+  m_health: {fileID: 0}
+  m_ai: {fileID: 0}
+  m_pressure: 25
+  m_points: 100
+  m_scoreManager: {fileID: 11400000, guid: 515c2b0f4322f224fb0976679f2301a6, type: 2}
+  m_strategy: {fileID: 11400000, guid: d338d87c7c6a7f144a73e50e4ee3b4e7, type: 2}
+  m_spawnCount: 0
+  m_spawnList: []
+  m_spawnFromPosition: {x: 0, y: 0, z: 0}
