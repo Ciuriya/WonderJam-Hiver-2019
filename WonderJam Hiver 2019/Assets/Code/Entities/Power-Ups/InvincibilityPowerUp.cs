@@ -8,6 +8,7 @@ public class InvincibilityPowerUp : PowerUp
     // Start is called before the first frame update
     public override void Use(Shooter p_shooter)
     {
+        m_pickupAudioEvent.Play(p_shooter.m_audioSource);
         player = p_shooter.GetComponentInParent<Player>();
         player.AddInvincibility();
     }

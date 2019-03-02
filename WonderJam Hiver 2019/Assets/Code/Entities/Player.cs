@@ -5,8 +5,11 @@ public class Player : Entity
 {
 	[HideInInspector] public PlayerController m_playerController;
     public GameEvent m_OnPlayerDeath;
+    [Tooltip("The time for which the player is invincible, in seconds")]
     [Range(0, 60)] public float m_InvincibilityTime = 3f;
+    [Tooltip("The time for which the player have a speed boost, in seconds")]
     [Range(0, 60)] public float m_SpeedBoostTime = 3f;
+    [Tooltip("The speed boost added to the speed of the player")]
     [Range(0, 60)] public float m_SpeedBoost = 3f;
 
     public override void Start()
