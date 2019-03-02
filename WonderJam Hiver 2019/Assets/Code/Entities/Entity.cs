@@ -26,7 +26,7 @@ public class Entity : MonoBehaviour
 	[HideInInspector] public UnitHealth m_health;
 	[HideInInspector] public StateController m_ai;
 
-    public virtual void Awake()
+    public virtual void Start()
     {
         m_health = GetComponent<UnitHealth>();
         m_shooter = GetComponent<Shooter>();

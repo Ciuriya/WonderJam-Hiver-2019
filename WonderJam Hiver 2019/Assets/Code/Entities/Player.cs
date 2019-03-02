@@ -5,15 +5,11 @@ public class Player : Entity
 	[HideInInspector] public PlayerController m_playerController;
     public GameEvent m_OnPlayerDeath;
 
-	public override void Awake()
+	public override void Start()
 	{
-		base.Awake();
+		base.Start();
 
 		m_playerController = GetComponent<PlayerController>();
-	}
-
-	void Start() 
-	{ 
 		Game.m_keybinds.m_entity = this;
 	}
 
