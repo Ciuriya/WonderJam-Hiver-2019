@@ -5,9 +5,11 @@ public class Player : Entity
 {
 	[HideInInspector] public PlayerController m_playerController;
     public GameEvent m_OnPlayerDeath;
-    [Range(0, 60)] public float m_InvincibilityTime;
+    [Range(0, 60)] public float m_InvincibilityTime = 3f;
+    [Range(0, 60)] public float m_SpeedBoostTime = 3f;
+    [Range(0, 60)] public float m_SpeedBoost = 3f;
 
-	public override void Start()
+    public override void Start()
 	{
 		base.Start();
 
@@ -67,5 +69,17 @@ public class Player : Entity
         m_canDie = false;
         yield return new WaitForSeconds(m_InvincibilityTime);
         m_canDie = true;
+    }
+
+    public void AddSpeed()
+    {
+        StartCoroutine(Speed());
+    }
+
+    public IEnumerator Speed()
+    {
+        m_controller.m_speed += m_SpeedBoost;
+        yield return new WaitForSeconds(m_SpeedBoostTime);
+        m_controller.m_speed -= m_SpeedBoost;
     }
 }

@@ -13,4 +13,5 @@ public class PowerUpItem : MonoBehaviour
             Destroy(gameObject);
 		}
 	}
+
 }
