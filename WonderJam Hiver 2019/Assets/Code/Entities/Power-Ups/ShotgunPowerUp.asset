@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f008e709a1d9146b37c7739d8a59c2, type: 3}
   m_Name: ShotgunPowerUp
   m_EditorClassIdentifier: 
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 8159294494826889400, guid: 22160a476bf2b7b48858c0182a476e5c, type: 3}
   m_pickupAudioEvent: {fileID: 11400000, guid: 634f01fde90f03948b74665f44b78b61, type: 2}
   m_powerUpPattern: {fileID: 11400000, guid: e2b74866f34af21428ffeb192bf89c25, type: 2}
   m_duration: 5
