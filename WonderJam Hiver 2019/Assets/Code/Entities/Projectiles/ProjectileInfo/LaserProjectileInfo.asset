@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c083894368908f4b8878407ec2d294d, type: 3}
-  m_Name: DefaultProjectileInfo
+  m_Name: LaserProjectileInfo
   m_EditorClassIdentifier: 
   m_damage: 1
   m_piercing: 0
   m_range: 10
   m_speed: 6
-  m_rotate: 0
+  m_rotate: 1
   m_rotationSpeed: 10000
   m_faceAtTarget: 1
-  m_spriteRotation: -90
+  m_spriteRotation: 0
   m_behaviours: []
-  m_fireAudioEvent: {fileID: 11400000, guid: 9d226a36f1aec4a48818fddd728f0e56, type: 2}
+  m_fireAudioEvent: {fileID: 11400000, guid: 979fc60bbded33a49bccac400da29d90, type: 2}

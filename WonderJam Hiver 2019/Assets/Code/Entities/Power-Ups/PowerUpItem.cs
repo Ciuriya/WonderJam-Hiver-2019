@@ -10,7 +10,8 @@ public class PowerUpItem : MonoBehaviour
 		if(p_collider.tag == "Player")
 		{
 			m_powerUpToGive.Use(p_collider.gameObject.GetComponent<Shooter>());
-			Destroy(gameObject);
+            Destroy(gameObject);
 		}
 	}
+
 }
