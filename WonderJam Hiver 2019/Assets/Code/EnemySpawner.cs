@@ -7,29 +7,32 @@ public class EnemyDictEntry
 {
     public string Name;
     public string Location;
-    public int Weight;
+    public int Points;
 }
 
 public class SpawnableEnemy
 {
     public GameObject Object;
-    public int EnemyPoints;
-    public int EnemyWeight;
+    public int Points;
+    public int Weight;
 
     public SpawnableEnemy(EnemyDictEntry Entry)
     {
         Object = Resources.Load<GameObject>(Entry.Location);
-        EnemyWeight = Entry.Weight;
+        Points = Entry.Points;
     }
 }
 
 public class EnemySpawner : MonoBehaviour
 {
     public SpawnableEnemy[] EnemyChoices;
-    public float SpawnWidth = 300;
-    public float SpawnCount = 1;
+    public float SpawnWidth = 4f;
 
     List<GameObject> SpawnedEnemies;
+
+    //Level Spawn Data
+    public int LevelPointsAvailable;
+    int LevelTotalWeights;
 
     Transform SpawnTransform;
 
@@ -37,10 +40,30 @@ public class EnemySpawner : MonoBehaviour
     {
         if (EnemyChoices.Length > index && EnemyChoices[index].Object != null)
         {
-            Vector3 EnemyPos = new Vector3(Random.Range(-1, 1) * SpawnWidth, SpawnTransform.position.y, SpawnTransform.position.z);
-            GameObject NewEnemy = Instantiate(EnemyChoices[0].Object, EnemyPos, SpawnTransform.rotation);
+            Vector3 EnemyPos = new Vector3(Random.Range(-SpawnWidth, SpawnWidth), SpawnTransform.position.y, SpawnTransform.position.z);
+            Debug.Log(EnemyPos.x);
+            GameObject NewEnemy = Instantiate(EnemyChoices[index].Object, EnemyPos, SpawnTransform.rotation);
             SpawnedEnemies.Add(NewEnemy);
+            LevelPointsAvailable -= EnemyChoices[index].Points;
         }
+    }
+
+    public void StartNewLevel(int Points)
+    {
+        LevelPointsAvailable = Points;
+        LevelTotalWeights = 0;
+        for(int i = 0; i < EnemyChoices.Length; i++)
+        {
+            if(EnemyChoices[i].Weight > 0)
+            {
+                LevelTotalWeights += EnemyChoices[i].Weight;
+            }
+        }
+    }
+
+    public bool IsLevelOver()
+    {
+        return SpawnedEnemies.Count == 0 && LevelPointsAvailable == 0;
     }
 
     //Run once before any Start has been run
@@ -79,9 +102,13 @@ public class EnemySpawner : MonoBehaviour
         //Remove Dead objects to keep only the live ones
         SpawnedEnemies.RemoveAll((Enemy) => { return Enemy == null; });
 
-        if(SpawnedEnemies.Count < SpawnCount)
+        //Spawn logic goes here
+        if(LevelPointsAvailable > 0)
         {
-            //Spawn(0);
+            if(SpawnedEnemies.Count == 0)
+            { //TODO: Always spawn in the biggest class you can when the screen gets cleared
+                Spawn(0);
+            }
         }
 
         foreach(var Enemy in SpawnedEnemies)
