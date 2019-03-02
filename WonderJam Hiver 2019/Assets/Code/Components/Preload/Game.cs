@@ -4,6 +4,7 @@ static class Game
 {
 	public static KeybindManager m_keybinds;
 	public static OptionManager m_options;
+	public static AudioManager m_audio;
 	public static ProjectilePooler m_projPool;
 
 	static Game() 
@@ -12,6 +13,7 @@ static class Game
 
 		m_keybinds = (KeybindManager) SafeComponent(game, "KeybindManager");
 		m_options = (OptionManager) SafeComponent(game, "OptionManager");
+		m_audio = (AudioManager) SafeComponent(game, "AudioManager");
 		m_projPool = (ProjectilePooler) SafeComponent(SafeFind("ProjectilePooler"), "ProjectilePooler");
 	}
 
