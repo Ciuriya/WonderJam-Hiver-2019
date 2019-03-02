@@ -48,6 +48,7 @@ public class StraightBehaviourJob : ProjectileMovementJob
 
 	protected override void Dispose() 
 	{
+        Debug.Log(m_dataArray.Length);
 		if(m_dataArray.IsCreated) m_dataArray.Dispose();
 	}
 
