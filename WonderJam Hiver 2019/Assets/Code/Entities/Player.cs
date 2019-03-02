@@ -34,11 +34,11 @@ public class Player : Entity
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Enemy" && m_canDie == true)
+        if(m_canDie == true && collision.collider.tag == "Enemy" )
         {
             Kill();
         }
-        else if(collision.collider.tag == "Enemy" && m_canDie == false)
+        else if(m_canDie == false && collision.collider.tag == "Enemy")
         {
             Destroy(collision.collider.gameObject);
         }
