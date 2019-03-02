@@ -40,7 +40,7 @@ public class Player : Entity
         }
         else if(collision.collider.tag == "Enemy" && m_canDie == false)
         {
-            //collision.otherCollider.
+            Destroy(collision.collider.gameObject);
         }
     }
 

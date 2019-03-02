@@ -17,11 +17,11 @@ MonoBehaviour:
   m_projectileInfo: {fileID: 11400000, guid: af86e0d7b5200ac4d95e14a9a5ae2cb7, type: 2}
   m_behaviours:
   - {fileID: 11400000, guid: 0356ad6be9fa611418d4c7e2b1f7c2d0, type: 2}
-  m_shots: 1000
+  m_shots: 500
   m_instant: 0
   m_loop: 0
   m_loopsBeforeSwitch: 3
-  m_patternCooldown: 3
+  m_patternCooldown: 5
   m_bypassShooterCooldown: 0
   m_stepDelay: 0
   m_nextPatterns: []
@@ -29,4 +29,4 @@ MonoBehaviour:
   m_flipShootOrigin: 0
   m_angleRange: 0
   m_angleOffset: 0
-  m_centeredOnDirection: 1
+  m_centeredOnDirection: 0
