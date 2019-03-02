@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class Entity : MonoBehaviour 
 {
+	[Tooltip("The entity's movement controller")]
+	public CharController m_controller;
+
 	[Tooltip("If this entity can die")]
 	public bool m_canDie;
 	[HideInInspector] public bool m_isDead;

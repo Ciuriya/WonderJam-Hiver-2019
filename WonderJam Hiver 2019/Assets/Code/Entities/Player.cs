@@ -2,6 +2,15 @@
 
 public class Player : Entity
 {
+	[HideInInspector] public PlayerController m_playerController;
+
+	public override void Awake()
+	{
+		base.Awake();
+
+		m_playerController = GetComponent<PlayerController>();
+	}
+
 	void Start() 
 	{ 
 		Game.m_keybinds.m_entity = this;
@@ -17,7 +26,7 @@ public class Player : Entity
 
 			if(toFire == null) return;
 
-			//m_shooter.SetPatternInfo(toFire, "forcedTarget", (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition));
+			m_shooter.SetPatternInfo(toFire, "forcedTarget", new Vector2(transform.position.x, transform.position.y + 1));
 			m_shooter.Shoot(toFire);
 		}
 	}

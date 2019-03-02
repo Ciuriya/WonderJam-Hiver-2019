@@ -14,8 +14,5 @@ public class ShotPatternPowerUp : PowerUp
         p_shooter.AddShotPatternPowerUp(this);
     }
 
-    public override void End(Shooter p_shooter)
-    {
-        Debug.Log("How did you even get here");
-    }
+    public override void End(Shooter p_shooter) { }
 }
