@@ -59,8 +59,8 @@ public class Player : Entity
 
     protected override void Die()
     {
-        //On teleporte le joueur a une position de spawn (Setuper arbitrairement pour le moment)
-        gameObject.transform.position = new Vector3(0,-2,0);
+        GameObject respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
+        gameObject.transform.position = respawnPoint.transform.position;
         m_OnPlayerDeath.Raise();
         Debug.Log("U got murdered");
 

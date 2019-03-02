@@ -20,6 +20,10 @@ public class Entity : MonoBehaviour
 	[Tooltip("Event called when the entity dies")]
 	public UnityEvent m_deathEvent;
 
+    public SimpleAudioEvent m_pickupAudioEvent;
+    public SimpleAudioEvent m_deathSoundEvent;
+
+    [HideInInspector] public AudioSource m_audioSource;
     [HideInInspector] public SpriteRenderer m_renderer;
 	[HideInInspector] public Shooter m_shooter;
 	[HideInInspector] public CollisionRelay m_collisionRelay;
@@ -31,8 +35,11 @@ public class Entity : MonoBehaviour
         m_health = GetComponent<UnitHealth>();
         m_shooter = GetComponent<Shooter>();
         m_renderer = GetComponent<SpriteRenderer>();
+        m_audioSource = gameObject.AddComponent<AudioSource>();
 
-		if(m_shooter) m_shooter.Init(this);
+        Game.m_audio.AddAudioSource(m_audioSource, AudioCategories.SFX);
+
+        if (m_shooter) m_shooter.Init(this);
 		if(m_health) m_health.Init(this);
 	}
 

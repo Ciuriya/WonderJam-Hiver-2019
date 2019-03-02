@@ -26,9 +26,7 @@ public class Enemy : Entity
     public Spawn[] m_spawnList;
 
     [HideInInspector] public Vector3 m_spawnFromPosition;
-
     private int totalWeight = 0;
-
 
     public void OnEnable()
     {
@@ -48,6 +46,7 @@ public class Enemy : Entity
         {
             m_isDead = true;
             m_scoreManager.UpdateValue(m_points);
+            m_deathSoundEvent.Play(m_audioSource);
             Die();
         }
     }
