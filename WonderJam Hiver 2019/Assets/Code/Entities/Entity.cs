@@ -17,15 +17,17 @@ public class Entity : MonoBehaviour
 	[Tooltip("Event called when the entity dies")]
 	public UnityEvent m_deathEvent;
 
+    [HideInInspector] public SpriteRenderer m_renderer;
 	[HideInInspector] public Shooter m_shooter;
 	[HideInInspector] public CollisionRelay m_collisionRelay;
 	[HideInInspector] public UnitHealth m_health;
 	[HideInInspector] public StateController m_ai;
 
-	public virtual void Awake() 
-	{
-		m_health = GetComponent<UnitHealth>();
-		m_shooter = GetComponent<Shooter>();
+    public virtual void Awake()
+    {
+        m_health = GetComponent<UnitHealth>();
+        m_shooter = GetComponent<Shooter>();
+        m_renderer = GetComponent<SpriteRenderer>();
 
 		if(m_shooter) m_shooter.Init(this);
 		if(m_health) m_health.Init(this);

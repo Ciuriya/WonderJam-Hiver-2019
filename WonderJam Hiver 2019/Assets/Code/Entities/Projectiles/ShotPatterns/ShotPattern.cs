@@ -39,8 +39,11 @@ public abstract class ShotPattern : ScriptableObject
 
 	[Tooltip("The delay in seconds before this pattern switches to the next one")]
 	[Range(0, 10)] public float m_nextPatternSwitchDelay;
+    
+    [Tooltip("Flip the origin of the shooting location")]
+    public bool m_flipShootOrigin;
 
-	protected Vector2 FetchTarget(Shooter p_shooter, Projectile p_projectile) 
+    protected Vector2 FetchTarget(Shooter p_shooter, Projectile p_projectile) 
 	{
 		object forcedTarget = p_shooter.GetPatternInfo(this, "forcedTarget");
 
@@ -52,8 +55,10 @@ public abstract class ShotPattern : ScriptableObject
 		GameObject proj = Game.m_projPool.Get();
 		Projectile projectile = proj.GetComponent<Projectile>();
 		object spawnLocation = p_shooter.GetPatternInfo(this, "spawnLocation");
+        float offset = p_shooter.m_entity.m_renderer.sprite.bounds.max.y;
 
-		proj.transform.position = spawnLocation == null ? p_shooter.transform.position : (Vector3) spawnLocation;
+        proj.transform.position = spawnLocation == null ? p_shooter.transform.position : (Vector3) spawnLocation;
+        proj.transform.position += new Vector3(0, m_flipShootOrigin ? -offset : offset, 0);
 		proj.transform.rotation = m_projectile.transform.rotation;
 
 		projectile.Clone(m_projectile, m_projectileInfo, m_behaviours);

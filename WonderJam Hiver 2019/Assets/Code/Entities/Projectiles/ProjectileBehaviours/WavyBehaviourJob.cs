@@ -45,7 +45,7 @@ public class WavyBehaviourJob : ProjectileMovementJob
 		for(int i = 0; i < p_dataList.Count; i++)
 			dataArray[i] = (WavyBehaviourData) p_dataList[i];
 
-		m_dataArray = new NativeArray<WavyBehaviourData>(dataArray, Allocator.Temp);
+		m_dataArray = new NativeArray<WavyBehaviourData>(dataArray, Allocator.TempJob);
 		m_job = new WavyBehaviourMoveJob 
 		{
 			DeltaTime = Time.deltaTime,

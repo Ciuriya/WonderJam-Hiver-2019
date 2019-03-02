@@ -10,20 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab2581eb554244943b0754c6e90d4dcc, type: 3}
-  m_Name: Shotgun
+  m_Name: ShotgunPattern
   m_EditorClassIdentifier: 
-  m_projectile: {fileID: 0}
-  m_projectileInfo: {fileID: 0}
-  m_behaviours: []
-  m_shots: 0
-  m_instant: 0
+  m_projectile: {fileID: 904768965044621364, guid: 3394a436ec9bc46479de4a7b86fe8868,
+    type: 3}
+  m_projectileInfo: {fileID: 11400000, guid: 2e00817b84f85f44fb101d97e6e991df, type: 2}
+  m_behaviours:
+  - {fileID: 11400000, guid: 0356ad6be9fa611418d4c7e2b1f7c2d0, type: 2}
+  m_shots: 5
+  m_instant: 1
   m_loop: 0
   m_loopsBeforeSwitch: 0
-  m_patternCooldown: 0
+  m_patternCooldown: 0.5
   m_bypassShooterCooldown: 0
   m_stepDelay: 0
   m_nextPatterns: []
   m_nextPatternSwitchDelay: 0
-  m_angleRange: 0
+  m_angleRange: 90
   m_angleOffset: 0
-  m_centeredOnDirection: 0
+  m_centeredOnDirection: 1

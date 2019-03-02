@@ -50,7 +50,6 @@ public abstract class ProjectileMovementJob : MonoBehaviour
 	void Update() 
 	{
 		if(Time.timeScale == 0f) return;
-		if(m_dataList.Count == 0) return;
 
 		m_transformsAccArray = new TransformAccessArray(m_transforms.ToArray());
 		CreateJob(m_dataList);

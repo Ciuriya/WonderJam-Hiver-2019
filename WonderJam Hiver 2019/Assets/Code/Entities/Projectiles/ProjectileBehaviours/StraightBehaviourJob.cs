@@ -33,7 +33,7 @@ public class StraightBehaviourJob : ProjectileMovementJob
 		for(int i = 0; i < p_dataList.Count; i++)
 			dataArray[i] = (StraightBehaviourData) p_dataList[i];
 		
-		m_dataArray = new NativeArray<StraightBehaviourData>(dataArray, Allocator.Temp);
+		m_dataArray = new NativeArray<StraightBehaviourData>(dataArray, Allocator.TempJob);
 		m_job = new StraightBehaviourMoveJob 
 		{ 
 			DeltaTime = Time.deltaTime,
@@ -48,7 +48,6 @@ public class StraightBehaviourJob : ProjectileMovementJob
 
 	protected override void Dispose() 
 	{
-        Debug.Log(m_dataArray.Length);
 		if(m_dataArray.IsCreated) m_dataArray.Dispose();
 	}
 

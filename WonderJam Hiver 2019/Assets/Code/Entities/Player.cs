@@ -17,7 +17,7 @@ public class Player : Entity
 
 			if(toFire == null) return;
 
-			m_shooter.SetPatternInfo(toFire, "forcedTarget", (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition));
+			//m_shooter.SetPatternInfo(toFire, "forcedTarget", (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition));
 			m_shooter.Shoot(toFire);
 		}
 	}
