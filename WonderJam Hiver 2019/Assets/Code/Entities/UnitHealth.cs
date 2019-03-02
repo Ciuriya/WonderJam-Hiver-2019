@@ -29,6 +29,10 @@ public class UnitHealth : MonoBehaviour
 	public void Init(Entity p_entity) 
 	{
 		m_entity = p_entity;
+        if (m_usingLocalHealth)
+        {
+            m_localHealth = m_maxHealth.Value;
+        }
 	}
 
 	public int GetHealth() 
