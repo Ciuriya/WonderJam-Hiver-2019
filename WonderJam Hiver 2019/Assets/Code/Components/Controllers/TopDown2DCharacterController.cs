@@ -26,7 +26,7 @@ public class TopDown2DCharacterController : CharController
 			targetY = scaledY;
 		}
 
-		Vector3 targetVelocity = new Vector2(targetX + m_rigidbody2D.velocity.x / 2, targetY + m_rigidbody2D.velocity.y / 2);
+		Vector3 targetVelocity = new Vector2(targetX + m_rigidbody2D.velocity.x / 2, targetY + m_rigidbody2D.velocity.y / 2) - new Vector2(0, m_downwardVelocity);
 
 		m_rigidbody2D.velocity = Vector3.SmoothDamp(m_rigidbody2D.velocity, targetVelocity, ref m_velocity, m_smoothTime);
 	}
