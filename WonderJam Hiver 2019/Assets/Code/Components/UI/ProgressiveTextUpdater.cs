@@ -39,7 +39,9 @@ public class ProgressiveTextUpdater : MonoBehaviour
         while (m_displayedValue.Value <= m_value.Value)
         {
             m_displayedValue.Value += (m_value.Value - m_displayedValue.Value > speed) ? speed : m_value.Value - m_displayedValue.Value;
-            m_text.text = (m_displayedValue.Value < m_maxValue.Value ? m_displayedValue.Value : m_maxValue.Value).ToString().PadLeft(m_padding, '0');
+
+            if (m_displayedValue.Value >= 0)
+                m_text.text = (m_displayedValue.Value < m_maxValue.Value ? m_displayedValue.Value : m_maxValue.Value).ToString().PadLeft(m_padding, '0');
 
             if (m_displayedValue.Value == m_value.Value) break;
 
