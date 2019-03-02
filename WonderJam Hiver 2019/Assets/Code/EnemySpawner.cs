@@ -143,7 +143,7 @@ public class EnemySpawner : MonoBehaviour
                     LargestPointsAvailable--;
                 }
                 if (LargestPointsAvailable <= 0) { Debug.LogError("Ran out of enemies to spawn, please make sure the level has low point enemies for filler"); Active = false; return; }
-                Debug.Log("Cur: " + SpawnedEnemies.Count + "(" + CurPoints + ")");
+                //Debug.Log("Cur: " + SpawnedEnemies.Count + "(" + CurPoints + ")");
                 if (SpawnedEnemies.Count == 0)
                 { //Always spawn the biggest enemy you can if the screen was cleared
                     Spawn(Random.Range(0, ThisLevelChoices[LargestPointsAvailable - 1].Count - 1));

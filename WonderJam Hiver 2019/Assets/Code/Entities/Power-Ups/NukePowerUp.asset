@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949a8f2188d999d4896389bdeaabcf72, type: 3}
-  m_Name: Nuke
+  m_Script: {fileID: 11500000, guid: 674f4e8c9e7c7324ba94c4cfd8cc84eb, type: 3}
+  m_Name: NukePowerUp
   m_EditorClassIdentifier: 
-  m_clips:
-  - {fileID: 8300000, guid: fd49da001149d324882e68ad04a8c349, type: 3}
-  m_volume:
-    Min: 0.99999994
-    Max: 1
-  m_pitch:
-    Min: 0.49518567
-    Max: 1
+  m_icon: {fileID: 0}
+  m_pickupAudioEvent: {fileID: 11400000, guid: c8ac6366b388af44f90aba2e2fe1f8a4, type: 2}
+  enemies:
+  - {fileID: 0}
