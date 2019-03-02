@@ -115,6 +115,7 @@ MonoBehaviour:
   m_health: {fileID: 0}
   m_ai: {fileID: 0}
   m_playerController: {fileID: 0}
+  m_OnPlayerDeath: {fileID: 11400000, guid: 3a164138e8fddc749a17a3f92331c36d, type: 2}
 --- !u!114 &5657439564360169167
 MonoBehaviour:
   m_ObjectHideFlags: 0
