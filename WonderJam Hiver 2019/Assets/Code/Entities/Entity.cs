@@ -64,7 +64,7 @@ public class Entity : MonoBehaviour
 		if(m_ai && p_damager) m_ai.m_target = p_damager;
 	}
 
-	public void Kill() 
+	public virtual void Kill() 
 	{
 		if(m_canDie && !m_isDead) 
 		{
@@ -75,12 +75,8 @@ public class Entity : MonoBehaviour
 
 	protected virtual void Die() 
 	{
-		Destroy(m_ai);
-
 		m_deathEvent.Invoke();
-
-		Destroy(m_health);
-		Destroy(this);
+        Destroy(gameObject);
 	}
 }
 

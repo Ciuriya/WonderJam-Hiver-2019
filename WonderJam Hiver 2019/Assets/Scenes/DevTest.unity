@@ -260,6 +260,152 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1613597829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1829808567, guid: 780e6fb8947fd6448a5a1ebea75fa221,
+    type: 3}
+  m_PrefabInstance: {fileID: 1999357822253585223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1613597831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613597829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02ce2f05bf320443b5f977cf1f1623b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DeathEvent: {fileID: 11400000, guid: 8e251c98801f5774eadae333e5e93df6, type: 2}
+  m_Value: {fileID: 11400000, guid: ee6856ed727fc2d438342589ff4e4b18, type: 2}
+  m_MaxValue: {fileID: 11400000, guid: a16f575aa13662449a2672cb84d9d23f, type: 2}
+--- !u!1 &2020325480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267413192009377010, guid: 780e6fb8947fd6448a5a1ebea75fa221,
+    type: 3}
+  m_PrefabInstance: {fileID: 1999357822253585223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2020325486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020325480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330913bce29ed0149a8813bd6530b7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DeathEvent: {fileID: 11400000, guid: 81c86b79c005ecd47a872dfcd3976608, type: 2}
+  m_Value: {fileID: 11400000, guid: 0f84604660bd2c249b7e712ac9442000, type: 2}
+--- !u!1 &2090440095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090440098}
+  - component: {fileID: 2090440097}
+  - component: {fileID: 2090440099}
+  - component: {fileID: 2090440096}
+  m_Layer: 0
+  m_Name: TestListenerGameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2090440096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090440095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ee80a8ba44de4ebf04624af8265e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2090440097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090440095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3bc4d8b2852af4b96e373b6c43b18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: 8e251c98801f5774eadae333e5e93df6, type: 2}
+  m_responseDelay: 0
+  m_response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2090440096}
+        m_MethodName: DoPressureGameOverStuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!4 &2090440098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090440095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.67616856, y: -0.07393125, z: -0.008404659}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090440099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090440095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3bc4d8b2852af4b96e373b6c43b18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: 81c86b79c005ecd47a872dfcd3976608, type: 2}
+  m_responseDelay: 0
+  m_response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2090440096}
+        m_MethodName: DoOutOfLivesGameOverStuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1999357822253585223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,6 +590,60 @@ PrefabInstance:
     - target: {fileID: 1776406603, guid: 780e6fb8947fd6448a5a1ebea75fa221, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829808571, guid: 780e6fb8947fd6448a5a1ebea75fa221, type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829808571, guid: 780e6fb8947fd6448a5a1ebea75fa221, type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829808571, guid: 780e6fb8947fd6448a5a1ebea75fa221, type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829808571, guid: 780e6fb8947fd6448a5a1ebea75fa221, type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1613597831}
+    - target: {fileID: 1829808571, guid: 780e6fb8947fd6448a5a1ebea75fa221, type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829808571, guid: 780e6fb8947fd6448a5a1ebea75fa221, type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267413192009377011, guid: 780e6fb8947fd6448a5a1ebea75fa221,
+        type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267413192009377011, guid: 780e6fb8947fd6448a5a1ebea75fa221,
+        type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267413192009377011, guid: 780e6fb8947fd6448a5a1ebea75fa221,
+        type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267413192009377011, guid: 780e6fb8947fd6448a5a1ebea75fa221,
+        type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2020325486}
+    - target: {fileID: 1267413192009377011, guid: 780e6fb8947fd6448a5a1ebea75fa221,
+        type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267413192009377011, guid: 780e6fb8947fd6448a5a1ebea75fa221,
+        type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780e6fb8947fd6448a5a1ebea75fa221, type: 3}

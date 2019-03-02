@@ -1159,6 +1159,7 @@ GameObject:
   - component: {fileID: 1829808569}
   - component: {fileID: 1829808571}
   - component: {fileID: 1829808570}
+  - component: {fileID: 1613597831}
   m_Layer: 5
   m_Name: PressureMeter
   m_TagString: Untagged
@@ -1264,6 +1265,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1613597831}
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1829808570
@@ -1283,6 +1295,21 @@ MonoBehaviour:
   m_displayedValue: {fileID: 11400000, guid: 9f612e64c0ad94a44a3a8d8a7adf19f8, type: 2}
   m_maxValue: {fileID: 11400000, guid: a16f575aa13662449a2672cb84d9d23f, type: 2}
   m_updateSpeed: 1
+--- !u!114 &1613597831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829808567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02ce2f05bf320443b5f977cf1f1623b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DeathEvent: {fileID: 11400000, guid: 8e251c98801f5774eadae333e5e93df6, type: 2}
+  m_Value: {fileID: 11400000, guid: ee6856ed727fc2d438342589ff4e4b18, type: 2}
+  m_MaxValue: {fileID: 11400000, guid: a16f575aa13662449a2672cb84d9d23f, type: 2}
 --- !u!1 &1893692226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,6 +2869,7 @@ GameObject:
   - component: {fileID: 4325528947461430338}
   - component: {fileID: 1267413192009377011}
   - component: {fileID: 1267413192009377012}
+  - component: {fileID: 2020325486}
   m_Layer: 5
   m_Name: LifeCountText
   m_TagString: Untagged
@@ -2938,6 +2966,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2020325486}
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1267413192009377012
@@ -2956,6 +2995,20 @@ MonoBehaviour:
   m_value: {fileID: 11400000, guid: 0f84604660bd2c249b7e712ac9442000, type: 2}
   m_maxValue: {fileID: 11400000, guid: 6d9cf40fd41547f47be1b59f0d09fc0e, type: 2}
   m_padding: 2
+--- !u!114 &2020325486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267413192009377010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330913bce29ed0149a8813bd6530b7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DeathEvent: {fileID: 11400000, guid: 81c86b79c005ecd47a872dfcd3976608, type: 2}
+  m_Value: {fileID: 11400000, guid: 0f84604660bd2c249b7e712ac9442000, type: 2}
 --- !u!1 &1294123549706703971
 GameObject:
   m_ObjectHideFlags: 0
