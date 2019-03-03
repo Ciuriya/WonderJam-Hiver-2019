@@ -2,13 +2,8 @@
 
 public class GameOver : MonoBehaviour
 {
-    public void DoPressureGameOverStuff()
+    public void DoGameOverStuff()
     {
-        Debug.Log("You lost you dumb fuck (PRESSURE)");
-    }
-
-    public void DoOutOfLivesGameOverStuff()
-    {
-        Debug.Log("You ran out of lives you dumb fuck (LIVES)");
+        Debug.Log("Switch Scene + Save");
     }
 }

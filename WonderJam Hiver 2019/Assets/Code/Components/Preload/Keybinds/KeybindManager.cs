@@ -130,7 +130,7 @@ public class KeybindManager : MonoBehaviour
 			} 
 			else if(Input.GetKeyDown(keybind.m_negativeKey)) 	
 			{
-				if(exists && Game.m_players.RemovePlayer(user)) 
+				if(exists && Game.m_players.RemovePlayer(user, false)) 
 					m_inputUsers.Remove(m_inputUsers.Find(i => i.m_profile == user.m_profile && i.m_controllerId == user.m_controllerId));
 			}
 		}
