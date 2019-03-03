@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pressure
   m_EditorClassIdentifier: 
   m_developerDescription: 'BUILD VALUE: 0'
-  m_value: 1000
+  m_value: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TimeLeft
   m_EditorClassIdentifier: 
   m_developerDescription: 'BUILD VALUE: 0'
-  m_value: 1
+  m_value: 0

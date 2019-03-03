@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DisplayedHighScore
   m_EditorClassIdentifier: 
   m_developerDescription: 'BUILD VALUE: 0'
-  m_value: 99999
+  m_value: 0
