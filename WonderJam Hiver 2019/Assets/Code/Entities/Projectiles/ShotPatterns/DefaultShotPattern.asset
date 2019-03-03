@@ -26,6 +26,7 @@ MonoBehaviour:
   m_stepDelay: 0
   m_nextPatterns: []
   m_nextPatternSwitchDelay: 0
+  m_flipShootOrigin: 0
   m_angleRange: 0
   m_angleOffset: 0
   m_centeredOnDirection: 1
