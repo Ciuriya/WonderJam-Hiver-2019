@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7692142af8ed58e4481e55e0985f12a7, type: 3}
   m_Name: Pressure
   m_EditorClassIdentifier: 
-  m_developerDescription: 'BUILD VALUE: 0'
-  m_value: 0
+  m_developerDescription: 
+  m_value: 1000

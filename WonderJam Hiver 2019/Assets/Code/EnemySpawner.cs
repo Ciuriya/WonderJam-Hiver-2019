@@ -120,7 +120,7 @@ public class EnemySpawner : MonoBehaviour
     {
         List<EnemyDictEntry> EnemyDict = new List<EnemyDictEntry>();
         //Load the enemy data here
-        System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/EnemyDictionary.JSON");
+        System.IO.StreamReader Reader = new System.IO.StreamReader("Assets/Data/EnemyDictionary.JSON");
         for (string JSON = Reader.ReadLine(); JSON != null; JSON = Reader.ReadLine())
         {
             EnemyDict.Add(JsonUtility.FromJson<EnemyDictEntry>(JSON));

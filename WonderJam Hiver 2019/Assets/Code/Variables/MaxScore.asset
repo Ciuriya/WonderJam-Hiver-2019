@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7692142af8ed58e4481e55e0985f12a7, type: 3}
   m_Name: MaxScore
   m_EditorClassIdentifier: 
-  m_developerDescription: 'BUILD VALUE: 999999999'
+  m_developerDescription: 
   m_value: 999999999
