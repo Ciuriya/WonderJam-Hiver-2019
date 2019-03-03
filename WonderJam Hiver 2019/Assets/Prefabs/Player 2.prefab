@@ -4932,7 +4932,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_particleSystem: {fileID: 1060835245599815748}
+  m_particleSystem: {fileID: 5885917197543811053, guid: 2d720d9531284544aa22910ff8b4f2c2,
+    type: 3}
   m_pickupAudioEvent: {fileID: 0}
   m_deathSoundEvent: {fileID: 11400000, guid: e9935c853d617d6469a32a34c66752f7, type: 2}
   m_audioSource: {fileID: 0}
