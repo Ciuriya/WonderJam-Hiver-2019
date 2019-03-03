@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4878807916281215201}
   - component: {fileID: 3910479968962036258}
   - component: {fileID: 897452040213850907}
+  - component: {fileID: 8251311920907638749}
   m_Layer: 9
   m_Name: WhiteCell
   m_TagString: Enemy
@@ -275,6 +276,21 @@ MonoBehaviour:
   m_stateTimeElapsed: 0
   m_nextWaypoint: 0
   m_patrolFinished: 0
+--- !u!114 &8251311920907638749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303335789913996864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ff9d612f732ca4a8d3d93bf075323d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  flashSpeed: 0.25
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7663611079197450058
 GameObject:
   m_ObjectHideFlags: 0
