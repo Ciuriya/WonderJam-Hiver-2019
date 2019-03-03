@@ -147,7 +147,6 @@ MonoBehaviour:
   m_collisionRelay: {fileID: 0}
   m_health: {fileID: 0}
   m_ai: {fileID: 0}
-  m_OnPlayerDeath: {fileID: 11400000, guid: 3a164138e8fddc749a17a3f92331c36d, type: 2}
   m_playerId: 0
   m_input:
     m_profile: 
@@ -5039,8 +5038,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1909384975
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0

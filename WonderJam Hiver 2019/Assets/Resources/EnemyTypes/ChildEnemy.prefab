@@ -295,7 +295,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_particleSystem: {fileID: 0}
+  m_particleSystem: {fileID: 5885917197543811053, guid: b59bddb982b816b448b8f11c942e5d39,
+    type: 3}
   m_renderer: {fileID: 0}
   m_shooter: {fileID: 0}
   m_collisionRelay: {fileID: 0}
@@ -308,3 +309,4 @@ MonoBehaviour:
   m_spawnCount: 0
   m_spawnList: []
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
+  m_spawnTime: 0
