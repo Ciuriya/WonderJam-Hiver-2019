@@ -28,8 +28,13 @@ public class Enemy : Entity
     [HideInInspector] public Vector3 m_spawnFromPosition;
     [HideInInspector] public float m_spawnTime;
 
+    private DamageFlash flasher;
     private int totalWeight = 0;
 
+    public void Awake()
+    {
+        flasher = GetComponent<DamageFlash>();
+    }
 
     public override void OnEnable()
     {
@@ -42,7 +47,6 @@ public class Enemy : Entity
     public override void OnDamage()
     {
         base.OnDamage();
-        DamageFlash flasher = GetComponent<DamageFlash>();
 
         if (flasher)
             flasher.Flash();
@@ -104,9 +108,13 @@ public class Enemy : Entity
                     if (newGameObject)
                     {
                         Enemy enemy = newGameObject.GetComponent<Enemy>();
-
-                        enemy.m_spawnFromPosition = transform.position;
-                        enemy.m_strategy = spawn.Strategy;
+                        if (enemy)
+                        {
+                            enemy.m_spawnFromPosition = transform.position;
+                            enemy.m_strategy = spawn.Strategy;
+                            var HealthComp = enemy.gameObject.GetComponent<UnitHealth>();
+                            HealthComp.m_localHealth = HealthComp.m_maxHealth + PlayerManager.GetMaxPlayers() - 1;
+                        }
                     }
                 }
 
