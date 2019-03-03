@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7692142af8ed58e4481e55e0985f12a7, type: 3}
-  m_Name: MaxLife
+  m_Script: {fileID: 11500000, guid: df97578a2383d46438af02afd21af806, type: 3}
+  m_Name: WhiteCellState
   m_EditorClassIdentifier: 
-  m_developerDescription: 'BUILD VALUE: 99'
-  m_value: 99
+  m_actions:
+  - {fileID: 11400000, guid: 306e02da1a69c5742875b99ea7aabdf0, type: 2}
+  m_transitions: []
+  m_sceneGizmoColor: {r: 0, g: 0, b: 0, a: 0}

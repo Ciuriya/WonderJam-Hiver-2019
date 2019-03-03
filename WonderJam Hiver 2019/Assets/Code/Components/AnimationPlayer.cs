@@ -4,10 +4,10 @@ public class AnimationPlayer : MonoBehaviour
 {
     private Animator m_animator;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         m_animator = gameObject.GetComponent<Animator>();
+
     }
 
     public void playAnimation()
