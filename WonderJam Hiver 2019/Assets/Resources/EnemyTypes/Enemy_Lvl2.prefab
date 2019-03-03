@@ -197,6 +197,8 @@ MonoBehaviour:
   m_look: {fileID: 0}
   m_runtimeSets:
   - {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec, type: 2}
+  m_immunityRuntimeSet: {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec,
+    type: 2}
   m_deathEvent:
     m_PersistentCalls:
       m_Calls: []

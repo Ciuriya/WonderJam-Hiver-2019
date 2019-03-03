@@ -198,6 +198,8 @@ MonoBehaviour:
   m_isDead: 0
   m_look: {fileID: 11400000, guid: 01a8f721dded1b94989532d7e6fd103d, type: 2}
   m_runtimeSets: []
+  m_immunityRuntimeSet: {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec,
+    type: 2}
   m_deathEvent:
     m_PersistentCalls:
       m_Calls: []
