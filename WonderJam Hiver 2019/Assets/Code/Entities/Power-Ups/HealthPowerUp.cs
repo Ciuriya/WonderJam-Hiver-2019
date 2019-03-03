@@ -1,20 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Power-Up/Invincibility")]
-public class InvincibilityPowerUp : PowerUp
+[CreateAssetMenu(menuName = "Power-Up/Health++")]
+public class HealthPowerUp : PowerUp
 {
-
     [HideInInspector] public Player player;
     public override void Use(Shooter p_shooter)
     {
         m_pickupAudioEvent.Play(p_shooter.m_entity.m_audioSource);
         player = p_shooter.GetComponentInParent<Player>();
-        player.AddInvincibility();
+        player.AddLife();
     }
 
     public override void End(Shooter p_shooter)
     {
-
+        
     }
-    
 }

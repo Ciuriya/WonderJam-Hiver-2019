@@ -112,4 +112,9 @@ public class Player : Entity
         yield return new WaitForSeconds(m_SpeedBoostTime);
         m_controller.m_speed -= m_SpeedBoost;
     }
+
+    public void AddLife()
+    {
+        m_lifeManager.UpdateValue(+1);
+    }
 }
