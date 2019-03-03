@@ -42,6 +42,15 @@ public class Enemy : Entity
             totalWeight += spawn.Weight;
     }
 
+    public override void OnDamage()
+    {
+        base.OnDamage();
+        DamageFlash flasher = GetComponent<DamageFlash>();
+
+        if (flasher)
+            flasher.Flash();
+    }
+
     public void FixedUpdate()
     {
         if (m_strategy.name == "Wavy")
@@ -87,11 +96,24 @@ public class Enemy : Entity
 
             if (rand <= 0)
             {
-                GameObject go = Instantiate(spawn.Object, gameObject.transform.position + positionTweaker, gameObject.transform.rotation);         
-                Enemy enemy = go.GetComponent<Enemy>();
+                if (spawn.Object)
+                {
+                    GameObject newGameObject = Instantiate(
+                        spawn.Object,
+                        gameObject.transform.position + positionTweaker,
+                        gameObject.transform.rotation
+                    );
 
-                enemy.m_spawnFromPosition = transform.position;
-                enemy.m_strategy = spawn.Strategy;             
+                    if (newGameObject)
+                    {
+                        Enemy enemy = newGameObject.GetComponent<Enemy>();
+
+                        enemy.m_spawnFromPosition = transform.position;
+                        enemy.m_strategy = spawn.Strategy;
+                    }
+                }
+
+                break;
             }
         }
     }

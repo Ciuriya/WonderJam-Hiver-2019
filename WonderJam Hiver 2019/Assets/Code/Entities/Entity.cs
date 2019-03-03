@@ -73,7 +73,12 @@ public class Entity : MonoBehaviour
 
 		// make sure the AI starts targeting its last damager
 		if(m_ai && p_damager) m_ai.m_target = p_damager;
-	}
+
+        OnDamage();
+    }
+
+    public virtual void OnDamage() {}
+
 
 	public virtual void Kill() 
 	{
