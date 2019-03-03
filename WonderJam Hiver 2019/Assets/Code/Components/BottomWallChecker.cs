@@ -11,9 +11,12 @@ public class BottomWallChecker : MonoBehaviour
     {
         if(collision.collider.tag == "Enemy")
         {
-            m_pressureManager.UpdateValue(collision.gameObject.GetComponent<Enemy>().m_pressure);
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            m_pressureManager.UpdateValue(enemy.m_pressure);
 
-            m_OnEnemyPassed.Raise();
+            if (enemy.m_pressure > 0)
+                m_OnEnemyPassed.Raise();
+
             Destroy(collision.gameObject);
         }
     }
