@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Player : Entity
 {
+	public GameEvent m_OnPlayerDeath;
+
 	[HideInInspector] public int m_playerId; // starts at 1
 	[HideInInspector] public InputUser m_input;
 	[HideInInspector] public PlayerController m_playerController;
@@ -63,29 +65,28 @@ public class Player : Entity
 
 		gameObject.transform.position = spawnPoint.transform.position;
 
-        if (m_lifeManager.m_value > 0)
-        {
-            m_lifeManager.UpdateValue(-1);
-            return true;
-        }
-        else
-            return false;
+		return true;
+	}
+
+	public void Despawn() 
+	{ 
+		Destroy(gameObject);
 	}
 
     //Override pour eviter que le player devienne Dead (On ne peut plus le tuer s'il est dead)
     public override void Kill()
     {
         Explosion();
-
+        m_lifeManager.UpdateValue(-1);
         Die();
     }
 
     protected override void Die()
     {
-        if (m_lifeManager.m_value.Value > 0)
-            Spawn();
-        else
-            Game.m_players.RemovePlayer(m_input, true);
+        Spawn();
+        m_OnPlayerDeath.Raise();
+        Debug.Log("U got murdered");
+
     }
 
     public void AddInvincibility()

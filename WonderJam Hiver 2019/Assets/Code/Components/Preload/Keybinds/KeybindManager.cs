@@ -32,15 +32,8 @@ public class KeybindManager : MonoBehaviour
 		SimpleInput.OnUpdate -= OnKeybindUpdate;
 	}
 
-	public List<InputUser> GetAllActiveInputUsers(bool p_needDefault) 
-	{
-		if(p_needDefault && m_inputUsers.Count == 0) 
-		{
-			List<InputUser> userList = new List<InputUser>();
-			userList.Add(new InputUser("mouseAndKB", 0));
-
-			return userList;
-		}
+	public List<InputUser> GetAllActiveInputUsers() 
+	{ 
 		return m_inputUsers;
 	}
 
@@ -100,7 +93,7 @@ public class KeybindManager : MonoBehaviour
 
 	void Update() 
 	{ 
-		foreach(InputUser user in GetAllActiveInputUsers(true)) 
+		foreach(InputUser user in m_inputUsers) 
 		{
 			foreach(Keybind keybind in GetKeybinds(user))
 			{
@@ -137,12 +130,12 @@ public class KeybindManager : MonoBehaviour
 			} 
 			else if(Input.GetKeyDown(keybind.m_negativeKey)) 	
 			{
-				if(exists && Game.m_players.RemovePlayer(user, false)) 
+				if(exists && Game.m_players.RemovePlayer(user)) 
 					m_inputUsers.Remove(m_inputUsers.Find(i => i.m_profile == user.m_profile && i.m_controllerId == user.m_controllerId));
 			}
 		}
 
-		foreach(InputUser user in GetAllActiveInputUsers(true))
+		foreach(InputUser user in m_inputUsers)
 		{
 			foreach(Keybind keybind in GetKeybinds(user))
 			{
@@ -187,11 +180,11 @@ public class KeybindManager : MonoBehaviour
 
 	public bool GetButtonDown(string p_keybind, InputUser p_user) 
 	{ 
-		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind && k.m_profile == p_user.m_profile).m_pressedThisFrame;
+		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind).m_pressedThisFrame;
 	}	
 	
 	public bool GetButtonUp(string p_keybind, InputUser p_user) 
 	{ 
-		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind && k.m_profile == p_user.m_profile).m_releasedThisFrame;
+		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind).m_releasedThisFrame;
 	}
 }
