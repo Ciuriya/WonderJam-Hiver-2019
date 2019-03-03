@@ -44,7 +44,6 @@ public class Entity : MonoBehaviour
         Game.m_audio.AddAudioSource(m_audioSource, AudioCategories.SFX);
 
         if (m_shooter) m_shooter.Init(this);
-		if(m_health) m_health.Init(this);
 	}
 
 	public virtual void OnEnable() 
