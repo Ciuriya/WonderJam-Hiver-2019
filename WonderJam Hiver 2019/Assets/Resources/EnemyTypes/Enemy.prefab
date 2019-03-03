@@ -202,7 +202,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_particleSystem: {fileID: 0}
+  m_particleSystem: {fileID: 5885917197543811053, guid: b59bddb982b816b448b8f11c942e5d39,
+    type: 3}
   m_renderer: {fileID: 0}
   m_shooter: {fileID: 0}
   m_collisionRelay: {fileID: 0}
@@ -219,6 +220,7 @@ MonoBehaviour:
       type: 3}
     Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
+  m_spawnTime: 0
 --- !u!1 &7663611079197450058
 GameObject:
   m_ObjectHideFlags: 0
