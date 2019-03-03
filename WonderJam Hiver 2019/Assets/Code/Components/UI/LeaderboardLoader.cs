@@ -29,12 +29,13 @@ public class LeaderboardLoader : MonoBehaviour
 
 		m_instantiatedObjects = new List<GameObject>();
 
-		List<LeaderboardScore> scores = m_local ? GetLocalScores() : GetOnlineScores();
-		LeaderboardScore pending = GetPendingScore(m_local);
+		List<LeaderboardScore> scores = m_local ? GetLocalScores() : GetOnlineScores(false);
+		LeaderboardScore pending = GetPendingScore();
 
 		if(pending != null) scores.Add(pending);
 
-		scores.Sort(new System.Comparison<LeaderboardScore>((LeaderboardScore first, LeaderboardScore second) => { return second.Score - first.Score; }));
+		if(scores.Count > 0)
+			scores.Sort(new System.Comparison<LeaderboardScore>((LeaderboardScore first, LeaderboardScore second) => { return second.Score - first.Score; }));
 
 		for(int i = 1; i <= m_loadedAmount; i++) 
 		{ 
@@ -70,7 +71,7 @@ public class LeaderboardLoader : MonoBehaviour
 		return scores;
 	}
 
-	public List<LeaderboardScore> GetOnlineScores() 
+	public List<LeaderboardScore> GetOnlineScores(bool p_upload) 
 	{
 		List<LeaderboardScore> scores = new List<LeaderboardScore>();
 
@@ -89,21 +90,27 @@ public class LeaderboardLoader : MonoBehaviour
 		}
 
 		OverwriteOnlineLeaderboards(fixedJson);
-		Game.m_leaderNetHandler.UploadV2(fixedJson);
+		if(p_upload) Game.m_leaderNetHandler.UploadV2(fixedJson);
 
 		return scores;
 	}
 
-	public void AddScore(LeaderboardScore p_score, bool p_local) 
+	public void AddScore(LeaderboardScore p_score) 
 	{
-		System.IO.StreamWriter Writer = new System.IO.StreamWriter(Application.dataPath + "/Data/" + (p_local ? "Local" : "Online") + "Leaderboard.JSON", true);
+		List<LeaderboardScore> online = GetOnlineScores(true);
+		List<LeaderboardScore> offline = GetLocalScores();
 
-		Writer.Write("\n" + JsonUtility.ToJson(p_score));
-		Writer.Close();
+		System.IO.StreamWriter Online = new System.IO.StreamWriter(Application.dataPath + "/Data/OnlineLeaderboard.JSON", true);
+		System.IO.StreamWriter Local = new System.IO.StreamWriter(Application.dataPath + "/Data/LocalLeaderboard.JSON", true);
 
-		if(!p_local) Game.m_leaderNetHandler.UploadV2(Game.m_leaderNetHandler.ConvertFileToJSON());
+		Online.Write((online.Count > 0 ? "\n" : "") + JsonUtility.ToJson(p_score));
+		Local.Write((offline.Count > 0 ? "\n" : "") + JsonUtility.ToJson(p_score));
+		Online.Close();
+		Local.Close();
 
-		DeletePendingScore(p_local);
+		DeletePendingScore();
+
+		Game.m_leaderNetHandler.UploadV2(Game.m_leaderNetHandler.ConvertFileToJSON());
 	}
 
 	public void OverwriteOnlineLeaderboards(string p_jsonData) 
@@ -114,18 +121,18 @@ public class LeaderboardLoader : MonoBehaviour
 		Writer.Close();
 	}
 
-	public LeaderboardScore GetPendingScore(bool p_local) 
+	public LeaderboardScore GetPendingScore() 
 	{
-		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/Pending" + (p_local ? "Local" : "Online") + "Scores.JSON");
+		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/PendingScores.JSON");
 		LeaderboardScore score = JsonUtility.FromJson<LeaderboardScore>(Reader.ReadLine());
 
 		Reader.Close();
 		return score;
 	}
 
-	public void DeletePendingScore(bool p_local) 
+	public void DeletePendingScore() 
 	{ 
-		System.IO.StreamWriter Writer = new System.IO.StreamWriter(Application.dataPath + "/Data/Pending" + (p_local ? "Local" : "Online") + "Scores.JSON", false);
+		System.IO.StreamWriter Writer = new System.IO.StreamWriter(Application.dataPath + "/Data/PendingScores.JSON", false);
 
 		Writer.Write("");
 		Writer.Close();

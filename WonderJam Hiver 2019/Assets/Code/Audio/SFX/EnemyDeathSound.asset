@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: EnemyDeathSound
   m_EditorClassIdentifier: 
   m_clips:
-  - {fileID: 8300000, guid: fed85be6f1a808b49aaa501df957b787, type: 3}
-  - {fileID: 8300000, guid: 18a4d1c8f904d354da84f8524e1b6358, type: 3}
+  - {fileID: 8300000, guid: 987a805f5d2d9b84ab61ebab2c3381f8, type: 3}
+  - {fileID: 8300000, guid: 4a148c6742893e842b2dac0425210305, type: 3}
+  - {fileID: 8300000, guid: 3099d69bcc2123c4480b24a064d02b12, type: 3}
+  - {fileID: 8300000, guid: f600d20287efb2d428da60932573fedd, type: 3}
   m_volume:
     Min: 1
     Max: 1

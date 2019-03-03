@@ -21,7 +21,10 @@ public class HighscoreLoader : MonoBehaviour
 
 		scores.Sort(new System.Comparison<LeaderboardScore>((LeaderboardScore first, LeaderboardScore second) => { return second.Score - first.Score; }));
 
-		m_highscoreValue.Value = scores[0].Score;
+		if(scores.Count == 0) m_highscoreValue.Value = 0;
+		else m_highscoreValue.Value = scores[0].Score;
+
+
 		m_highscoreChangeEvent.Raise();
 	}
 

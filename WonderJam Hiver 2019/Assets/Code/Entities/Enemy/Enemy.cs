@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Enemy : Entity
@@ -18,6 +19,8 @@ public class Enemy : Entity
 
     public ValueManager m_scoreManager;
 
+    public Text m_scoreText;
+
     public MoveStrategy m_strategy;
 
     [Header("Spawn data")]
@@ -28,8 +31,13 @@ public class Enemy : Entity
     [HideInInspector] public Vector3 m_spawnFromPosition;
     [HideInInspector] public float m_spawnTime;
 
+    private DamageFlash flasher;
     private int totalWeight = 0;
 
+    public void Awake()
+    {
+        flasher = GetComponent<DamageFlash>();
+    }
 
     public override void OnEnable()
     {
@@ -37,6 +45,14 @@ public class Enemy : Entity
         m_spawnTime = Time.time;
         foreach(var spawn in m_spawnList)
             totalWeight += spawn.Weight;
+    }
+
+    public override void OnDamage()
+    {
+        base.OnDamage();
+
+        if (flasher)
+            flasher.Flash();
     }
 
     public void FixedUpdate()
@@ -63,7 +79,7 @@ public class Enemy : Entity
     {
         for (int i = 0; i < m_spawnCount; ++i)
             SpawnChild();
-
+        ShowScore();
         Destroy(gameObject);
     }
 
@@ -84,12 +100,40 @@ public class Enemy : Entity
 
             if (rand <= 0)
             {
-                GameObject go = Instantiate(spawn.Object, gameObject.transform.position + positionTweaker, gameObject.transform.rotation);         
-                Enemy enemy = go.GetComponent<Enemy>();
+                if (spawn.Object)
+                {
+                    GameObject newGameObject = Instantiate(
+                        spawn.Object,
+                        gameObject.transform.position + positionTweaker,
+                        gameObject.transform.rotation
+                    );
 
-                enemy.m_spawnFromPosition = transform.position;
-                enemy.m_strategy = spawn.Strategy;             
+                    if (newGameObject)
+                    {
+                        Enemy enemy = newGameObject.GetComponent<Enemy>();
+                        if (enemy != null)
+                        {
+                            enemy.m_spawnFromPosition = transform.position;
+                            enemy.m_strategy = spawn.Strategy;
+                            var HealthComp = enemy.gameObject.GetComponent<UnitHealth>();
+                            if(HealthComp)
+                            HealthComp.m_localHealth = HealthComp.m_maxHealth + PlayerManager.GetMaxPlayers() - 1;
+                        }
+                    }
+                }
+
+                break;
             }
         }
+    }
+
+    private void ShowScore()
+    {
+        int score = m_points;
+        m_scoreText.text = score.ToString();
+        GameObject scorePopUp = Instantiate(m_scoreText.gameObject, GameObject.Find("HUD Canvas").transform);
+        scorePopUp.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        Debug.Log(m_scoreText.text);
+        Debug.Log(scorePopUp);
     }
 }

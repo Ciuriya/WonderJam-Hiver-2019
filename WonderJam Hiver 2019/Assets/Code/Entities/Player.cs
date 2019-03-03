@@ -9,6 +9,7 @@ public class Player : Entity
 
     [Tooltip("The time for which the player is invincible, in seconds")]
     [Range(0, 60)] public float m_InvincibilityTime = 3f;
+    [Range(0, 60)] public float m_RespawnInvulnerability = 1f;
 
     [Tooltip("The time for which the player have a speed boost, in seconds")]
     [Range(0, 60)] public float m_SpeedBoostTime = 3f;
@@ -21,13 +22,18 @@ public class Player : Entity
 
     public ValueManager m_lifeManager;
 
+    private Flashing flashing;
+
     public override void Start()
 	{
 		base.Start();
 
 		m_playerController = GetComponent<PlayerController>();
 		m_playerController.m_player = this;
-	}
+
+        flashing = GetComponent<Flashing>();
+
+    }
 
 	void Update() 
 	{
@@ -69,6 +75,10 @@ public class Player : Entity
         if (m_lifeManager.m_value > 0)
         {
             m_lifeManager.UpdateValue(-1);
+            StartCoroutine(Invincibility(m_RespawnInvulnerability));
+
+            if (flashing) flashing.Flash();
+
             return true;
         }
         else
@@ -86,7 +96,6 @@ public class Player : Entity
     protected override void Die()
     {
 		m_deathSoundEvent.Play();
-		Destroy(m_currentParticleSystem);
 
 		if (m_lifeManager.m_value.Value > 0)
             StartCoroutine(RespawnDelay());
@@ -103,6 +112,13 @@ public class Player : Entity
     {
         m_canDie = false;
         yield return new WaitForSeconds(m_InvincibilityTime);
+        m_canDie = true;
+    }
+
+    public IEnumerator Invincibility(float Time)
+    {
+        m_canDie = false;
+        yield return new WaitForSeconds(Time);
         m_canDie = true;
     }
 

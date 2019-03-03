@@ -14,8 +14,7 @@ public class GameOver : MonoBehaviour
 	public void SaveScoreToJSON() 
 	{
 		LeaderboardScore score = new LeaderboardScore("", m_score.Value);
-		WriteToJSON(score, Application.dataPath + "/Data/PendingLocalScores.JSON");
-		WriteToJSON(score, Application.dataPath + "/Data/PendingOnlineScores.JSON");
+		WriteToJSON(score, Application.dataPath + "/Data/PendingScores.JSON");
 	}
 
 	private void WriteToJSON(LeaderboardScore p_score, string p_fileName) 
