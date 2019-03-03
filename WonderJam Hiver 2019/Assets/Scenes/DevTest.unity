@@ -1260,6 +1260,7 @@ GameObject:
   - component: {fileID: 2093606857}
   - component: {fileID: 2093606856}
   - component: {fileID: 2093606855}
+  - component: {fileID: 2093606858}
   m_Layer: 0
   m_Name: TopWall
   m_TagString: Untagged
@@ -1328,6 +1329,18 @@ Transform:
   m_Father: {fileID: 1476291563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2093606858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093606854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10165a8133123fe47929bad4e3bbad1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2146858348
 PrefabInstance:
   m_ObjectHideFlags: 0
