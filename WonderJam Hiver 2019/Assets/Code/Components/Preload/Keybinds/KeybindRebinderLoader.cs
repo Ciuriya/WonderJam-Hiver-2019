@@ -16,7 +16,7 @@ public class KeybindRebinderLoader : MonoBehaviour
 		for(int i = 0; i < transform.childCount; i++)
 			Destroy(transform.GetChild(i));
 
-		List<Keybind> keybinds = Game.m_keybinds.GetKeybinds();
+		List<Keybind> keybinds = Game.m_keybinds.GetKeybinds(new InputUser("mouseAndKB", 0));
 
 		foreach(Keybind keybind in keybinds) 
 		{

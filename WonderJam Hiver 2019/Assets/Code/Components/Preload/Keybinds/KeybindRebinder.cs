@@ -30,7 +30,7 @@ public class KeybindRebinder : MonoBehaviour
 
 	public void UpdateKeybind() 
 	{
-		m_keybind = Game.m_keybinds.GetKeybinds().Find(k => k.m_axis.Key == m_keybindName);
+		m_keybind = Game.m_keybinds.GetKeybinds(new InputUser("mouseAndKB", 0)).Find(k => k.m_axis.Key == m_keybindName);
 		UpdateText();
 	}
 
