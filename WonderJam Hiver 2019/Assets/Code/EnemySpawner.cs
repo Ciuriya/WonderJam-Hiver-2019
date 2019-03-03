@@ -56,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
     float CurSpawnTimer;
 
     //Level Spawn Data
-    int CurLevel;
+    int CurLevel = 0;
     public int LevelPointsAvailable;
     int LevelTotalWeights;
     int LargestPointsAvailable;
@@ -79,10 +79,11 @@ public class EnemySpawner : MonoBehaviour
         if(LevelPointsAvailable == 0) { Active = false; }
     }
 
-    public void StartLevel(int Level)
+    public void StartLevel()
     {
-        CurLevel = Level;
-        LevelPointsAvailable = Level * 14;
+        CurLevel++;
+        CurLevel = CurLevel;
+        LevelPointsAvailable = CurLevel * 14;
         LevelSpawnTimer = 1 / (Mathf.Log(CurLevel * 0.2f) + 2) + 0.4f;
         CurSpawnTimer = LevelSpawnTimer;
         LevelTotalWeights = 0;
@@ -134,8 +135,6 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         SpawnTransform = GetComponent<Transform>();
-        
-        StartLevel(3);
     }
 
     // Update is called once per frame
@@ -187,6 +186,10 @@ public class EnemySpawner : MonoBehaviour
                         break;
                     }
                 }
+            }
+            else if( /*Make sure all enemies are dead*/ false)
+            {
+                LevelEndEvent.Raise();
             }
         }
     }
