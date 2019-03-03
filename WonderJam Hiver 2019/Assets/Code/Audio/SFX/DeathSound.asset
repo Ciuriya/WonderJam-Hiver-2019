@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949a8f2188d999d4896389bdeaabcf72, type: 3}
   m_Name: DeathSound
   m_EditorClassIdentifier: 
-  m_clips: []
+  m_clips:
+  - {fileID: 8300000, guid: fed85be6f1a808b49aaa501df957b787, type: 3}
   m_volume:
-    Min: 0
-    Max: 0
+    Min: 0.49949372
+    Max: 1
   m_pitch:
-    Min: 0
-    Max: 0
+    Min: 0.9999999
+    Max: 0.9999999
