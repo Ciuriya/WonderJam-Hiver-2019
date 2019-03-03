@@ -663,8 +663,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b317369960504a848bb511077f32f953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerPrefab: {fileID: 1288121432565641891, guid: c8402538d6d23ba49ac09f3ad07625d5,
-    type: 3}
+  m_playerPrefabs:
+  - {fileID: 1288121432565641891, guid: c8402538d6d23ba49ac09f3ad07625d5, type: 3}
+  - {fileID: 1060835246735939620, guid: dabcab9abc323a141b83a0d716dbac8c, type: 3}
+  - {fileID: 8893534912241220119, guid: e266a57d1e193604c803f7cd8a281132, type: 3}
+  - {fileID: 3199361196401457142, guid: f25ccbbe16f25b0438b7616358434379, type: 3}
   m_gameStartTimerEvent: {fileID: 11400000, guid: 6d29f0779e4b1ca478e48518e3af6ff2,
     type: 2}
   m_players: []

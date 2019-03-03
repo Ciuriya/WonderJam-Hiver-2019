@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour 
 {
-	[Tooltip("The prefab to instantiate for each player")]
-	public GameObject m_playerPrefab;
+	[Tooltip("Prefabs matching the player's id to spawn")]
+	public List<GameObject> m_playerPrefabs;
 
 	public GameEvent m_gameStartTimerEvent;
 
@@ -30,16 +30,20 @@ public class PlayerManager : MonoBehaviour
 	{ 
 		if(m_players.Count == 4) return false;
 
-		GameObject playerObj = Instantiate(m_playerPrefab);
+		int id = 0;
+
+		for(int i = 1; i <= 4; i++)
+			if(!m_players.Exists(p => p.m_playerId == i))
+			{
+				id = i;
+				break;
+			}
+
+		GameObject playerObj = Instantiate(m_playerPrefabs[id - 1]);
 		Player player = playerObj.GetComponent<Player>();
 
 		player.m_input = p_user;
-		
-		for(int i = 1; i <= 4; i++)
-			if(!m_players.Exists(p => p.m_playerId == i)) {
-				player.m_playerId = i;
-				break;
-			}
+		player.m_playerId = id;
 
 		if(!player.Spawn()) 
 		{
