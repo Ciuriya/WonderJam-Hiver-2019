@@ -18,6 +18,9 @@ public class Player : Entity
     [Tooltip("The speed boost added to the speed of the player")]
     [Range(0, 60)] public float m_SpeedBoost = 3f;
 
+    [Tooltip("The delay before respawning upon death")]
+    [Range(0, 60)] public float m_spawnDelay = 1f;
+
     public ValueManager m_lifeManager;
 
     public override void Start()
@@ -61,9 +64,8 @@ public class Player : Entity
 
 	public bool Spawn() 
 	{
-		GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnP" + m_playerId);
-
-		gameObject.transform.position = spawnPoint.transform.position;
+        GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnP" + m_playerId);
+        gameObject.transform.position = spawnPoint.transform.position;
 
 		return true;
 	}
@@ -83,7 +85,7 @@ public class Player : Entity
 
     protected override void Die()
     {
-        Spawn();
+        StartCoroutine(RespawnDelay());
         m_OnPlayerDeath.Raise();
         Debug.Log("U got murdered");
 
@@ -111,5 +113,13 @@ public class Player : Entity
         m_controller.m_speed += m_SpeedBoost;
         yield return new WaitForSeconds(m_SpeedBoostTime);
         m_controller.m_speed -= m_SpeedBoost;
+    }
+
+    private IEnumerator RespawnDelay()
+    {
+        gameObject.transform.position = new Vector3(999, 999, 999);
+
+        yield return new WaitForSeconds(m_spawnDelay);
+        Spawn();
     }
 }
