@@ -10,6 +10,7 @@ TagManager:
   - SpawnP2
   - SpawnP3
   - SpawnP4
+  - particle system
   layers:
   - Default
   - TransparentFX
