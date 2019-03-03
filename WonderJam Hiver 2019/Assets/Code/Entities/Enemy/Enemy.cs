@@ -121,7 +121,7 @@ public class Enemy : Entity
     private void ShowScore()
     {
         int score = m_scoreManager.m_value.Value;
-        Score = GameObject.Find("Score").GetComponent<Text>();
+        //Score = GameObject.Find("Score").GetComponent<Text>();
         Score.text = score.ToString();
         Instantiate(Score, gameObject.transform.position, gameObject.transform.rotation);
     }

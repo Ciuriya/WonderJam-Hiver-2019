@@ -290,8 +290,6 @@ MonoBehaviour:
   m_look: {fileID: 0}
   m_runtimeSets:
   - {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec, type: 2}
-  m_immunityRuntimeSet: {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec,
-    type: 2}
   m_deathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -311,7 +309,7 @@ MonoBehaviour:
   m_pressure: 25
   m_points: 100
   m_scoreManager: {fileID: 11400000, guid: 515c2b0f4322f224fb0976679f2301a6, type: 2}
-  Score: {fileID: 5010350133265129295, guid: aef2b2ad8a9a16141a3eab2ac6975d24, type: 3}
+  Score: {fileID: 6801117961667936599, guid: aef2b2ad8a9a16141a3eab2ac6975d24, type: 3}
   m_strategy: {fileID: 11400000, guid: d338d87c7c6a7f144a73e50e4ee3b4e7, type: 2}
   m_spawnCount: 1
   m_spawnList:
