@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Player : Entity
 {
-	public GameEvent m_OnPlayerDeath;
-
 	[HideInInspector] public int m_playerId; // starts at 1
 	[HideInInspector] public InputUser m_input;
 	[HideInInspector] public PlayerController m_playerController;
@@ -17,6 +15,9 @@ public class Player : Entity
 
     [Tooltip("The speed boost added to the speed of the player")]
     [Range(0, 60)] public float m_SpeedBoost = 3f;
+
+	[Tooltip("The spawn delay between deaths")]
+	[Range(0, 2)] public float m_spawnDelay = 0.25f;
 
     public ValueManager m_lifeManager;
 
@@ -65,28 +66,31 @@ public class Player : Entity
 
 		gameObject.transform.position = spawnPoint.transform.position;
 
-		return true;
-	}
-
-	public void Despawn() 
-	{ 
-		Destroy(gameObject);
+        if (m_lifeManager.m_value > 0)
+        {
+            m_lifeManager.UpdateValue(-1);
+            return true;
+        }
+        else
+            return false;
 	}
 
     //Override pour eviter que le player devienne Dead (On ne peut plus le tuer s'il est dead)
     public override void Kill()
     {
         Explosion();
-        m_lifeManager.UpdateValue(-1);
+
         Die();
     }
 
     protected override void Die()
     {
-        Spawn();
-        m_OnPlayerDeath.Raise();
-        Debug.Log("U got murdered");
+		Destroy(m_currentParticleSystem);
 
+		if (m_lifeManager.m_value.Value > 0)
+            StartCoroutine(RespawnDelay());
+        else
+            Game.m_players.RemovePlayer(m_input, true);
     }
 
     public void AddInvincibility()
@@ -112,6 +116,14 @@ public class Player : Entity
         yield return new WaitForSeconds(m_SpeedBoostTime);
         m_controller.m_speed -= m_SpeedBoost;
     }
+
+	private IEnumerator RespawnDelay() 
+	{ 
+		gameObject.transform.position = new Vector3(-50000, -50000, -50000);
+
+		yield return new WaitForSeconds(m_spawnDelay);
+		Spawn();
+	}
 
     public void AddLife()
     {

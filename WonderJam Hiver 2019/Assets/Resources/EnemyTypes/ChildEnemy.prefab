@@ -46,18 +46,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0019283444, y: 0.00013998151}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20170453, y: 0.5446529}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!50 &8136100162165550229
 Rigidbody2D:
@@ -191,7 +191,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0023753345, y: 0.0033632517}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -202,7 +202,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20190746, y: 0.5419712}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!50 &8136100163231584443
 Rigidbody2D:
@@ -288,17 +288,18 @@ MonoBehaviour:
   m_canDie: 1
   m_isDead: 0
   m_look: {fileID: 0}
-  m_runtimeSets: []
+  m_runtimeSets:
+  - {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec, type: 2}
   m_deathEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_particleSystem: {fileID: 5885917197543811053, guid: b59bddb982b816b448b8f11c942e5d39,
-    type: 3}
   m_pickupAudioEvent: {fileID: 0}
   m_deathSoundEvent: {fileID: 11400000, guid: 206510e9686ff50489a0528c5abb2edb, type: 2}
   m_audioSource: {fileID: 0}
+  m_particleSystem: {fileID: 5885917197543811053, guid: b59bddb982b816b448b8f11c942e5d39,
+    type: 3}
   m_renderer: {fileID: 0}
   m_shooter: {fileID: 0}
   m_collisionRelay: {fileID: 0}
@@ -311,3 +312,4 @@ MonoBehaviour:
   m_spawnCount: 0
   m_spawnList: []
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
+  m_spawnTime: 0

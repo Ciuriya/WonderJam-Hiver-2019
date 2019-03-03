@@ -15,7 +15,7 @@ MonoBehaviour:
   m_value:
     m_useConstant: 0
     m_constantValue: 0
-    m_variable: {fileID: 11400000, guid: 0f84604660bd2c249b7e712ac9442000, type: 2}
+    m_variable: {fileID: 11400000, guid: e7961751532f8ab4c9d5b1342d5c8d59, type: 2}
   m_minValue:
     m_useConstant: 1
     m_constantValue: 0

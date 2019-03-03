@@ -26,17 +26,24 @@ public class Enemy : Entity
     public Spawn[] m_spawnList;
 
     [HideInInspector] public Vector3 m_spawnFromPosition;
+    [HideInInspector] public float m_spawnTime;
+
     private int totalWeight = 0;
 
-    public void OnEnable()
+
+    public override void OnEnable()
     {
+        base.OnEnable();
+        m_spawnTime = Time.time;
         foreach(var spawn in m_spawnList)
             totalWeight += spawn.Weight;
     }
 
     public void FixedUpdate()
     {
-        if (m_strategy)
+        if (m_strategy.name == "Wavy")
+            m_strategy.GetMovementVector(this);
+        else if (m_strategy)
             m_controller.Move(m_strategy.GetMovementVector(this));
     }
 
@@ -44,9 +51,10 @@ public class Enemy : Entity
     {
         if (m_canDie && !m_isDead)
         {
-            m_isDead = true;
+			m_deathSoundEvent.Play(); // not using audio source because it gets destroyed too fast
+			m_isDead = true;
+			Explosion();
             m_scoreManager.UpdateValue(m_points);
-            m_deathSoundEvent.Play(m_audioSource);
             Die();
         }
     }

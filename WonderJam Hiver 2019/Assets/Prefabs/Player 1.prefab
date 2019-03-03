@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 1288121432565641889}
   - component: {fileID: 1288121432565641890}
   m_Layer: 9
-  m_Name: Player
+  m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,18 +141,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_particleSystem: {fileID: 4754833610858286699, guid: 438f52e4a7a96a7438de5485a232ed1a,
-    type: 3}
   m_pickupAudioEvent: {fileID: 0}
   m_deathSoundEvent: {fileID: 0}
   m_audioSource: {fileID: 0}
+  m_particleSystem: {fileID: 1288121433552868035}
   m_renderer: {fileID: 0}
   m_shooter: {fileID: 0}
   m_collisionRelay: {fileID: 0}
   m_health: {fileID: 0}
   m_ai: {fileID: 0}
+  m_playerId: 0
+  m_input:
+    m_profile: 
+    m_controllerId: 0
   m_playerController: {fileID: 0}
-  m_OnPlayerDeath: {fileID: 11400000, guid: 3a164138e8fddc749a17a3f92331c36d, type: 2}
   m_InvincibilityTime: 3
   m_SpeedBoostTime: 3
   m_SpeedBoost: 3
@@ -170,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_controller: {fileID: 1288121432565641894}
+  m_player: {fileID: 0}
 --- !u!114 &1288121432565641894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5037,8 +5040,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1909384975
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
