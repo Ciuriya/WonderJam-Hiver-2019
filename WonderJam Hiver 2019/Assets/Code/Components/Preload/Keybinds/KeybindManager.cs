@@ -34,11 +34,6 @@ public class KeybindManager : MonoBehaviour
 
 	public List<InputUser> GetAllActiveInputUsers() 
 	{ 
-		if(m_inputUsers.Count == 0) // player manager calls this function on start and adds them all, so this adds something
-		{ 
-			m_inputUsers.Add(new InputUser("mouseAndKB", 0));
-		}
-
 		return m_inputUsers;
 	}
 

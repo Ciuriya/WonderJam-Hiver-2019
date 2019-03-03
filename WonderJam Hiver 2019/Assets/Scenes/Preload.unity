@@ -665,6 +665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerPrefab: {fileID: 1288121432565641891, guid: c8402538d6d23ba49ac09f3ad07625d5,
     type: 3}
+  m_gameStartTimerEvent: {fileID: 11400000, guid: 6d29f0779e4b1ca478e48518e3af6ff2,
+    type: 2}
   m_players: []
 --- !u!1 &1745280917
 GameObject:

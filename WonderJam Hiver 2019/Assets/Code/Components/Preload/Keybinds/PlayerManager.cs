@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour
 	[Tooltip("The prefab to instantiate for each player")]
 	public GameObject m_playerPrefab;
 
+	public GameEvent m_gameStartTimerEvent;
+
 	[HideInInspector] public List<Player> m_players;
 
 	void Awake()
@@ -45,6 +47,9 @@ public class PlayerManager : MonoBehaviour
 			return false;
 		} 
 		else m_players.Add(player);
+
+		if(m_players.Count == 1)
+			m_gameStartTimerEvent.Raise();
 
 		return true;
 	}
