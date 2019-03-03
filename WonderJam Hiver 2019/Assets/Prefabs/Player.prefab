@@ -141,7 +141,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_particleSystem: {fileID: 0}
+  m_particleSystem: {fileID: 4754833610858286699, guid: 438f52e4a7a96a7438de5485a232ed1a,
+    type: 3}
+  m_pickupAudioEvent: {fileID: 0}
+  m_deathSoundEvent: {fileID: 0}
+  m_audioSource: {fileID: 0}
   m_renderer: {fileID: 0}
   m_shooter: {fileID: 0}
   m_collisionRelay: {fileID: 0}
@@ -203,7 +207,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_audioSource: {fileID: 0}
   m_entity: {fileID: 0}
 --- !u!61 &1288121432565641888
 BoxCollider2D:
@@ -268,7 +271,7 @@ MonoBehaviour:
   m_shooter: {fileID: 0}
   newShotPatternPowerUp: {fileID: 11400000, guid: d85224c684707c14395d07c2ca0da9c7,
     type: 2}
-  delayBetweenCheatCodes: 6
+  delayBetweenCheatCodes: 0
 --- !u!1 &1288121433246573521
 GameObject:
   m_ObjectHideFlags: 0
