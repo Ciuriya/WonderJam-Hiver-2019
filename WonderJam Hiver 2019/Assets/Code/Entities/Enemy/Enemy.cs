@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Enemy : Entity
@@ -17,6 +18,8 @@ public class Enemy : Entity
     public int m_points = 0;
 
     public ValueManager m_scoreManager;
+
+    public Text m_scoreText;
 
     public MoveStrategy m_strategy;
 
@@ -76,7 +79,7 @@ public class Enemy : Entity
     {
         for (int i = 0; i < m_spawnCount; ++i)
             SpawnChild();
-
+        ShowScore();
         Destroy(gameObject);
     }
 
@@ -122,5 +125,15 @@ public class Enemy : Entity
                 break;
             }
         }
+    }
+
+    private void ShowScore()
+    {
+        int score = m_points;
+        m_scoreText.text = score.ToString();
+        GameObject scorePopUp = Instantiate(m_scoreText.gameObject, GameObject.Find("HUD Canvas").transform);
+        scorePopUp.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        Debug.Log(m_scoreText.text);
+        Debug.Log(scorePopUp);
     }
 }
