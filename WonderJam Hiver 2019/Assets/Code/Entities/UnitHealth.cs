@@ -26,9 +26,15 @@ public class UnitHealth : MonoBehaviour
 
 	[HideInInspector] public Entity m_entity;
 
-	public void Init(Entity p_entity) 
+    public void Awake()
+    {
+        m_localHealth = m_maxHealth.Value;
+        m_entity = gameObject.GetComponent<Entity>();
+    }
+
+    public void Init(Entity p_entity) 
 	{
-		m_entity = p_entity;
+		//m_entity = p_entity;
         if (m_usingLocalHealth)
         {
             m_localHealth = m_maxHealth.Value;
@@ -46,12 +52,12 @@ public class UnitHealth : MonoBehaviour
 		return m_maxHealth.Value;
 	}
 
-	private void SetHealth(int p_value) 
+	public void SetHealth(int p_value) 
 	{
 		int value = p_value;
 
-		if(value > GetMaxHealth()) value = GetMaxHealth();
-		else if(value < 0) value = 0;
+		//if(value > GetMaxHealth()) value = GetMaxHealth();
+		/*else*/ if(value < 0) value = 0;
 
 		if(m_usingLocalHealth) m_localHealth = value;
 		else m_sharedHealth.Value = value;
