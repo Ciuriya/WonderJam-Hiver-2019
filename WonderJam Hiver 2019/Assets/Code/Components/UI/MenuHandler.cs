@@ -41,7 +41,7 @@ public class MenuHandler : MonoBehaviour
 	{
 		bool isPaused = m_currentMenu;
 
-		if(Game.m_keybinds.GetButtonDown("Pause")) GoBack();
+		if(Game.m_keybinds.GetButtonDown("Pause", new InputUser("mouseAndKB", 0))) GoBack();
 	}
 
 	public void GoBack() 
