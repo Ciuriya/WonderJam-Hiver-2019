@@ -35,7 +35,6 @@ public class Enemy : Entity
     {
         base.OnEnable();
         m_spawnTime = Time.time;
-
         foreach(var spawn in m_spawnList)
             totalWeight += spawn.Weight;
     }
