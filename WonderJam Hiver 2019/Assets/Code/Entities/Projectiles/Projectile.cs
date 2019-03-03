@@ -56,7 +56,7 @@ public class Projectile : MonoBehaviour
 		if(relay) Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), relay.GetComponent<BoxCollider2D>());
 
 		gameObject.SetActive(true);
-		m_info.m_fireAudioEvent.Play(p_shooter.m_audioSource);
+		m_info.m_fireAudioEvent.Play(p_shooter.m_entity.m_audioSource);
 
 		m_behaviourManager.Init(this);
 		Game.m_projPool.AddProjectileToJob(this);
@@ -103,7 +103,7 @@ public class Projectile : MonoBehaviour
 		{
 			CollisionRelay relay = collider.GetComponent<CollisionRelay>();
 
-			if(relay != null) {
+			if (relay != null && m_shooter != null && relay.m_entity.tag != m_shooter.tag) {
 				m_shooter.Damage(this, relay.m_entity);
 
 				hitEntity = true;

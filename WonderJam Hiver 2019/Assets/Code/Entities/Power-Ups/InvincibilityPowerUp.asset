@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1627ad78e809c4e9eca39f22ed2ba7, type: 3}
+  m_Name: InvincibilityPowerUp
+  m_EditorClassIdentifier: 
+  m_icon: {fileID: 5325306727551216355, guid: 09f6ce18dc2ec6a4bb676e20d2065b17, type: 3}
+  m_pickupAudioEvent: {fileID: 11400000, guid: c47a310438c52c54b92104ca156f4159, type: 2}
+  player: {fileID: 0}

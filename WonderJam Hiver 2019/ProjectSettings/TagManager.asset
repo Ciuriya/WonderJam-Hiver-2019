@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Power Up
+  - SpawnP1
+  - SpawnP2
+  - SpawnP3
+  - SpawnP4
+  - particle system
   layers:
   - Default
   - TransparentFX

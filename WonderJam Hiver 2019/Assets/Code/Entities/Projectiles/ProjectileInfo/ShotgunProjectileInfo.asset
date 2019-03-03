@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c083894368908f4b8878407ec2d294d, type: 3}
   m_Name: ShotgunProjectileInfo
   m_EditorClassIdentifier: 
-  m_damage: 10
+  m_damage: 1
   m_piercing: 0
   m_range: 10
   m_speed: 5

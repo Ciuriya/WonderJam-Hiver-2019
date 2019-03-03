@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4ac71058d4aea47a5ba28fcc6e93b7, type: 3}
+  m_Name: LevelCountManager
+  m_EditorClassIdentifier: 
+  m_value:
+    m_useConstant: 0
+    m_constantValue: 1
+    m_variable: {fileID: 11400000, guid: 556ee03401cf70c479301c580637d8ad, type: 2}
+  m_minValue:
+    m_useConstant: 1
+    m_constantValue: 0
+    m_variable: {fileID: 0}
+  m_maxValue:
+    m_useConstant: 0
+    m_constantValue: 0
+    m_variable: {fileID: 11400000, guid: 86a3b7c84cfe8c649808a41d3900070c, type: 2}
+  m_updateEvent: {fileID: 11400000, guid: 9cd6fd7f5027e8f49a96749120564ef5, type: 2}

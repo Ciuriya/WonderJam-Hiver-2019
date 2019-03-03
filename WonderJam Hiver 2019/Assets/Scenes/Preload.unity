@@ -126,6 +126,8 @@ GameObject:
   - component: {fileID: 948228137}
   - component: {fileID: 948228141}
   - component: {fileID: 948228136}
+  - component: {fileID: 948228142}
+  - component: {fileID: 948228143}
   m_Layer: 0
   m_Name: _app
   m_TagString: Untagged
@@ -145,11 +147,187 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d4d4f9d4451bb489c53a41b597eb55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerEntryKeys:
+  - m_axis:
+      m_key: PlayerEntry
+      value: 0
+    m_profile: mouseAndKB
+    m_controllerSpecific: 0
+    m_controllerId: 0
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 8
+    m_positiveKey: 13
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Enter
+    m_negativeDisplayName: Backspace
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: PlayerEntryC1
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 1
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 351
+    m_positiveKey: 350
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: A
+    m_negativeDisplayName: B
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: PlayerEntryC2
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 2
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 371
+    m_positiveKey: 370
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: A
+    m_negativeDisplayName: B
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: PlayerEntryC3
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 3
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 391
+    m_positiveKey: 390
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: A
+    m_negativeDisplayName: B
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: PlayerEntryC4
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 4
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 411
+    m_positiveKey: 410
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: A
+    m_negativeDisplayName: B
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: PlayerEntryC5
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 5
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 431
+    m_positiveKey: 430
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: A
+    m_negativeDisplayName: B
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: PlayerEntryC6
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 6
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 451
+    m_positiveKey: 450
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: A
+    m_negativeDisplayName: B
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: PlayerEntryC7
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 7
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 471
+    m_positiveKey: 470
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: A
+    m_negativeDisplayName: B
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: PlayerEntryC8
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 8
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
+    m_negativeKey: 491
+    m_positiveKey: 490
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: A
+    m_negativeDisplayName: B
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
   m_mouseAndKeyboard:
   - m_axis:
       m_key: MoveX
       value: 0
     m_profile: mouseAndKB
+    m_controllerSpecific: 0
+    m_controllerId: 0
+    m_useUnityAxis: 0
+    m_unityAxis: 
     m_useRawValues: 1
     m_negativeKey: 97
     m_positiveKey: 100
@@ -165,6 +343,10 @@ MonoBehaviour:
       m_key: MoveY
       value: 0
     m_profile: mouseAndKB
+    m_controllerSpecific: 0
+    m_controllerId: 0
+    m_useUnityAxis: 0
+    m_unityAxis: 
     m_useRawValues: 1
     m_negativeKey: 115
     m_positiveKey: 119
@@ -180,7 +362,11 @@ MonoBehaviour:
       m_key: Pause
       value: 0
     m_profile: mouseAndKB
-    m_useRawValues: 1
+    m_controllerSpecific: 0
+    m_controllerId: 0
+    m_useUnityAxis: 0
+    m_unityAxis: 
+    m_useRawValues: 0
     m_negativeKey: 0
     m_positiveKey: 27
     m_altNegativeKey: 0
@@ -195,6 +381,10 @@ MonoBehaviour:
       m_key: Primary Fire
       value: 0
     m_profile: mouseAndKB
+    m_controllerSpecific: 0
+    m_controllerId: 0
+    m_useUnityAxis: 0
+    m_unityAxis: 
     m_useRawValues: 0
     m_negativeKey: 0
     m_positiveKey: 323
@@ -206,9 +396,199 @@ MonoBehaviour:
     m_pressedLastFrame: 0
     m_releasedThisFrame: 0
     m_releasedLastFrame: 0
-  m_currentProfile: 
+  m_controller:
+  - m_axis:
+      m_key: MoveX
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 0
+    m_controllerId: 0
+    m_useUnityAxis: 1
+    m_unityAxis: ControllerHorizontal
+    m_useRawValues: 1
+    m_negativeKey: 0
+    m_positiveKey: 0
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Move Horizontally
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: MoveY
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 0
+    m_controllerId: 0
+    m_useUnityAxis: 1
+    m_unityAxis: ControllerVertical
+    m_useRawValues: 1
+    m_negativeKey: 0
+    m_positiveKey: 0
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Move Vertically
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire1
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 1
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 353
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire2
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 2
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 373
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire3
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 3
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 393
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire4
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 4
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 413
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire5
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 5
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 433
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire6
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 6
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 453
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire7
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 7
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 473
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire8
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 8
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 493
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  m_inputUsers: []
   m_blockAllKeybinds: 0
-  m_entity: {fileID: 0}
 --- !u!114 &948228137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +650,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd4d25658f227884c88a4d32e4122125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &948228142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948228135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b317369960504a848bb511077f32f953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerPrefabs:
+  - {fileID: 1288121432565641891, guid: c8402538d6d23ba49ac09f3ad07625d5, type: 3}
+  - {fileID: 1060835246735939620, guid: dabcab9abc323a141b83a0d716dbac8c, type: 3}
+  - {fileID: 8893534912241220119, guid: e266a57d1e193604c803f7cd8a281132, type: 3}
+  - {fileID: 3199361196401457142, guid: f25ccbbe16f25b0438b7616358434379, type: 3}
+  m_gameStartTimerEvent: {fileID: 11400000, guid: 6d29f0779e4b1ca478e48518e3af6ff2,
+    type: 2}
+  m_gameOverNoMorePlayers: {fileID: 11400000, guid: 81c86b79c005ecd47a872dfcd3976608,
+    type: 2}
+  m_lifeCountManager: {fileID: 11400000, guid: 9ad7f8df680d9a8428658bc5a0db6d1d, type: 2}
+  m_players: []
+--- !u!114 &948228143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948228135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1d75929ef77c5459251ba49faeec6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1745280917

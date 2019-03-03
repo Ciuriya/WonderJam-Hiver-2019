@@ -14,7 +14,7 @@ public abstract class ShotPattern : ScriptableObject
 	public List<ProjectileBehaviour> m_behaviours;
 
 	[Tooltip("Amount of shots to include in this pattern")]
-	[Range(1, 100)] public int m_shots;
+	[Range(1, 1000)] public int m_shots;
 
 	[Tooltip("If the shot happens instantly")]
 	public bool m_instant;
@@ -55,7 +55,7 @@ public abstract class ShotPattern : ScriptableObject
 		GameObject proj = Game.m_projPool.Get();
 		Projectile projectile = proj.GetComponent<Projectile>();
 		object spawnLocation = p_shooter.GetPatternInfo(this, "spawnLocation");
-        float offset = p_shooter.m_entity.m_renderer.sprite.bounds.max.y;
+        float offset = p_shooter.m_entity.transform.localScale.y / 2; //m_entity.m_renderer.sprite.bounds.max.y;
 
         proj.transform.position = spawnLocation == null ? p_shooter.transform.position : (Vector3) spawnLocation;
         proj.transform.position += new Vector3(0, m_flipShootOrigin ? -offset : offset, 0);

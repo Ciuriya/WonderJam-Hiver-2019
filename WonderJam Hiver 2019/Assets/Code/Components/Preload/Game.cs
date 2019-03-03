@@ -2,18 +2,22 @@
 
 static class Game 
 {
+	public static PlayerManager m_players;
 	public static KeybindManager m_keybinds;
 	public static OptionManager m_options;
 	public static AudioManager m_audio;
+	public static LeaderboardNetworkHandler m_leaderNetHandler;
 	public static ProjectilePooler m_projPool;
 
 	static Game() 
 	{
 		GameObject game = SafeFind("_app");
 
+		m_players = (PlayerManager) SafeComponent(game, "PlayerManager");
 		m_keybinds = (KeybindManager) SafeComponent(game, "KeybindManager");
 		m_options = (OptionManager) SafeComponent(game, "OptionManager");
 		m_audio = (AudioManager) SafeComponent(game, "AudioManager");
+		m_leaderNetHandler = (LeaderboardNetworkHandler) SafeComponent(game, "LeaderboardNetworkHandler");
 		m_projPool = (ProjectilePooler) SafeComponent(SafeFind("ProjectilePooler"), "ProjectilePooler");
 	}
 
