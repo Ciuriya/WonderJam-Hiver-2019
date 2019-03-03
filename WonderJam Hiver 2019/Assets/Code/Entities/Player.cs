@@ -16,6 +16,9 @@ public class Player : Entity
     [Tooltip("The speed boost added to the speed of the player")]
     [Range(0, 60)] public float m_SpeedBoost = 3f;
 
+	[Tooltip("The spawn delay between deaths")]
+	[Range(0, 2)] public float m_spawnDelay = 0.25f;
+
     public ValueManager m_lifeManager;
 
     public override void Start()
@@ -82,8 +85,10 @@ public class Player : Entity
 
     protected override void Die()
     {
-        if (m_lifeManager.m_value.Value > 0)
-            Spawn();
+		Destroy(m_currentParticleSystem);
+
+		if (m_lifeManager.m_value.Value > 0)
+            StartCoroutine(RespawnDelay());
         else
             Game.m_players.RemovePlayer(m_input, true);
     }
@@ -111,4 +116,12 @@ public class Player : Entity
         yield return new WaitForSeconds(m_SpeedBoostTime);
         m_controller.m_speed -= m_SpeedBoost;
     }
+
+	private IEnumerator RespawnDelay() 
+	{ 
+		gameObject.transform.position = new Vector3(-50000, -50000, -50000);
+
+		yield return new WaitForSeconds(m_spawnDelay);
+		Spawn();
+	}
 }

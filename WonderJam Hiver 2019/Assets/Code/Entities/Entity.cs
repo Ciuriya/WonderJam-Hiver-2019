@@ -28,6 +28,7 @@ public class Entity : MonoBehaviour
 	[HideInInspector] public CollisionRelay m_collisionRelay;
 	[HideInInspector] public UnitHealth m_health;
 	[HideInInspector] public StateController m_ai;
+	[HideInInspector] public GameObject m_currentParticleSystem;
 
     public virtual void Start()
     {
@@ -80,6 +81,7 @@ public class Entity : MonoBehaviour
 	protected virtual void Die() 
 	{
 		m_deathEvent.Invoke();
+		Destroy(m_currentParticleSystem);
         Destroy(gameObject);
 	}
 
@@ -87,7 +89,7 @@ public class Entity : MonoBehaviour
     protected virtual void Explosion()
     {
         if(m_particleSystem != null)
-            Instantiate(m_particleSystem, transform.position, transform.rotation);
+			m_currentParticleSystem = Instantiate(m_particleSystem, transform.position, transform.rotation);
     }
 }
 
