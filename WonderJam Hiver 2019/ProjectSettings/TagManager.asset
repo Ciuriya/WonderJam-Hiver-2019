@@ -6,9 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Power Up
-  - RespawnP2
-  - RespawnP3
-  - RespawnP4
+  - SpawnP1
+  - SpawnP2
+  - SpawnP3
+  - SpawnP4
   layers:
   - Default
   - TransparentFX
