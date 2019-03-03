@@ -10,13 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 3321279624174093045}
   - component: {fileID: 2504005693996729121}
-  - component: {fileID: 4825430648576958017}
   - component: {fileID: 7854744962318452027}
+  - component: {fileID: 4825430648576958017}
   - component: {fileID: 8618669505760873090}
   - component: {fileID: 1368527927707479345}
   - component: {fileID: 4878807916281215201}
+  - component: {fileID: 3910479968962036258}
+  - component: {fileID: 897452040213850907}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: WhiteCell
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 1909384975
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4ad92e75de0d154cba4bcaf853e349a, type: 3}
-  m_Color: {r: 0, g: 0.25958085, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d912580c92f20304d9703fda16a91492, type: 3}
+  m_Color: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,6 +87,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &7854744962318452027
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303335789913996864}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &4825430648576958017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,29 +132,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
---- !u!50 &7854744962318452027
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3303335789913996864}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &8618669505760873090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +172,7 @@ MonoBehaviour:
   m_localHealth: 0
   m_maxHealth:
     m_useConstant: 1
-    m_constantValue: 1
+    m_constantValue: 3
     m_variable: {fileID: 0}
   m_immunityWindow: 0
   m_damageEvent:
@@ -194,7 +196,7 @@ MonoBehaviour:
   m_controller: {fileID: 8618669505760873090}
   m_canDie: 1
   m_isDead: 0
-  m_look: {fileID: 0}
+  m_look: {fileID: 11400000, guid: 01a8f721dded1b94989532d7e6fd103d, type: 2}
   m_runtimeSets: []
   m_deathEvent:
     m_PersistentCalls:
@@ -207,17 +209,57 @@ MonoBehaviour:
   m_collisionRelay: {fileID: 0}
   m_health: {fileID: 0}
   m_ai: {fileID: 0}
-  m_pressure: 50
-  m_points: 200
+  m_pressure: 0
+  m_points: 25
   m_scoreManager: {fileID: 11400000, guid: 515c2b0f4322f224fb0976679f2301a6, type: 2}
-  m_strategy: {fileID: 11400000, guid: d338d87c7c6a7f144a73e50e4ee3b4e7, type: 2}
-  m_spawnCount: 2
-  m_spawnList:
-  - Weight: 0
-    Object: {fileID: 8136100163231584441, guid: 4032f045d94781645b1bed6ae74c1790,
-      type: 3}
-    Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
+  m_strategy: {fileID: 11400000, guid: 391b8aea2e32f3c4cb5945aba9f25d7f, type: 2}
+  m_spawnCount: 0
+  m_spawnList: []
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
+  m_spawnTime: 0
+--- !u!114 &3910479968962036258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303335789913996864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b3a96ca1b651a4192b0700ba75c49e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_patternToShoot: {fileID: 11400000, guid: 9ef7b55e647dcc7418a8f421d7f54812, type: 2}
+  m_patternCooldown: 0
+  m_shotEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_audioSource: {fileID: 0}
+  m_entity: {fileID: 0}
+--- !u!114 &897452040213850907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303335789913996864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88473ee335e2fb742adda210a03ea1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_currentState: {fileID: 11400000, guid: 696673ff9bfb77c49bf1f4d761ad5f61, type: 2}
+  m_waypoints: []
+  m_enemyEntities: {fileID: 0}
+  m_drawGizmos: 0
+  m_entity: {fileID: 0}
+  m_look: {fileID: 0}
+  m_target: {fileID: 0}
+  m_stateTimeElapsed: 0
+  m_nextWaypoint: 0
+  m_patrolFinished: 0
 --- !u!1 &7663611079197450058
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +317,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
 --- !u!50 &7304052760224901808
 Rigidbody2D:

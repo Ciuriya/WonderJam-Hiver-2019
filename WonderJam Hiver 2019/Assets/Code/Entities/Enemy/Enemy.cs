@@ -26,19 +26,24 @@ public class Enemy : Entity
     public Spawn[] m_spawnList;
 
     [HideInInspector] public Vector3 m_spawnFromPosition;
+    [HideInInspector] public float m_spawnTime;
 
     private int totalWeight = 0;
 
 
     public void OnEnable()
     {
+        m_spawnTime = Time.time;
+
         foreach(var spawn in m_spawnList)
             totalWeight += spawn.Weight;
     }
 
     public void FixedUpdate()
     {
-        if (m_strategy)
+        if (m_strategy.name == "Wavy")
+            m_strategy.GetMovementVector(this);
+        else if (m_strategy)
             m_controller.Move(m_strategy.GetMovementVector(this));
     }
 
