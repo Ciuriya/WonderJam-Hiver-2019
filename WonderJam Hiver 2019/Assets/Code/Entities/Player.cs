@@ -96,7 +96,6 @@ public class Player : Entity
     protected override void Die()
     {
 		m_deathSoundEvent.Play();
-		Destroy(m_currentParticleSystem);
 
 		if (m_lifeManager.m_value.Value > 0)
             StartCoroutine(RespawnDelay());

@@ -197,6 +197,8 @@ MonoBehaviour:
   m_look: {fileID: 0}
   m_runtimeSets:
   - {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec, type: 2}
+  m_immunityRuntimeSet: {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec,
+    type: 2}
   m_deathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -219,13 +221,23 @@ MonoBehaviour:
   m_strategy: {fileID: 11400000, guid: d338d87c7c6a7f144a73e50e4ee3b4e7, type: 2}
   m_spawnCount: 2
   m_spawnList:
-  - Weight: 95
+  - Weight: 64
     Object: {fileID: 8136100163231584441, guid: 4032f045d94781645b1bed6ae74c1790,
       type: 3}
     Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
   - Weight: 5
     Object: {fileID: 8136100163231584441, guid: 4032f045d94781645b1bed6ae74c1790,
       type: 3}
+    Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
+  - Weight: 10
+    Object: {fileID: 5355418016501957587, guid: a201634f25076d94baf0c974e65874fa,
+      type: 3}
+    Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
+  - Weight: 20
+    Object: {fileID: 919980441, guid: 1aee0432707122c4dbdc2e59728a3a0a, type: 3}
+    Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
+  - Weight: 1
+    Object: {fileID: 978085410, guid: 90f936f3a59e5504dad8138b4cd8b90c, type: 3}
     Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
   m_spawnTime: 0

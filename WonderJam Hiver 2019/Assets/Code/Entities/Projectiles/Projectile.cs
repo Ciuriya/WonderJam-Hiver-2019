@@ -103,7 +103,7 @@ public class Projectile : MonoBehaviour
 		{
 			CollisionRelay relay = collider.GetComponent<CollisionRelay>();
 
-			if(relay != null && m_shooter != null) {
+			if (relay != null && m_shooter != null && relay.m_entity.tag != m_shooter.tag) {
 				m_shooter.Damage(this, relay.m_entity);
 
 				hitEntity = true;

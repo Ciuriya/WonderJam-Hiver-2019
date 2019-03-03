@@ -198,6 +198,8 @@ MonoBehaviour:
   m_isDead: 0
   m_look: {fileID: 11400000, guid: 01a8f721dded1b94989532d7e6fd103d, type: 2}
   m_runtimeSets: []
+  m_immunityRuntimeSet: {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec,
+    type: 2}
   m_deathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -218,8 +220,15 @@ MonoBehaviour:
   m_points: 25
   m_scoreManager: {fileID: 11400000, guid: 515c2b0f4322f224fb0976679f2301a6, type: 2}
   m_strategy: {fileID: 11400000, guid: 391b8aea2e32f3c4cb5945aba9f25d7f, type: 2}
-  m_spawnCount: 0
-  m_spawnList: []
+  m_spawnCount: 1
+  m_spawnList:
+  - Weight: 90
+    Object: {fileID: 7245735128445158697, guid: 9bd7d664fddbc5640b69359f5d6e3ebd,
+      type: 3}
+    Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
+  - Weight: 10
+    Object: {fileID: 0}
+    Strategy: {fileID: 0}
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
   m_spawnTime: 0
 --- !u!114 &3910479968962036258
