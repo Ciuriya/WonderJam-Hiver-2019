@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 1288121432565641888}
   - component: {fileID: 1288121432565641889}
   - component: {fileID: 1288121432565641890}
+  - component: {fileID: 140642250177111836}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -64,7 +65,7 @@ Transform:
   m_GameObject: {fileID: 1288121432565641891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.85, y: -3.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 1288121433246573520}
   - {fileID: 1288121432334626106}
@@ -157,6 +158,7 @@ MonoBehaviour:
     m_controllerId: 0
   m_playerController: {fileID: 0}
   m_InvincibilityTime: 3
+  m_RespawnInvulnerability: 1
   m_SpeedBoostTime: 3
   m_SpeedBoost: 3
   m_spawnDelay: 0.25
@@ -277,6 +279,21 @@ MonoBehaviour:
   newShotPatternPowerUp: {fileID: 11400000, guid: d85224c684707c14395d07c2ca0da9c7,
     type: 2}
   delayBetweenCheatCodes: 0
+--- !u!114 &140642250177111836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288121432565641891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ff9d612f732ca4a8d3d93bf075323d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  flashSpeed: 0.1
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1288121433246573521
 GameObject:
   m_ObjectHideFlags: 0
