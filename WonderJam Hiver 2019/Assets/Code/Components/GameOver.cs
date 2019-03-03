@@ -1,20 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
 	public IntReference m_score;
 
-    public void DoPressureGameOverStuff()
+    public void DoGameOverStuff()
     {
-        Debug.Log("You lost you dumb fuck (PRESSURE)");
 		SaveScoreToJSON();
+        SceneManager.LoadScene("Leaderboards");
 	}
-
-    public void DoOutOfLivesGameOverStuff()
-    {
-        Debug.Log("You ran out of lives you dumb fuck (LIVES)");
-		SaveScoreToJSON();
-    }
 
 	public void SaveScoreToJSON() 
 	{
