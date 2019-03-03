@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 948228141}
   - component: {fileID: 948228136}
   - component: {fileID: 948228142}
+  - component: {fileID: 948228143}
   m_Layer: 0
   m_Name: _app
   m_TagString: Untagged
@@ -674,6 +675,18 @@ MonoBehaviour:
     type: 2}
   m_lifeCountManager: {fileID: 11400000, guid: 9ad7f8df680d9a8428658bc5a0db6d1d, type: 2}
   m_players: []
+--- !u!114 &948228143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948228135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1d75929ef77c5459251ba49faeec6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1745280917
 GameObject:
   m_ObjectHideFlags: 0
