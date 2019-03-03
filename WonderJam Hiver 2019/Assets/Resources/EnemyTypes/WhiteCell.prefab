@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4878807916281215201}
   - component: {fileID: 3910479968962036258}
   - component: {fileID: 897452040213850907}
+  - component: {fileID: 8251311920907638749}
   m_Layer: 9
   m_Name: WhiteCell
   m_TagString: Enemy
@@ -125,14 +126,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
 --- !u!114 &8618669505760873090
 MonoBehaviour:
@@ -218,8 +219,19 @@ MonoBehaviour:
   m_points: 25
   m_scoreManager: {fileID: 11400000, guid: 515c2b0f4322f224fb0976679f2301a6, type: 2}
   m_strategy: {fileID: 11400000, guid: 391b8aea2e32f3c4cb5945aba9f25d7f, type: 2}
-  m_spawnCount: 0
-  m_spawnList: []
+  m_spawnCount: 1
+  m_spawnList:
+  - Weight: 90
+    Object: {fileID: 7245735128445158697, guid: 9bd7d664fddbc5640b69359f5d6e3ebd,
+      type: 3}
+    Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
+  - Weight: 5
+    Object: {fileID: 0}
+    Strategy: {fileID: 0}
+  - Weight: 5
+    Object: {fileID: 5181378714745732843, guid: 85f9f041e9bed494eb4eb05423ec924e,
+      type: 3}
+    Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
   m_spawnTime: 0
 --- !u!114 &3910479968962036258
@@ -264,6 +276,21 @@ MonoBehaviour:
   m_stateTimeElapsed: 0
   m_nextWaypoint: 0
   m_patrolFinished: 0
+--- !u!114 &8251311920907638749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303335789913996864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ff9d612f732ca4a8d3d93bf075323d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  flashSpeed: 0.25
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7663611079197450058
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +348,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
 --- !u!50 &7304052760224901808
 Rigidbody2D:

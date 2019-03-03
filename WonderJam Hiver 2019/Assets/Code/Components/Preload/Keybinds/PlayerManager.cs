@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour
     public ValueManager m_lifeCountManager;
 
 	[HideInInspector] public List<Player> m_players;
+    public static int MostPlayers = 0;
+    public static int GetMaxPlayers() { return MostPlayers; }
 
 	void Awake()
 	{
@@ -58,6 +60,9 @@ public class PlayerManager : MonoBehaviour
 
 		if(m_players.Count == 1)
 			m_gameStartTimerEvent.Raise();
+
+        if (id > MostPlayers)
+            MostPlayers = id;
 
 		return true;
 	}

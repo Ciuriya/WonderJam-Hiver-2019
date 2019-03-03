@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2581eb554244943b0754c6e90d4dcc, type: 3}
   m_Name: EnemyShot
   m_EditorClassIdentifier: 
-  m_projectile: {fileID: 733175078221444750, guid: 199e9e2e663ee46498cabce6d5486200,
+  m_projectile: {fileID: 733175078221444750, guid: ce9bfc54905be3c4db6ebf88dd5fd0b1,
     type: 3}
   m_projectileInfo: {fileID: 11400000, guid: 91baa0d9d106ac24795e36649e5a3e1c, type: 2}
   m_behaviours:
@@ -21,7 +21,7 @@ MonoBehaviour:
   m_instant: 0
   m_loop: 0
   m_loopsBeforeSwitch: 0
-  m_patternCooldown: 0.2
+  m_patternCooldown: 0.5
   m_bypassShooterCooldown: 0
   m_stepDelay: 0
   m_nextPatterns: []

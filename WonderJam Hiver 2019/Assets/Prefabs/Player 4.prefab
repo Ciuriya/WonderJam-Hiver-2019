@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 3199361196401457141}
   - component: {fileID: 3199361196401457140}
   - component: {fileID: 3199361196401457143}
+  - component: {fileID: 4758333976273686243}
+  - component: {fileID: 7852140399120542896}
   m_Layer: 9
   m_Name: Player 4
   m_TagString: Player
@@ -33,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 3199361196401457142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.85, y: -3.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 3199361197752428165}
   - {fileID: 3199361196571912303}
@@ -110,7 +112,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_particleSystem: {fileID: 3199361197521852310}
+  m_particleSystem: {fileID: 5885917197543811053, guid: 2d720d9531284544aa22910ff8b4f2c2,
+    type: 3}
   m_pickupAudioEvent: {fileID: 0}
   m_deathSoundEvent: {fileID: 11400000, guid: e9935c853d617d6469a32a34c66752f7, type: 2}
   m_audioSource: {fileID: 0}
@@ -126,6 +129,7 @@ MonoBehaviour:
     m_controllerId: 0
   m_playerController: {fileID: 0}
   m_InvincibilityTime: 3
+  m_RespawnInvulnerability: 1
   m_SpeedBoostTime: 3
   m_SpeedBoost: 3
   m_spawnDelay: 0.25
@@ -195,18 +199,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0023753345, y: 0.0033632517}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.64}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20190746, y: 0.5419712}
+  m_Size: {x: 0.4, y: 1.6}
   m_EdgeRadius: 0
 --- !u!50 &3199361196401457140
 Rigidbody2D:
@@ -246,6 +250,50 @@ MonoBehaviour:
   newShotPatternPowerUp: {fileID: 11400000, guid: d85224c684707c14395d07c2ca0da9c7,
     type: 2}
   delayBetweenCheatCodes: 6
+--- !u!114 &4758333976273686243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199361196401457142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ff9d612f732ca4a8d3d93bf075323d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  flashSpeed: 0.1
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &7852140399120542896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199361196401457142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cb2229fdacd6e41a752431cd4d4b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_usingLocalHealth: 1
+  m_sharedHealth:
+    m_useConstant: 1
+    m_constantValue: 0
+    m_variable: {fileID: 0}
+  m_localHealth: 0
+  m_maxHealth:
+    m_useConstant: 1
+    m_constantValue: 1
+    m_variable: {fileID: 0}
+  m_immunityWindow: 0
+  m_damageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_entity: {fileID: 0}
 --- !u!1 &3199361196571912302
 GameObject:
   m_ObjectHideFlags: 0
@@ -5034,7 +5082,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0019283444, y: 0.00013998151}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5045,7 +5093,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20170453, y: 0.5446529}
+  m_Size: {x: 0.4, y: 1.6}
   m_EdgeRadius: 0
 --- !u!50 &3199361197752428162
 Rigidbody2D:

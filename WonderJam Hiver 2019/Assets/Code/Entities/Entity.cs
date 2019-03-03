@@ -44,7 +44,6 @@ public class Entity : MonoBehaviour
         Game.m_audio.AddAudioSource(m_audioSource, AudioCategories.SFX);
 
         if (m_shooter) m_shooter.Init(this);
-		if(m_health) m_health.Init(this);
 	}
 
 	public virtual void OnEnable() 
@@ -73,7 +72,12 @@ public class Entity : MonoBehaviour
 
 		// make sure the AI starts targeting its last damager
 		if(m_ai && p_damager) m_ai.m_target = p_damager;
-	}
+
+        OnDamage();
+    }
+
+    public virtual void OnDamage() {}
+
 
 	public virtual void Kill() 
 	{

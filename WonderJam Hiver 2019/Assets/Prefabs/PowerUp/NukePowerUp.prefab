@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 978085411}
   m_Layer: 9
   m_Name: NukePowerUp
-  m_TagString: Untagged
+  m_TagString: Power Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,8 +167,8 @@ SpriteRenderer:
   m_SortingLayerID: 1909384975
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 1, b: 0.18169498, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5ecfdcb9e5691ec4888a7d6b82da2ff3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -195,7 +195,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 0.33684212, y: 0.33684212}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -274,6 +274,7 @@ MonoBehaviour:
   m_collisionRelay: {fileID: 0}
   m_health: {fileID: 0}
   m_ai: {fileID: 0}
+  m_currentParticleSystem: {fileID: 0}
   m_pressure: 0
   m_points: 0
   m_scoreManager: {fileID: 0}
@@ -285,6 +286,7 @@ MonoBehaviour:
       type: 3}
     Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
+  m_spawnTime: 0
 --- !u!114 &978085411
 MonoBehaviour:
   m_ObjectHideFlags: 0
