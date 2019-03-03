@@ -30,7 +30,11 @@ public class Player : Entity
 
 	void Update() 
 	{
-		bool fire = Game.m_keybinds.GetButton("Primary Fire", m_input);
+		string fireButton = "Primary Fire";
+
+		if(m_input.m_controllerId > 0) fireButton += m_input.m_controllerId;
+
+		bool fire = Game.m_keybinds.GetButton(fireButton, m_input);
 
 		if(fire) 
 		{

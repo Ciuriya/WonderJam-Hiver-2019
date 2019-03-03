@@ -435,19 +435,152 @@ MonoBehaviour:
     m_releasedThisFrame: 0
     m_releasedLastFrame: 0
   - m_axis:
-      m_key: Primary Fire
+      m_key: Primary Fire1
       value: 0
     m_profile: controller
-    m_controllerSpecific: 0
-    m_controllerId: 0
-    m_useUnityAxis: 1
+    m_controllerSpecific: 1
+    m_controllerId: 1
+    m_useUnityAxis: 0
     m_unityAxis: ControllerFire
     m_useRawValues: 0
     m_negativeKey: 0
-    m_positiveKey: 0
+    m_positiveKey: 353
     m_altNegativeKey: 0
     m_altPositiveKey: 0
-    m_positiveDisplayName: Pause
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire2
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 2
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 373
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire3
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 3
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 393
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire4
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 4
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 413
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire5
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 5
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 433
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire6
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 6
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 453
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire7
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 7
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 473
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
+    m_negativeDisplayName: 
+    m_pressedThisFrame: 0
+    m_pressedLastFrame: 0
+    m_releasedThisFrame: 0
+    m_releasedLastFrame: 0
+  - m_axis:
+      m_key: Primary Fire8
+      value: 0
+    m_profile: controller
+    m_controllerSpecific: 1
+    m_controllerId: 8
+    m_useUnityAxis: 0
+    m_unityAxis: ControllerFire
+    m_useRawValues: 0
+    m_negativeKey: 0
+    m_positiveKey: 493
+    m_altNegativeKey: 0
+    m_altPositiveKey: 0
+    m_positiveDisplayName: Primary Fire
     m_negativeDisplayName: 
     m_pressedThisFrame: 0
     m_pressedLastFrame: 0
