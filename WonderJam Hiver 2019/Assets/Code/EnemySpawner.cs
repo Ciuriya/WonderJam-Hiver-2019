@@ -76,6 +76,9 @@ public class EnemySpawner : MonoBehaviour
         Vector3 EnemyPos = new Vector3(Random.Range(-SpawnWidth, SpawnWidth), SpawnTransform.position.y, SpawnTransform.position.z);
 
         GameObject NewEnemy = Instantiate(Enemy.Object, EnemyPos, SpawnTransform.rotation);
+        var HealthComp = NewEnemy.GetComponent<UnitHealth>();
+        HealthComp.m_maxHealth.Value += (PlayerManager.GetMaxPlayers() - 1);
+        HealthComp.m_localHealth += (PlayerManager.GetMaxPlayers() - 1);
         LevelPointsAvailable -= Enemy.Points;
     }
 
