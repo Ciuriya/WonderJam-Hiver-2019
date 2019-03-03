@@ -30,7 +30,8 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	public bool AddPlayer(InputUser p_user) 
-	{ 
+	{
+		if(SceneManager.GetActiveScene().name != "DevTest") return false;
 		if(m_players.Count == 4) return false;
 
 		int id = 0;

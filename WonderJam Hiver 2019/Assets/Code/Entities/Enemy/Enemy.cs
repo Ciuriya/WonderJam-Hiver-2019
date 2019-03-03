@@ -30,8 +30,9 @@ public class Enemy : Entity
     private int totalWeight = 0;
 
 
-    public void OnEnable()
+    public override void OnEnable()
     {
+        base.OnEnable();
         foreach(var spawn in m_spawnList)
             totalWeight += spawn.Weight;
     }
