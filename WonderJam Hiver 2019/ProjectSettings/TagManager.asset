@@ -10,6 +10,10 @@ TagManager:
   - SpawnP2
   - SpawnP3
   - SpawnP4
+  - particle system
+  - RespawnP3
+  - RespawnP4
+  - RespawnP2
   layers:
   - Default
   - TransparentFX
@@ -50,12 +54,12 @@ TagManager:
   - name: background
     uniqueID: 630325805
     locked: 0
+  - name: watever
+    uniqueID: 1909384975
+    locked: 0
   - name: parrallax
     uniqueID: 830765073
     locked: 0
   - name: player
     uniqueID: 2376502369
-    locked: 0
-  - name: watever
-    uniqueID: 1909384975
     locked: 0
