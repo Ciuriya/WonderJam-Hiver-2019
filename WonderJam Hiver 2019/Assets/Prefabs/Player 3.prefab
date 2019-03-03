@@ -4839,6 +4839,7 @@ GameObject:
   - component: {fileID: 8893534912241220116}
   - component: {fileID: 8893534912241220117}
   - component: {fileID: 8893534912241220118}
+  - component: {fileID: 5531235413508388675}
   m_Layer: 9
   m_Name: Player 3
   m_TagString: Player
@@ -5068,3 +5069,32 @@ MonoBehaviour:
   newShotPatternPowerUp: {fileID: 11400000, guid: d85224c684707c14395d07c2ca0da9c7,
     type: 2}
   delayBetweenCheatCodes: 6
+--- !u!114 &5531235413508388675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893534912241220119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cb2229fdacd6e41a752431cd4d4b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_usingLocalHealth: 1
+  m_sharedHealth:
+    m_useConstant: 1
+    m_constantValue: 0
+    m_variable: {fileID: 0}
+  m_localHealth: 0
+  m_maxHealth:
+    m_useConstant: 1
+    m_constantValue: 1
+    m_variable: {fileID: 0}
+  m_immunityWindow: 0
+  m_damageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_entity: {fileID: 0}
