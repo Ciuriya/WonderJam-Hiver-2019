@@ -3896,7 +3896,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477399681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3905,7 +3905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -492, y: 383}
+  m_AnchoredPosition: {x: 20, y: 221}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &477399685
@@ -9495,7 +9495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daf5dc595f69ef4f9daa04097c0535e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerID: 0
+  m_playerID: 1
   m_Image: {fileID: 0}
   m_color: {r: 0, g: 0, b: 0, a: 0}
   m_UIMask: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
@@ -9981,7 +9981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -408, y: 106}
+  m_AnchoredPosition: {x: 531, y: 106}
   m_SizeDelta: {x: 233.5, y: 567.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1700801381
@@ -12039,7 +12039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daf5dc595f69ef4f9daa04097c0535e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerID: 0
+  m_playerID: 3
   m_Image: {fileID: 0}
   m_color: {r: 0, g: 0, b: 0, a: 0}
   m_UIMask: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
@@ -12702,7 +12702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132, y: 230.9}
+  m_AnchoredPosition: {x: -184, y: -147}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4264389295843837841
@@ -13088,7 +13088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daf5dc595f69ef4f9daa04097c0535e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerID: 0
+  m_playerID: 2
   m_Image: {fileID: 0}
   m_color: {r: 0, g: 0, b: 0, a: 0}
   m_UIMask: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
@@ -13289,7 +13289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daf5dc595f69ef4f9daa04097c0535e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerID: 0
+  m_playerID: 4
   m_Image: {fileID: 0}
   m_color: {r: 0, g: 0, b: 0, a: 0}
   m_UIMask: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
