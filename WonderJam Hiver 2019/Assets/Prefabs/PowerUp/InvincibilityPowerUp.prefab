@@ -173,7 +173,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_particleSystem: {fileID: 0}
-  m_pickupAudioEvent: {fileID: 0}
+  m_pickupAudioEvent: {fileID: 11400000, guid: c47a310438c52c54b92104ca156f4159, type: 2}
   m_deathSoundEvent: {fileID: 0}
   m_audioSource: {fileID: 0}
   m_renderer: {fileID: 0}

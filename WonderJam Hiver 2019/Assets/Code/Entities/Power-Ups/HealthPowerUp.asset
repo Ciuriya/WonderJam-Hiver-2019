@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HealthPowerUp
   m_EditorClassIdentifier: 
   m_icon: {fileID: 0}
-  m_pickupAudioEvent: {fileID: 0}
+  m_pickupAudioEvent: {fileID: 11400000, guid: c47a310438c52c54b92104ca156f4159, type: 2}
   player: {fileID: 0}
