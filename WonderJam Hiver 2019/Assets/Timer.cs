@@ -15,6 +15,8 @@ public class Timer : MonoBehaviour
     [Tooltip("Event to raise at the end of the timer")]
     public GameEvent m_GameEvent;
 
+    [Tooltip("Put the level value change here to show a nice cute feedback")]
+    public GameEvent m_GameJamCode;
 
     public void StartTimer()
     {
@@ -30,6 +32,7 @@ public class Timer : MonoBehaviour
             m_UpdateEvent.Raise();
             yield return new WaitForSecondsRealtime(1f);
         }
+        m_GameJamCode.Raise();
         m_GameEvent.Raise();
     }
 }
