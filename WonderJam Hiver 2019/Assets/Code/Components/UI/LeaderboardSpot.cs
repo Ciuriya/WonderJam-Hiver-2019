@@ -40,7 +40,7 @@ public class LeaderboardSpot : MonoBehaviour
 
 		if(m_score.Name.Length > 0) 
 		{
-			m_loader.AddScore(m_score, m_local);
+			m_loader.AddScore(m_score);
 		}
 	}
 }
