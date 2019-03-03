@@ -108,11 +108,12 @@ public class Enemy : Entity
                     if (newGameObject)
                     {
                         Enemy enemy = newGameObject.GetComponent<Enemy>();
-                        if (enemy)
+                        if (enemy != null)
                         {
                             enemy.m_spawnFromPosition = transform.position;
                             enemy.m_strategy = spawn.Strategy;
                             var HealthComp = enemy.gameObject.GetComponent<UnitHealth>();
+                            if(HealthComp)
                             HealthComp.m_localHealth = HealthComp.m_maxHealth + PlayerManager.GetMaxPlayers() - 1;
                         }
                     }

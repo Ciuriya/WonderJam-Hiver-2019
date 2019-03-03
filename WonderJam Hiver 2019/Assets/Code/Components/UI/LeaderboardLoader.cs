@@ -12,14 +12,6 @@ public class LeaderboardLoader : MonoBehaviour
 	[Tooltip("Should leaderboards be pulled locally or from the server?")]
 	public bool m_local;
 
-	[Tooltip("The IP address to pull the leaderboards from")]
-	[ConditionalField("m_local", "false")]
-	public string m_serverIPAddress;
-
-	[Tooltip("The port used to pull the leaderboards from the server")]
-	[ConditionalField("m_local", "false")]
-	public int m_serverPort;
-
 	[Tooltip("The amount of scores to load in the leaderboard (maximum)")]
 	public int m_loadedAmount;
 
@@ -82,7 +74,22 @@ public class LeaderboardLoader : MonoBehaviour
 	{
 		List<LeaderboardScore> scores = new List<LeaderboardScore>();
 
-		// request
+		string json = Game.m_leaderNetHandler.FetchBlocking();
+		string fixedJson = "";
+
+		if(json.Length > 0) 
+		{ 
+			string[] individualScores = json.Split('{');
+
+			for(int i = 1; i < individualScores.Length; i++) 
+			{ 
+				scores.Add(JsonUtility.FromJson<LeaderboardScore>("{" + individualScores[i].Replace("\n", "") + "}\n"));
+				fixedJson += "{" + individualScores[i].Replace("\n", "") + "}\n";
+			}
+		}
+
+		OverwriteOnlineLeaderboards(fixedJson);
+		Game.m_leaderNetHandler.UploadV2(fixedJson);
 
 		return scores;
 	}
@@ -94,9 +101,17 @@ public class LeaderboardLoader : MonoBehaviour
 		Writer.Write("\n" + JsonUtility.ToJson(p_score));
 		Writer.Close();
 
-		// if !p_local, upload online
+		if(!p_local) Game.m_leaderNetHandler.UploadV2(Game.m_leaderNetHandler.ConvertFileToJSON());
 
 		DeletePendingScore(p_local);
+	}
+
+	public void OverwriteOnlineLeaderboards(string p_jsonData) 
+	{
+		System.IO.StreamWriter Writer = new System.IO.StreamWriter(Application.dataPath + "/Data/OnlineLeaderboard.JSON", false);
+
+		Writer.Write(p_jsonData);
+		Writer.Close();
 	}
 
 	public LeaderboardScore GetPendingScore(bool p_local) 
