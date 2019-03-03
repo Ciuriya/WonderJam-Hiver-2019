@@ -87,6 +87,7 @@ public class Entity : MonoBehaviour
 
 	protected virtual void Die() 
 	{
+		m_deathSoundEvent.Play();
 		m_deathEvent.Invoke();
 		Destroy(m_currentParticleSystem);
         Destroy(gameObject);

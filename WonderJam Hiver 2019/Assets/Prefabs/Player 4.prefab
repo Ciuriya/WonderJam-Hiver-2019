@@ -111,11 +111,15 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_particleSystem: {fileID: 3199361197521852310}
+  m_pickupAudioEvent: {fileID: 0}
+  m_deathSoundEvent: {fileID: 11400000, guid: e9935c853d617d6469a32a34c66752f7, type: 2}
+  m_audioSource: {fileID: 0}
   m_renderer: {fileID: 0}
   m_shooter: {fileID: 0}
   m_collisionRelay: {fileID: 0}
   m_health: {fileID: 0}
   m_ai: {fileID: 0}
+  m_currentParticleSystem: {fileID: 0}
   m_playerId: 0
   m_input:
     m_profile: 
@@ -124,6 +128,7 @@ MonoBehaviour:
   m_InvincibilityTime: 3
   m_SpeedBoostTime: 3
   m_SpeedBoost: 3
+  m_spawnDelay: 0.25
   m_lifeManager: {fileID: 11400000, guid: 9ad7f8df680d9a8428658bc5a0db6d1d, type: 2}
 --- !u!114 &3199361196401457136
 MonoBehaviour:
@@ -176,7 +181,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_audioSource: {fileID: 0}
   m_entity: {fileID: 0}
 --- !u!61 &3199361196401457141
 BoxCollider2D:
