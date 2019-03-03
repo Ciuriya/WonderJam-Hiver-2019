@@ -288,12 +288,14 @@ MonoBehaviour:
   m_canDie: 1
   m_isDead: 0
   m_look: {fileID: 0}
-  m_runtimeSets: []
+  m_runtimeSets:
+  - {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec, type: 2}
   m_deathEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  m_particleSystem: {fileID: 0}
   m_renderer: {fileID: 0}
   m_shooter: {fileID: 0}
   m_collisionRelay: {fileID: 0}

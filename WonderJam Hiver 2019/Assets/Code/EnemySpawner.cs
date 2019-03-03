@@ -47,6 +47,7 @@ public class ChoiceStruct<T>
 
 public class EnemySpawner : MonoBehaviour
 {
+    public EntityRuntimeSet EnemyList;
     public bool Active = false;
     public Dictionary<string, SpawnableEnemy> EnemyChoices;
     //TODO: SpawnWeights
@@ -76,13 +77,21 @@ public class EnemySpawner : MonoBehaviour
 
         GameObject NewEnemy = Instantiate(Enemy.Object, EnemyPos, SpawnTransform.rotation);
         LevelPointsAvailable -= Enemy.Points;
-        if(LevelPointsAvailable == 0) { Active = false; }
     }
 
-    public void StartLevel()
+    public bool Spawn(string EnemyName)
+    {
+        if (LevelPointsAvailable < EnemyChoices[EnemyName].Points)
+        {
+            return false;
+        }
+        Spawn(EnemyChoices[EnemyName]);
+        return true;
+    }
+
+    public void StartLevel(bool SetActive = true)
     {
         CurLevel++;
-        CurLevel = CurLevel;
         LevelPointsAvailable = CurLevel * 14;
         LevelSpawnTimer = 1 / (Mathf.Log(CurLevel * 0.2f) + 2) + 0.4f;
         CurSpawnTimer = LevelSpawnTimer;
@@ -102,7 +111,7 @@ public class EnemySpawner : MonoBehaviour
                 ThisLevelChoices[Enemy.Value.Points - 1].ChoiceList.Add(Enemy.Value);
             }
         }
-        Active = true;
+        Active = SetActive;
         Debug.Log("Level" + CurLevel + "(DifficultyOffset: " + (int)Mathf.Log(10 * CurLevel) + ", Total: " + LevelPointsAvailable + ")");
     }
 
@@ -142,55 +151,57 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Active)
         {
-            CurSpawnTimer -= Time.deltaTime;
-
-            //Debug.Log(CurSpawnTimer);
             //Spawn logic goes here
-            if (CurSpawnTimer <= 0 && LevelPointsAvailable > 0)
+            if (LevelPointsAvailable > 0)
             {
+                CurSpawnTimer -= Time.deltaTime;
                 // Reset the timer with additional time it might have been missing, to be more consistent
-                CurSpawnTimer += LevelSpawnTimer;
-
-                //Make sure LargestPointAvailable reflects reality
-                if (LargestPointsAvailable > LevelPointsAvailable)
+                if (CurSpawnTimer <= 0)
                 {
-                    LargestPointsAvailable = LevelPointsAvailable;
-                }
-                while (LargestPointsAvailable > 0 && ThisLevelChoices[LargestPointsAvailable - 1].ChoiceList.Count == 0)
-                {
-                    LargestPointsAvailable--;
-                }
-                if (LargestPointsAvailable <= 0) { Debug.LogError("Ran out of enemies to spawn, please make sure the level has low point enemies for filler"); Active = false; return; }
+                    CurSpawnTimer += LevelSpawnTimer;
 
-                //Do the actual spawning here 
-
-                //Choose enemy rating here
-                int EnemyRating = Mathf.Min(Random.Range(0, LargestPointsAvailable) + CurLevel * (int)RatingIncreaseRate, LargestPointsAvailable - 1);
-                while(ThisLevelChoices[EnemyRating].ChoiceList.Count == 0)
-                { // Make sure there are enemies to spawn of that rating or lower
-                    EnemyRating--;
-                    if(EnemyRating == 0)
+                    //Make sure LargestPointAvailable reflects reality
+                    if (LargestPointsAvailable > LevelPointsAvailable)
                     {
-                        Debug.LogError("Ran out of enemies to spawn, please make sure the level has low point enemies for filler"); Active = false; return;
+                        LargestPointsAvailable = LevelPointsAvailable;
                     }
-                }
-
-                //If here then there are choices to pick from
-                int EnemyChoice = Random.Range(0, ThisLevelChoices[EnemyRating].Weight);
-                foreach(var Enemy in ThisLevelChoices[EnemyRating].ChoiceList)
-                {
-                    EnemyChoice -= Enemy.Weight;
-                    if(EnemyChoice <= 0)
+                    while (LargestPointsAvailable > 0 && ThisLevelChoices[LargestPointsAvailable - 1].ChoiceList.Count == 0)
                     {
-                        Spawn(Enemy);
-                        break;
+                        LargestPointsAvailable--;
+                    }
+                    if (LargestPointsAvailable <= 0) { Debug.LogError("Ran out of enemies to spawn, please make sure the level has low point enemies for filler"); Active = false; return; }
+
+                    //Do the actual spawning here 
+
+                    //Choose enemy rating here
+                    int EnemyRating = Mathf.Min(Random.Range(0, LargestPointsAvailable) + CurLevel * (int)RatingIncreaseRate, LargestPointsAvailable - 1);
+                    while (ThisLevelChoices[EnemyRating].ChoiceList.Count == 0)
+                    { // Make sure there are enemies to spawn of that rating or lower
+                        EnemyRating--;
+                        if (EnemyRating == 0)
+                        {
+                            Debug.LogError("Ran out of enemies to spawn, please make sure the level has low point enemies for filler"); Active = false; return;
+                        }
+                    }
+
+                    //If here then there are choices to pick from
+                    int EnemyChoice = Random.Range(0, ThisLevelChoices[EnemyRating].Weight);
+                    foreach (var Enemy in ThisLevelChoices[EnemyRating].ChoiceList)
+                    {
+                        EnemyChoice -= Enemy.Weight;
+                        if (EnemyChoice <= 0)
+                        {
+                            Spawn(Enemy);
+                            break;
+                        }
                     }
                 }
             }
-            else if( /*Make sure all enemies are dead*/ false)
+            else if( EnemyList.m_items.Count == 0 )
             {
                 LevelEndEvent.Raise();
-            }
+                Active = false;
+            } else { Debug.Log("Bloop!"); }
         }
     }
 }

@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d86d1824cc13b4d95e36d0c45552c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyList: {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec, type: 2}
   Active: 0
   SpawnWidth: 1
   SpawnTimer: 1

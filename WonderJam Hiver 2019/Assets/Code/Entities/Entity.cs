@@ -39,7 +39,7 @@ public class Entity : MonoBehaviour
 		if(m_health) m_health.Init(this);
 	}
 
-	void OnEnable() 
+	public virtual void OnEnable() 
 	{ 
 		foreach(EntityRuntimeSet set in m_runtimeSets)
 			set.Add(this);
