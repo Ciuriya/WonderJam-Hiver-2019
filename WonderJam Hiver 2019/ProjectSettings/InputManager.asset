@@ -292,7 +292,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: 1ControllerVertical
     descriptiveName: 
@@ -308,7 +308,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: 1ControllerFire
     descriptiveName: 
@@ -324,7 +324,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: 2ControllerHorizontal
     descriptiveName: 
@@ -340,7 +340,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: 2ControllerVertical
     descriptiveName: 
@@ -356,7 +356,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: 2ControllerFire
     descriptiveName: 
@@ -372,7 +372,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: 3ControllerHorizontal
     descriptiveName: 
@@ -388,7 +388,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 4
+    joyNum: 3
   - serializedVersion: 3
     m_Name: 3ControllerVertical
     descriptiveName: 
@@ -404,7 +404,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 4
+    joyNum: 3
   - serializedVersion: 3
     m_Name: 3ControllerFire
     descriptiveName: 
@@ -420,7 +420,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 4
+    joyNum: 3
   - serializedVersion: 3
     m_Name: 4ControllerHorizontal
     descriptiveName: 
@@ -436,7 +436,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 5
+    joyNum: 4
   - serializedVersion: 3
     m_Name: 4ControllerVertical
     descriptiveName: 
@@ -452,7 +452,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 5
+    joyNum: 4
   - serializedVersion: 3
     m_Name: 4ControllerFire
     descriptiveName: 
@@ -468,7 +468,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 5
+    joyNum: 4
   - serializedVersion: 3
     m_Name: 5ControllerHorizontal
     descriptiveName: 
@@ -484,7 +484,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 6
+    joyNum: 5
   - serializedVersion: 3
     m_Name: 5ControllerVertical
     descriptiveName: 
@@ -500,7 +500,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 6
+    joyNum: 5
   - serializedVersion: 3
     m_Name: 5ControllerFire
     descriptiveName: 
@@ -516,7 +516,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 6
+    joyNum: 5
   - serializedVersion: 3
     m_Name: 6ControllerHorizontal
     descriptiveName: 
@@ -532,7 +532,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 7
+    joyNum: 6
   - serializedVersion: 3
     m_Name: 6ControllerVertical
     descriptiveName: 
@@ -548,7 +548,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 7
+    joyNum: 6
   - serializedVersion: 3
     m_Name: 6ControllerFire
     descriptiveName: 
@@ -564,7 +564,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 7
+    joyNum: 6
   - serializedVersion: 3
     m_Name: 7ControllerHorizontal
     descriptiveName: 
@@ -580,7 +580,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 8
+    joyNum: 7
   - serializedVersion: 3
     m_Name: 7ControllerVertical
     descriptiveName: 
@@ -596,7 +596,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 8
+    joyNum: 7
   - serializedVersion: 3
     m_Name: 7ControllerFire
     descriptiveName: 
@@ -612,7 +612,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 8
+    joyNum: 7
   - serializedVersion: 3
     m_Name: 8ControllerHorizontal
     descriptiveName: 
@@ -628,7 +628,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 9
+    joyNum: 8
   - serializedVersion: 3
     m_Name: 8ControllerVertical
     descriptiveName: 
@@ -644,7 +644,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 9
+    joyNum: 8
   - serializedVersion: 3
     m_Name: 8ControllerFire
     descriptiveName: 
@@ -660,4 +660,4 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 9
+    joyNum: 8
