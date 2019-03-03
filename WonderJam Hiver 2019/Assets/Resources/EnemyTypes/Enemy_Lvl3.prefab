@@ -197,8 +197,6 @@ MonoBehaviour:
   m_look: {fileID: 0}
   m_runtimeSets:
   - {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec, type: 2}
-  m_immunityRuntimeSet: {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec,
-    type: 2}
   m_deathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -222,7 +220,7 @@ MonoBehaviour:
   m_spawnCount: 2
   m_spawnList:
   - Weight: 64
-    Object: {fileID: 8136100163231584441, guid: 4032f045d94781645b1bed6ae74c1790,
+    Object: {fileID: 3303335789913996864, guid: 0897a299837c8a449983e8cd54cba473,
       type: 3}
     Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
   - Weight: 5
