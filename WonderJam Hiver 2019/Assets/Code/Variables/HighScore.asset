@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7692142af8ed58e4481e55e0985f12a7, type: 3}
   m_Name: HighScore
   m_EditorClassIdentifier: 
-  m_developerDescription: 
+  m_developerDescription: 'BUILD VALUE: RUNTIME SET JSON'
   m_value: 99999

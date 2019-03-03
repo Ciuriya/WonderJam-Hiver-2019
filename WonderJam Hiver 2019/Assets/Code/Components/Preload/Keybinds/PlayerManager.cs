@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
 	public List<GameObject> m_playerPrefabs;
 
 	public GameEvent m_gameStartTimerEvent;
+    public GameEvent m_gameOverNoMorePlayers;
+
+    public ValueManager m_lifeCountManager;
 
 	[HideInInspector] public List<Player> m_players;
 
@@ -22,12 +25,13 @@ public class PlayerManager : MonoBehaviour
 
 		m_players = new List<Player>();
 
-		foreach(InputUser user in Game.m_keybinds.GetAllActiveInputUsers())
+		foreach(InputUser user in Game.m_keybinds.GetAllActiveInputUsers(false))
 			AddPlayer(user);
 	}
 
 	public bool AddPlayer(InputUser p_user) 
-	{ 
+	{
+		if(SceneManager.GetActiveScene().name != "DevTest") return false;
 		if(m_players.Count == 4) return false;
 
 		int id = 0;
@@ -47,7 +51,7 @@ public class PlayerManager : MonoBehaviour
 
 		if(!player.Spawn()) 
 		{
-			player.Despawn();
+            Destroy(player.gameObject);
 			return false;
 		} 
 		else m_players.Add(player);
@@ -58,18 +62,24 @@ public class PlayerManager : MonoBehaviour
 		return true;
 	}
 
-	public bool RemovePlayer(InputUser p_user) 
+	public bool RemovePlayer(InputUser p_user, bool byDeath) 
 	{
-		if(m_players.Count == 1) return false;
+        if (!byDeath && m_players.Count == 1) return false;
 
 		Player player = m_players.Find(p => p.m_input.m_profile == p_user.m_profile && p.m_input.m_controllerId == p_user.m_controllerId);
 
 		if(player != null) 
-		{
+		{         
 			m_players.Remove(player);
-			player.Despawn();
+            Game.m_keybinds.m_inputUsers.Remove(player.m_input);
+            Destroy(player.gameObject);
 
-			return true;
+            if (!byDeath) m_lifeCountManager.UpdateValue(1);
+
+            if (m_players.Count == 0)
+                m_gameOverNoMorePlayers.Raise();
+
+            return true;
 		}
 
 		return false;

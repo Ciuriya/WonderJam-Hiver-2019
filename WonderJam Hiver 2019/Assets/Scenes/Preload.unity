@@ -365,7 +365,7 @@ MonoBehaviour:
     m_controllerId: 0
     m_useUnityAxis: 0
     m_unityAxis: 
-    m_useRawValues: 1
+    m_useRawValues: 0
     m_negativeKey: 0
     m_positiveKey: 27
     m_altNegativeKey: 0
@@ -670,6 +670,9 @@ MonoBehaviour:
   - {fileID: 3199361196401457142, guid: f25ccbbe16f25b0438b7616358434379, type: 3}
   m_gameStartTimerEvent: {fileID: 11400000, guid: 6d29f0779e4b1ca478e48518e3af6ff2,
     type: 2}
+  m_gameOverNoMorePlayers: {fileID: 11400000, guid: 81c86b79c005ecd47a872dfcd3976608,
+    type: 2}
+  m_lifeCountManager: {fileID: 11400000, guid: 9ad7f8df680d9a8428658bc5a0db6d1d, type: 2}
   m_players: []
 --- !u!1 &1745280917
 GameObject:
