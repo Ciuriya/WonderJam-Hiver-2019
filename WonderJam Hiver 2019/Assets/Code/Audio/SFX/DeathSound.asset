@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 949a8f2188d999d4896389bdeaabcf72, type: 3}
-  m_Name: ImmuneSystemTrigger
+  m_Name: DeathSound
   m_EditorClassIdentifier: 
   m_clips:
-  - {fileID: 8300000, guid: c9b66095e6184c74c9b07351551bb00c, type: 3}
+  - {fileID: 8300000, guid: fed85be6f1a808b49aaa501df957b787, type: 3}
   m_volume:
-    Min: 1
+    Min: 0.49949372
     Max: 1
   m_pitch:
-    Min: 1
-    Max: 1
+    Min: 0.9999999
+    Max: 0.9999999

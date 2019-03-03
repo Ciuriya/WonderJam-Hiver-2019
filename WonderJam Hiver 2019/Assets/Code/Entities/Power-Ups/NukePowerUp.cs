@@ -8,7 +8,7 @@ public class NukePowerUp : PowerUp
     // Start is called before the first frame update
     public override void Use(Shooter p_shooter)
     {
-        m_pickupAudioEvent.Play(p_shooter.m_audioSource);
+        m_pickupAudioEvent.Play(p_shooter.m_entity.m_audioSource);
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies)
         {

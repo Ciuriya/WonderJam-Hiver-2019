@@ -51,7 +51,8 @@ public class Enemy : Entity
     {
         if (m_canDie && !m_isDead)
         {
-            m_isDead = true;
+			m_deathSoundEvent.Play(); // not using audio source because it gets destroyed too fast
+			m_isDead = true;
 			Explosion();
             m_scoreManager.UpdateValue(m_points);
             Die();

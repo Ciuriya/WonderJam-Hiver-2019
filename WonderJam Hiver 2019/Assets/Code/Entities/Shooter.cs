@@ -16,7 +16,6 @@ public class Shooter : MonoBehaviour
 	[Tooltip("Event called when the entity shoots.")]
 	public UnityEvent m_shotEvent;
 
-	[HideInInspector] public AudioSource m_audioSource;
     [HideInInspector] public LinkedList<ShotPatternPowerUpWrapper> m_spPowerUps;
 	[HideInInspector] public Entity m_entity;
 	private Dictionary<ShotPattern, DataHolder> m_patterns;
@@ -26,9 +25,6 @@ public class Shooter : MonoBehaviour
 		m_entity = p_entity;
 		m_patterns = new Dictionary<ShotPattern, DataHolder>();
         m_spPowerUps = new LinkedList<ShotPatternPowerUpWrapper>();
-		m_audioSource = gameObject.AddComponent<AudioSource>();
-
-		Game.m_audio.AddAudioSource(m_audioSource, AudioCategories.SFX);
 	}
 
 	public bool CanShoot(ShotPattern p_pattern)

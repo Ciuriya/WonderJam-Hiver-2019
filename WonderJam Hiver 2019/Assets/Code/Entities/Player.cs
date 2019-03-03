@@ -124,4 +124,9 @@ public class Player : Entity
 		yield return new WaitForSeconds(m_spawnDelay);
 		Spawn();
 	}
+
+    public void AddLife()
+    {
+        m_lifeManager.UpdateValue(+1);
+    }
 }

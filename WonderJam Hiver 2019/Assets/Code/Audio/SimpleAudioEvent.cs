@@ -23,4 +23,9 @@ public class SimpleAudioEvent : AudioEvent
 
 		p_source.Play();
 	}
+
+	public void Play() 
+	{ 
+		AudioSource.PlayClipAtPoint(m_clips[Random.Range(0, m_clips.Length)], new Vector3(0, 0, 0), Random.Range(m_volume.Min, m_volume.Max));
+	}
 }
