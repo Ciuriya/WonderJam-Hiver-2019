@@ -19,7 +19,7 @@ public class Enemy : Entity
 
     public ValueManager m_scoreManager;
 
-    public Text Score;
+    public Text m_scoreText;
 
     public MoveStrategy m_strategy;
 
@@ -120,9 +120,11 @@ public class Enemy : Entity
 
     private void ShowScore()
     {
-        int score = m_scoreManager.m_value.Value;
-        //Score = GameObject.Find("Score").GetComponent<Text>();
-        Score.text = score.ToString();
-        Instantiate(Score, gameObject.transform.position, gameObject.transform.rotation);
+        int score = m_points;
+        m_scoreText.text = score.ToString();
+        GameObject scorePopUp = Instantiate(m_scoreText.gameObject, GameObject.Find("HUD Canvas").transform);
+        scorePopUp.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        Debug.Log(m_scoreText.text);
+        Debug.Log(scorePopUp);
     }
 }

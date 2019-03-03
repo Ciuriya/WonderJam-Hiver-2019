@@ -12,14 +12,14 @@ public class ScorePopup : MonoBehaviour
 
     private void Update()
     {
-        float speed = 90f;
+        float speed = 15f;
         float newY = Time.deltaTime * speed;
         transform.Translate(0, newY, 0);
     }
 
     IEnumerator PopUp()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(1f);
         Destroy(gameObject);
     }
 

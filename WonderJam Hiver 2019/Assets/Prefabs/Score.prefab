@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 7461514837426577706}
   - component: {fileID: 1042719736341592699}
   - component: {fileID: 6801117961667936599}
+  - component: {fileID: 5801497523539875987}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7461514837426577706
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79,3 +80,15 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 100
+--- !u!114 &5801497523539875987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6727553020340758647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59d116e6b536d94f9220d91b62b15a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
