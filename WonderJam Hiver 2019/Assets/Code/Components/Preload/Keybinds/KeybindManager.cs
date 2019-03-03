@@ -3,14 +3,17 @@ using System.Collections.Generic;
 
 public class KeybindManager : MonoBehaviour 
 {
+	public List<Keybind> m_playerEntryKeys;
 	public List<Keybind> m_mouseAndKeyboard;
+	public List<Keybind> m_controller;
 
-	[HideInInspector] public string m_currentProfile;
+	[HideInInspector] public List<InputUser> m_inputUsers;
 	[HideInInspector] public bool m_blockAllKeybinds;
-	[HideInInspector] public Entity m_entity;
 
 	void OnEnable() 
 	{
+		m_inputUsers = new List<InputUser>();
+
 		LoadKeybinds();
 
 		foreach(Keybind keybind in GetAllKeybinds())
@@ -29,11 +32,17 @@ public class KeybindManager : MonoBehaviour
 		SimpleInput.OnUpdate -= OnKeybindUpdate;
 	}
 
-	public List<Keybind> GetKeybinds() 
+	public List<InputUser> GetAllActiveInputUsers() 
 	{ 
-		switch(m_currentProfile) 
+		return m_inputUsers;
+	}
+
+	public List<Keybind> GetKeybinds(InputUser p_user) 
+	{ 
+		switch(p_user.m_profile) 
 		{
 			case "mouseAndKB": return m_mouseAndKeyboard;
+			case "controller": return m_controller;
 			default: return new List<Keybind>();
 		}
 	}
@@ -49,9 +58,8 @@ public class KeybindManager : MonoBehaviour
 
 	private void LoadKeybinds() 
 	{ 
-		m_currentProfile = PlayerPrefs.GetString("Keybind-CurrentProfile", "mouseAndKB");
-
-		foreach(Keybind keybind in GetAllKeybinds()) { 
+		foreach(Keybind keybind in GetAllKeybinds())
+		{ 
 			string name = "Keybind-" + keybind.m_axis.Key.Replace(" ", "_");
 
 			if(PlayerPrefs.HasKey(name + "Positive"))
@@ -70,14 +78,7 @@ public class KeybindManager : MonoBehaviour
 
 	private void SaveKeybinds() 
 	{
-		SaveCurrentProfile();
-
 		foreach(Keybind keybind in GetAllKeybinds()) SaveKeybind(keybind);
-	}
-
-	public void SaveCurrentProfile() 
-	{
-		PlayerPrefs.SetString("Keybind-CurrentProfile", m_currentProfile);
 	}
 
 	public void SaveKeybind(Keybind p_keybind) 
@@ -92,20 +93,25 @@ public class KeybindManager : MonoBehaviour
 
 	void Update() 
 	{ 
-		foreach(Keybind keybind in GetKeybinds()) 
-		{ 
-			// update runs right after OnKeybindUpdate, so we let it stay pressed/released until next frame
-			if(keybind.m_pressedLastFrame) 
-			{ 
-				keybind.m_pressedThisFrame = false;
-				keybind.m_pressedLastFrame = false;
-			} else if(keybind.m_pressedThisFrame) keybind.m_pressedLastFrame = true;			
-			
-			if(keybind.m_releasedLastFrame) 
-			{ 
-				keybind.m_releasedThisFrame = false;
-				keybind.m_releasedLastFrame = false;
-			} else if(keybind.m_releasedThisFrame) keybind.m_releasedLastFrame = true;
+		foreach(InputUser user in m_inputUsers) 
+		{
+			foreach(Keybind keybind in GetKeybinds(user))
+			{
+				// update runs right after OnKeybindUpdate, so we let it stay pressed/released until next frame
+				if(keybind.m_pressedLastFrame)
+				{
+					keybind.m_pressedThisFrame = false;
+					keybind.m_pressedLastFrame = false;
+				}
+				else if(keybind.m_pressedThisFrame) keybind.m_pressedLastFrame = true;
+
+				if(keybind.m_releasedLastFrame)
+				{
+					keybind.m_releasedThisFrame = false;
+					keybind.m_releasedLastFrame = false;
+				}
+				else if(keybind.m_releasedThisFrame) keybind.m_releasedLastFrame = true;
+			}
 		}
 	}
 
@@ -113,43 +119,72 @@ public class KeybindManager : MonoBehaviour
 	{ 
 		if(m_blockAllKeybinds) return;
 
-		foreach(Keybind keybind in GetKeybinds()) 
+		foreach(Keybind keybind in m_playerEntryKeys) 
 		{
-			if(Input.GetKey(keybind.m_negativeKey) || Input.GetKey(keybind.m_altNegativeKey))
-				keybind.m_axis.value = -1f;
-			else if(Input.GetKey(keybind.m_positiveKey) || Input.GetKey(keybind.m_altPositiveKey))
-				keybind.m_axis.value = 1f;
-			else keybind.m_axis.value = 0f;
+			InputUser user = new InputUser(keybind.m_profile, keybind.m_controllerSpecific ? keybind.m_controllerId : 0);
+			bool exists = m_inputUsers.Exists(i => i.m_profile == user.m_profile && i.m_controllerId == user.m_controllerId);
 
-			if(Input.GetKeyDown(keybind.m_negativeKey) || Input.GetKeyDown(keybind.m_altNegativeKey) || 
-				Input.GetKeyDown(keybind.m_positiveKey) || Input.GetKeyDown(keybind.m_altPositiveKey))
-				keybind.m_pressedThisFrame = true;
+			if(Input.GetKeyDown(keybind.m_positiveKey)) 
+			{
+				if(!exists && Game.m_players.AddPlayer(user)) m_inputUsers.Add(user);
+			} 
+			else if(Input.GetKeyDown(keybind.m_negativeKey)) 	
+			{
+				if(exists && Game.m_players.RemovePlayer(user)) 
+					m_inputUsers.Remove(m_inputUsers.Find(i => i.m_profile == user.m_profile && i.m_controllerId == user.m_controllerId));
+			}
+		}
 
-			if (Input.GetKeyUp(keybind.m_negativeKey) || Input.GetKeyUp(keybind.m_altNegativeKey) ||
-				Input.GetKeyUp(keybind.m_positiveKey) || Input.GetKeyUp(keybind.m_altPositiveKey))
-				keybind.m_releasedThisFrame = true;
+		foreach(InputUser user in m_inputUsers)
+		{
+			foreach(Keybind keybind in GetKeybinds(user))
+			{
+				if(Input.GetKey(keybind.m_negativeKey) || Input.GetKey(keybind.m_altNegativeKey))
+					keybind.m_axis.value = -1f;
+				else if(Input.GetKey(keybind.m_positiveKey) || Input.GetKey(keybind.m_altPositiveKey))
+					keybind.m_axis.value = 1f;
+				else keybind.m_axis.value = 0f;
+
+				if(Input.GetKeyDown(keybind.m_negativeKey) || Input.GetKeyDown(keybind.m_altNegativeKey) ||
+					Input.GetKeyDown(keybind.m_positiveKey) || Input.GetKeyDown(keybind.m_altPositiveKey))
+					keybind.m_pressedThisFrame = true;
+
+				if(Input.GetKeyUp(keybind.m_negativeKey) || Input.GetKeyUp(keybind.m_altNegativeKey) ||
+					Input.GetKeyUp(keybind.m_positiveKey) || Input.GetKeyUp(keybind.m_altPositiveKey))
+					keybind.m_releasedThisFrame = true;
+			}
 		}
 	}
 
-	public float GetAxis(string p_keybind) 
+	public float GetAxis(string p_keybind, InputUser p_user) 
 	{ 
-		if(GetKeybinds().Find(k => k.m_axis.Key == p_keybind).m_useRawValues)
-			return SimpleInput.GetAxisRaw(p_keybind);
-		else return SimpleInput.GetAxis(p_keybind);
+		Keybind keybind = GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind);
+		
+		if(keybind.m_useUnityAxis && p_user.m_profile == "controller")
+			return keybind.m_useRawValues ? Input.GetAxisRaw(keybind.GetUpdatedUnityAxis(p_user.m_controllerId)) :
+										    Input.GetAxis(keybind.GetUpdatedUnityAxis(p_user.m_controllerId));
+		else return keybind.m_axis.value;
 	}
 
-	public bool GetButton(string p_keybind) 
-	{ 
-		return GetKeybinds().Find(k => k.m_axis.Key == p_keybind).m_axis.value == 1f;
+	public bool GetButton(string p_keybind, InputUser p_user) 
+	{
+		Keybind keybind = GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind);
+		float axisValue = keybind.m_axis.value;
+
+		if(keybind.m_useUnityAxis && p_user.m_profile == "controller")
+			axisValue = keybind.m_useRawValues ? Input.GetAxisRaw(keybind.GetUpdatedUnityAxis(p_user.m_controllerId)) :
+												 Input.GetAxis(keybind.GetUpdatedUnityAxis(p_user.m_controllerId));
+
+		return axisValue == 1f;
 	}
 
-	public bool GetButtonDown(string p_keybind) 
+	public bool GetButtonDown(string p_keybind, InputUser p_user) 
 	{ 
-		return GetKeybinds().Find(k => k.m_axis.Key == p_keybind).m_pressedThisFrame;
+		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind).m_pressedThisFrame;
 	}	
 	
-	public bool GetButtonUp(string p_keybind) 
+	public bool GetButtonUp(string p_keybind, InputUser p_user) 
 	{ 
-		return GetKeybinds().Find(k => k.m_axis.Key == p_keybind).m_releasedThisFrame;
+		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind).m_releasedThisFrame;
 	}
 }
