@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
 
 		m_players = new List<Player>();
 
-		foreach(InputUser user in Game.m_keybinds.GetAllActiveInputUsers())
+		foreach(InputUser user in Game.m_keybinds.GetAllActiveInputUsers(false))
 			AddPlayer(user);
 	}
 

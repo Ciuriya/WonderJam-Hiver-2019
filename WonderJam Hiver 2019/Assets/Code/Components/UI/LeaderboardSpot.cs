@@ -35,10 +35,11 @@ public class LeaderboardSpot : MonoBehaviour
 	}
 
 	public void FinishEditing() 
-	{ 
+	{
+		m_score.Name = m_nameText.text;
+
 		if(m_score.Name.Length > 0) 
 		{
-			m_score.Name = m_nameText.text;
 			m_loader.AddScore(m_score, m_local);
 		}
 	}

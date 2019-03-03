@@ -365,7 +365,7 @@ MonoBehaviour:
     m_controllerId: 0
     m_useUnityAxis: 0
     m_unityAxis: 
-    m_useRawValues: 1
+    m_useRawValues: 0
     m_negativeKey: 0
     m_positiveKey: 27
     m_altNegativeKey: 0

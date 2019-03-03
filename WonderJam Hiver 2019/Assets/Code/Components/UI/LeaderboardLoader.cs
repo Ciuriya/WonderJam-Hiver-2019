@@ -66,15 +66,11 @@ public class LeaderboardLoader : MonoBehaviour
 	public List<LeaderboardScore> GetLocalScores() 
 	{
 		List<LeaderboardScore> scores = new List<LeaderboardScore>();
-		int loaded = 0;
 		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/LocalLeaderboard.JSON");
 
 		for(string json = Reader.ReadLine(); json != null; json = Reader.ReadLine())
 		{
-			if(loaded >= m_loadedAmount) break;
-
 			scores.Add(JsonUtility.FromJson<LeaderboardScore>(json));
-			loaded++;
 		}
 
 		Reader.Close();

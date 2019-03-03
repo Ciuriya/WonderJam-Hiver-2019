@@ -32,8 +32,15 @@ public class KeybindManager : MonoBehaviour
 		SimpleInput.OnUpdate -= OnKeybindUpdate;
 	}
 
-	public List<InputUser> GetAllActiveInputUsers() 
-	{ 
+	public List<InputUser> GetAllActiveInputUsers(bool p_needDefault) 
+	{
+		if(p_needDefault && m_inputUsers.Count == 0) 
+		{
+			List<InputUser> userList = new List<InputUser>();
+			userList.Add(new InputUser("mouseAndKB", 0));
+
+			return userList;
+		}
 		return m_inputUsers;
 	}
 
@@ -93,7 +100,7 @@ public class KeybindManager : MonoBehaviour
 
 	void Update() 
 	{ 
-		foreach(InputUser user in m_inputUsers) 
+		foreach(InputUser user in GetAllActiveInputUsers(true)) 
 		{
 			foreach(Keybind keybind in GetKeybinds(user))
 			{
@@ -135,7 +142,7 @@ public class KeybindManager : MonoBehaviour
 			}
 		}
 
-		foreach(InputUser user in m_inputUsers)
+		foreach(InputUser user in GetAllActiveInputUsers(true))
 		{
 			foreach(Keybind keybind in GetKeybinds(user))
 			{
@@ -180,11 +187,11 @@ public class KeybindManager : MonoBehaviour
 
 	public bool GetButtonDown(string p_keybind, InputUser p_user) 
 	{ 
-		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind).m_pressedThisFrame;
+		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind && k.m_profile == p_user.m_profile).m_pressedThisFrame;
 	}	
 	
 	public bool GetButtonUp(string p_keybind, InputUser p_user) 
 	{ 
-		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind).m_releasedThisFrame;
+		return GetKeybinds(p_user).Find(k => k.m_axis.Key == p_keybind && k.m_profile == p_user.m_profile).m_releasedThisFrame;
 	}
 }
