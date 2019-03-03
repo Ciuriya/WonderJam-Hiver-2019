@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 978085411}
   m_Layer: 9
   m_Name: NukePowerUp
-  m_TagString: Untagged
+  m_TagString: Power Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -225,9 +225,13 @@ MonoBehaviour:
     Object: {fileID: 7245735128445158697, guid: 9bd7d664fddbc5640b69359f5d6e3ebd,
       type: 3}
     Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
-  - Weight: 10
+  - Weight: 5
     Object: {fileID: 0}
     Strategy: {fileID: 0}
+  - Weight: 5
+    Object: {fileID: 5181378714745732843, guid: 85f9f041e9bed494eb4eb05423ec924e,
+      type: 3}
+    Strategy: {fileID: 11400000, guid: b488dfbaf935a6d408b8cf529b717c4f, type: 2}
   m_spawnFromPosition: {x: 0, y: 0, z: 0}
   m_spawnTime: 0
 --- !u!114 &3910479968962036258
