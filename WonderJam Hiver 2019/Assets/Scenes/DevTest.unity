@@ -213,7 +213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597814381
 GameObject:
@@ -309,6 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864345040}
   - component: {fileID: 864345039}
+  - component: {fileID: 864345041}
   m_Layer: 0
   m_Name: Spawner boi
   m_TagString: Untagged
@@ -328,9 +329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d86d1824cc13b4d95e36d0c45552c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyList: {fileID: 11400000, guid: 3a29bd0e254949b48b246fad24d90bec, type: 2}
   Active: 0
   SpawnWidth: 1
+  SpawnTimer: 1
   LevelPointsAvailable: 0
+  RatingIncreaseRate: 0.2
+  LevelEndEvent: {fileID: 11400000, guid: a7fdd5947afa3dd4d893738cabea694b, type: 2}
 --- !u!4 &864345040
 Transform:
   m_ObjectHideFlags: 0
@@ -345,6 +350,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &864345041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864345038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3bc4d8b2852af4b96e373b6c43b18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: ea4ad460c6677cf49a2c12ecc6b4950d, type: 2}
+  m_responseDelay: 0
+  m_response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 864345039}
+        m_MethodName: StartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1115380325
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1476291562
 GameObject:
@@ -802,7 +837,7 @@ Transform:
   - {fileID: 1203181533}
   - {fileID: 1134006345}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602536085 stripped
 GameObject:
