@@ -16,5 +16,10 @@ public class BottomWallChecker : MonoBehaviour
             m_OnEnemyPassed.Raise();
             Destroy(collision.gameObject);
         }
+
+        if(collision.collider.tag == "Power Up")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
