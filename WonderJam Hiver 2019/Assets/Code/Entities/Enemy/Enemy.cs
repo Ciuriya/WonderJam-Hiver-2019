@@ -47,6 +47,7 @@ public class Enemy : Entity
         if (m_canDie && !m_isDead)
         {
             m_isDead = true;
+            Explosion();
             m_scoreManager.UpdateValue(m_points);
             Die();
         }
