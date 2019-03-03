@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7ef3c75f5c63e49ba3a4b51e968ce3, type: 3}
   m_Name: BurstPattern
   m_EditorClassIdentifier: 
-  m_projectile: {fileID: 733175078221444750, guid: 199e9e2e663ee46498cabce6d5486200,
+  m_projectile: {fileID: 733175078221444750, guid: 6d24a8d8d468a4a49853a9e9b99765d0,
     type: 3}
   m_projectileInfo: {fileID: 11400000, guid: 59384be8db51d99418dba46d3bf88f69, type: 2}
   m_behaviours:
