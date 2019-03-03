@@ -14,7 +14,6 @@ public class Player : Entity
 
     public ValueManager m_lifeManager;
 
-
     public override void Start()
 	{
 		base.Start();
@@ -53,6 +52,7 @@ public class Player : Entity
     //Override pour eviter que le player devienne Dead (On ne peut plus le tuer s'il est dead)
     public override void Kill()
     {
+        Explosion();
         m_lifeManager.UpdateValue(-1);
         Die();
     }

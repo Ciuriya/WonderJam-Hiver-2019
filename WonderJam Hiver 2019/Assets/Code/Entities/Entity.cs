@@ -20,6 +20,9 @@ public class Entity : MonoBehaviour
 	[Tooltip("Event called when the entity dies")]
 	public UnityEvent m_deathEvent;
 
+	[Tooltip("Particle Effect to be used when the entity dies")]
+    public GameObject m_particleSystem;
+
     [HideInInspector] public SpriteRenderer m_renderer;
 	[HideInInspector] public Shooter m_shooter;
 	[HideInInspector] public CollisionRelay m_collisionRelay;
@@ -68,6 +71,7 @@ public class Entity : MonoBehaviour
 	{
 		if(m_canDie && !m_isDead) 
 		{
+		    Explosion();
 			m_isDead = true;
 			Die();
 		}
@@ -78,5 +82,12 @@ public class Entity : MonoBehaviour
 		m_deathEvent.Invoke();
         Destroy(gameObject);
 	}
+
+	//Play an explosion particle effect for the entity
+    protected virtual void Explosion()
+    {
+        if(m_particleSystem != null)
+            Instantiate(m_particleSystem, transform.position, transform.rotation);
+    }
 }
 
