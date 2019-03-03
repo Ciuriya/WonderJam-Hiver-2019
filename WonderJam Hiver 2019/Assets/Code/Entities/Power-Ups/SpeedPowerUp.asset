@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec046773d0e5da43b095b7804bbff81, type: 3}
   m_Name: SpeedPowerUp
   m_EditorClassIdentifier: 
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 5325306727551216355, guid: 15e7106db0fb5744ca4277695a8e602a, type: 3}
   m_pickupAudioEvent: {fileID: 11400000, guid: c47a310438c52c54b92104ca156f4159, type: 2}
   player: {fileID: 0}
