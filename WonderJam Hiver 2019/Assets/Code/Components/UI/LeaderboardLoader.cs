@@ -122,7 +122,7 @@ public class LeaderboardLoader : MonoBehaviour
 		DeletePendingScore();
 
 		if(onlineChange) 
-			StartCoroutine(Game.m_leaderNetHandler.UploadV2(Game.m_leaderNetHandler.ConvertFileToJSON()));
+			StartCoroutine(Game.m_leaderNetHandler.UploadV2(Game.m_leaderNetHandler.ConvertFileToJSON(), 1));
 	}
 
 	public void OverwriteOnlineLeaderboards(string p_jsonData) 

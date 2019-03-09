@@ -8,7 +8,7 @@ public class Player : Entity
 	[HideInInspector] public PlayerController m_playerController;
 
     [Tooltip("The time for which the player is invincible, in seconds")]
-    [Range(0, 60)] public float m_InvincibilityTime = 3f;
+    [Range(0, 60)] public float m_InvincibilityTime = 6f;
     [Range(0, 60)] public float m_RespawnInvulnerability = 1f;
 
     [Tooltip("The time for which the player have a speed boost, in seconds")]

@@ -41,7 +41,7 @@ public class LeaderboardNetworkHandler : MonoBehaviour
 		socket.Close();
 	}
 
-	public IEnumerator UploadV2(string p_jsonData) 
+	public IEnumerator UploadV2(string p_jsonData, int p_retries) 
 	{
 		TcpClient client = new TcpClient();
 		client.Connect(new IPEndPoint(IPAddress.Parse("104.236.227.95"), 1234));
@@ -58,6 +58,10 @@ public class LeaderboardNetworkHandler : MonoBehaviour
 		yield return new WaitForSeconds(0.2f);
 
 		client.Close();
+
+		yield return new WaitForSeconds(0.5f);
+
+		if(p_retries < 5) StartCoroutine(UploadV2(p_jsonData, p_retries + 1));
 	}
 
 	public string FetchBlocking() 

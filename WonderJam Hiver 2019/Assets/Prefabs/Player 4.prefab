@@ -128,7 +128,7 @@ MonoBehaviour:
     m_profile: 
     m_controllerId: 0
   m_playerController: {fileID: 0}
-  m_InvincibilityTime: 3
+  m_InvincibilityTime: 6
   m_RespawnInvulnerability: 1
   m_SpeedBoostTime: 3
   m_SpeedBoost: 3
