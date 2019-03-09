@@ -32,7 +32,7 @@ public class HighscoreLoader : MonoBehaviour
 		List<LeaderboardScore> scores = new List<LeaderboardScore>();
 		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/" + (p_local ? "Local" : "Online") + "Leaderboard.JSON");
 
-		for (string json = Reader.ReadLine(); json != null; json = Reader.ReadLine())
+		for (string json = Reader.ReadLine(); json != null && json.Length > 0; json = Reader.ReadLine())
 		{
 			scores.Add(JsonUtility.FromJson<LeaderboardScore>(json));
 		}

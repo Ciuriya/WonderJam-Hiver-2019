@@ -27,7 +27,7 @@ public class LeaderboardNetworkHandler : MonoBehaviour
 		return full;
 	}
 
-	public void Upload(string p_jsonData) 
+	public void Upload(string p_jsonData, int p_retries) 
 	{ 
 		Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 		IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse("104.236.227.95"), 1234);
@@ -37,31 +37,17 @@ public class LeaderboardNetworkHandler : MonoBehaviour
 		string data = "JSONHIGHSCORE---" + p_jsonData;
 		socket.Send(Encoding.UTF8.GetBytes(data));
 
+		byte[] buff = new byte[1024];
+		socket.Receive(buff);
+
 		socket.Disconnect(false);
 		socket.Close();
-	}
 
-	public IEnumerator UploadV2(string p_jsonData, int p_retries) 
-	{
-		TcpClient client = new TcpClient();
-		client.Connect(new IPEndPoint(IPAddress.Parse("104.236.227.95"), 1234));
+		string response = Encoding.UTF8.GetString(buff);
+		Debug.Log("Received: " + response);
 
-		NetworkStream stream = client.GetStream();
-
-		if(stream.CanWrite) 
-		{
-			string data = "JSONHIGHSCORE---" + p_jsonData;
-			byte[] buff = Encoding.UTF8.GetBytes(data);
-			stream.Write(buff, 0, buff.Length);
-		}
-
-		yield return new WaitForSeconds(0.2f);
-
-		client.Close();
-
-		yield return new WaitForSeconds(0.5f);
-
-		if(p_retries < 5) StartCoroutine(UploadV2(p_jsonData, p_retries + 1));
+		if(!response.StartsWith("OK") && p_retries < 10)
+			Upload(p_jsonData, p_retries + 1);
 	}
 
 	public string FetchBlocking() 
