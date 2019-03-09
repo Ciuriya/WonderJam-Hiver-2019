@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour
 		if(p_scene.name != "DevTest") return;
 
 		m_players = new List<Player>();
+		MostPlayers = 0;
 
 		foreach(InputUser user in Game.m_keybinds.GetAllActiveInputUsers(false))
 			AddPlayer(user);

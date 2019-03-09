@@ -88,9 +88,11 @@ public class Player : Entity
     //Override pour eviter que le player devienne Dead (On ne peut plus le tuer s'il est dead)
     public override void Kill()
     {
-        Explosion();
-
-        Die();
+		if(m_canDie) 
+		{
+			Explosion();
+			Die();
+		}
     }
 
     protected override void Die()
@@ -98,8 +100,11 @@ public class Player : Entity
 		m_deathSoundEvent.Play();
 
 		if (m_lifeManager.m_value.Value > 0)
+		{
+			m_shooter.StopShooting();
             StartCoroutine(RespawnDelay());
-        else
+		} 
+		else
             Game.m_players.RemovePlayer(m_input, true);
     }
 
