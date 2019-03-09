@@ -70,3 +70,7 @@ Thumbs.db
 WonderJam\ Hiver\ 2019/.vs/
 
 WonderJam Hiver 2019/\.vs/
+
+WonderJam Hiver 2019/Assets/Data/*
+!WonderJam Hiver 2019/Assets/Data/EnemyDictionary.JSON
+!WonderJam Hiver 2019/Assets/Data/EnemyDictionary.JSON/meta
