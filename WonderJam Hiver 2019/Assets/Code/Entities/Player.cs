@@ -20,9 +20,10 @@ public class Player : Entity
 	[Tooltip("The spawn delay between deaths")]
 	[Range(0, 2)] public float m_spawnDelay = 0.25f;
 
-    public ValueManager m_lifeManager;
+	public Flashing m_invincibilityFlasher;
+	public Flashing m_damageFlasher;
 
-    private Flashing flashing;
+    public ValueManager m_lifeManager;
 
     public override void Start()
 	{
@@ -30,9 +31,6 @@ public class Player : Entity
 
 		m_playerController = GetComponent<PlayerController>();
 		m_playerController.m_player = this;
-
-        flashing = GetComponent<Flashing>();
-
     }
 
 	void Update() 
@@ -77,7 +75,7 @@ public class Player : Entity
             m_lifeManager.UpdateValue(-1);
             StartCoroutine(Invincibility(m_RespawnInvulnerability));
 
-            if (flashing) flashing.Flash();
+            if (m_damageFlasher) m_damageFlasher.Flash();
 
             return true;
         }
@@ -116,7 +114,15 @@ public class Player : Entity
     public IEnumerator Invincibility()
     {
         m_canDie = false;
-        yield return new WaitForSeconds(m_InvincibilityTime);
+
+		if(m_invincibilityFlasher)
+		{
+			m_invincibilityFlasher.duration = m_InvincibilityTime;
+			m_invincibilityFlasher.Flash();
+		}
+
+		yield return new WaitForSeconds(m_InvincibilityTime);
+
         m_canDie = true;
     }
 

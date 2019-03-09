@@ -85,8 +85,13 @@ public class LeaderboardLoader : MonoBehaviour
 
 			for(int i = 1; i < individualScores.Length; i++) 
 			{ 
-				scores.Add(JsonUtility.FromJson<LeaderboardScore>("{" + individualScores[i].Replace("\n", "") + "}\n"));
-				fixedJson += "{" + individualScores[i].Replace("\n", "") + "}\n";
+				string indivScore = individualScores[i].Replace("\n", "");
+
+				if(!indivScore.Contains("{")) indivScore = "{" + indivScore;
+				if(!indivScore.Contains("}")) indivScore = indivScore + "}";
+
+				scores.Add(JsonUtility.FromJson<LeaderboardScore>(indivScore + "\n"));
+				fixedJson += indivScore + "\n";
 			}
 		}
 
@@ -122,7 +127,7 @@ public class LeaderboardLoader : MonoBehaviour
 		DeletePendingScore();
 
 		if(onlineChange) 
-			StartCoroutine(Game.m_leaderNetHandler.UploadV2(Game.m_leaderNetHandler.ConvertFileToJSON(), 1));
+			Game.m_leaderNetHandler.Upload(Game.m_leaderNetHandler.ConvertFileToJSON(), 1);
 	}
 
 	public void OverwriteOnlineLeaderboards(string p_jsonData) 

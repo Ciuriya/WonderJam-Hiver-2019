@@ -29,12 +29,7 @@ public class StateController : MonoBehaviour
 
 	void Update() 
 	{ 
-		if(m_look) m_currentState.UpdateState(this);
-	}
-
-	void OnDisable() 
-	{ 
-		Resources.UnloadAsset(m_currentState);
+		m_currentState.UpdateState(this);
 	}
 
 	public bool TransitionToState(State p_nextState) 
