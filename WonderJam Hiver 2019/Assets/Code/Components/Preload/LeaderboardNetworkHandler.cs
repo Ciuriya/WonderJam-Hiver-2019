@@ -7,12 +7,10 @@ using System.Text;
 
 public class LeaderboardNetworkHandler : MonoBehaviour
 {
-	public void Test()
+	public void Awake()
 	{
-		Debug.Log(FetchBlocking());
-		//StartCoroutine(Upload(ConvertFileToJSON()));
-		UploadV2(ConvertFileToJSON());
-		Debug.Log(FetchBlocking());
+		FetchBlocking();
+		ConvertFileToJSON();
 	}
 
 	public string ConvertFileToJSON() 
@@ -43,7 +41,7 @@ public class LeaderboardNetworkHandler : MonoBehaviour
 		socket.Close();
 	}
 
-	public void UploadV2(string p_jsonData) 
+	public IEnumerator UploadV2(string p_jsonData) 
 	{
 		TcpClient client = new TcpClient();
 		client.Connect(new IPEndPoint(IPAddress.Parse("104.236.227.95"), 1234));
@@ -56,6 +54,8 @@ public class LeaderboardNetworkHandler : MonoBehaviour
 			byte[] buff = Encoding.UTF8.GetBytes(data);
 			stream.Write(buff, 0, buff.Length);
 		}
+
+		yield return new WaitForSeconds(0.2f);
 
 		client.Close();
 	}
