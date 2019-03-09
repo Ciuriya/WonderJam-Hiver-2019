@@ -15,9 +15,15 @@ public class LeaderboardNetworkHandler : MonoBehaviour
 
 	public string ConvertFileToJSON() 
 	{
-		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/OnlineLeaderboard.JSON");
+        System.IO.StreamReader Reader;
+        string Path = Application.dataPath + "/Data/OnlineLeaderboard.JSON";
+        if (!System.IO.File.Exists(Path))
+        {
+            return "";
+        }
+        Reader = new System.IO.StreamReader(Path);
 
-		string full = "";
+        string full = "";
 
 		for(string json = Reader.ReadLine(); json != null; json = Reader.ReadLine())
 		{

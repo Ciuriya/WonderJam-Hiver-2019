@@ -121,11 +121,15 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         List<EnemyDictEntry> EnemyDict = new List<EnemyDictEntry>();
+
         //Load the enemy data here
-        System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/EnemyDictionary.JSON");
-        for (string JSON = Reader.ReadLine(); JSON != null; JSON = Reader.ReadLine())
+        TextAsset Text = Resources.Load<TextAsset>("EnemyDictionary");
+        string TextString = Text.text;
+        string[] TextArray = TextString.Split('\n');
+        Debug.Log(TextArray.Length);
+        foreach(string line in TextArray)
         {
-            EnemyDict.Add(JsonUtility.FromJson<EnemyDictEntry>(JSON));
+            EnemyDict.Add(JsonUtility.FromJson<EnemyDictEntry>(line));
         }
         
         //Order the list by the number of points it has

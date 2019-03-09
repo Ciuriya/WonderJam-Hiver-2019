@@ -30,7 +30,13 @@ public class HighscoreLoader : MonoBehaviour
 	private List<LeaderboardScore> GetScores(bool p_local) 
 	{
 		List<LeaderboardScore> scores = new List<LeaderboardScore>();
-		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/" + (p_local ? "Local" : "Online") + "Leaderboard.JSON");
+        System.IO.StreamReader Reader;
+        string Path = Application.dataPath + "/Data/" + (p_local ? "Local" : "Online") + "Leaderboard.JSON";
+        if (!System.IO.File.Exists(Path))
+        {
+            return scores;
+        }
+        Reader = new System.IO.StreamReader(Path);
 
 		for (string json = Reader.ReadLine(); json != null && json.Length > 0; json = Reader.ReadLine())
 		{

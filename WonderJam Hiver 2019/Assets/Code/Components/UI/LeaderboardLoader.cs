@@ -60,7 +60,13 @@ public class LeaderboardLoader : MonoBehaviour
 	public List<LeaderboardScore> GetLocalScores() 
 	{
 		List<LeaderboardScore> scores = new List<LeaderboardScore>();
-		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/LocalLeaderboard.JSON");
+        System.IO.StreamReader Reader;
+        string Path = Application.dataPath + "/Data/LocalLeaderboard.JSON";
+        if (!System.IO.File.Exists(Path))
+        {
+            return scores;
+        }
+        Reader = new System.IO.StreamReader(Path);
 
 		for(string json = Reader.ReadLine(); json != null; json = Reader.ReadLine())
 		{
@@ -109,8 +115,21 @@ public class LeaderboardLoader : MonoBehaviour
 		online.Sort(CompareScores);
 		offline.Sort(CompareScores);
 
-		System.IO.StreamWriter Online = new System.IO.StreamWriter(Application.dataPath + "/Data/OnlineLeaderboard.JSON", true);
-		System.IO.StreamWriter Local = new System.IO.StreamWriter(Application.dataPath + "/Data/LocalLeaderboard.JSON", true);
+        System.IO.StreamWriter Online;
+        string OnlinePath = Application.dataPath + "/Data/OnlineLeaderboard.JSON";
+        if (!System.IO.File.Exists(OnlinePath))
+        {
+            System.IO.File.Create(OnlinePath).Dispose();
+        }
+        Online = new System.IO.StreamWriter(OnlinePath, true);
+
+        System.IO.StreamWriter Local;
+        string LocalPath = Application.dataPath + "/Data/LocalLeaderboard.JSON";
+        if (!System.IO.File.Exists(LocalPath))
+        {
+            System.IO.File.Create(LocalPath).Dispose();
+        }
+        Local = new System.IO.StreamWriter(LocalPath, true);
 
 		if(online.Count < m_loadedAmount || online[m_loadedAmount - 1].Score < p_score.Score) // if we make it in top x
 		{
@@ -132,7 +151,13 @@ public class LeaderboardLoader : MonoBehaviour
 
 	public void OverwriteOnlineLeaderboards(string p_jsonData) 
 	{
-		System.IO.StreamWriter Writer = new System.IO.StreamWriter(Application.dataPath + "/Data/OnlineLeaderboard.JSON", false);
+        System.IO.StreamWriter Writer;
+        string Path = Application.dataPath + "/Data/OnlineLeaderboard.JSON";
+        if (!System.IO.File.Exists(Path))
+        {
+            System.IO.File.Create(Path).Dispose();
+        }
+        Writer = new System.IO.StreamWriter(Path, false);
 
 		Writer.Write(p_jsonData);
 		Writer.Close();
@@ -140,7 +165,13 @@ public class LeaderboardLoader : MonoBehaviour
 
 	public LeaderboardScore GetPendingScore() 
 	{
-		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/PendingScores.JSON");
+        System.IO.StreamReader Reader;
+        string Path = Application.dataPath + "/Data/PendingScores.JSON";
+        if (!System.IO.File.Exists(Path))
+        {
+            return null;
+        }
+        Reader = new System.IO.StreamReader(Path);
 		LeaderboardScore score = JsonUtility.FromJson<LeaderboardScore>(Reader.ReadLine());
 
 		Reader.Close();
@@ -148,8 +179,14 @@ public class LeaderboardLoader : MonoBehaviour
 	}
 
 	public void DeletePendingScore() 
-	{ 
-		System.IO.StreamWriter Writer = new System.IO.StreamWriter(Application.dataPath + "/Data/PendingScores.JSON", false);
+	{
+        System.IO.StreamWriter Writer;
+        string Path = Application.dataPath + "/Data/PendingScores.JSON";
+        if (!System.IO.File.Exists(Path))
+        {
+            System.IO.File.Create(Path);
+        }
+        Writer = new System.IO.StreamWriter(Path, false);
 
 		Writer.Write("");
 		Writer.Close();
