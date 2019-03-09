@@ -7,16 +7,14 @@ public class ObjectPooler : MonoBehaviour
 	[Tooltip("The amount of objects to instantiate on awake, automatically resizes if it can't meet demand")]
 	[Range(0, 2500)] public int m_size;
 
-	[HideInInspector] public List<GameObject> m_pool;
-	[HideInInspector] public List<GameObject> m_activeObjects;
+	private List<GameObject> m_pool;
+	private List<GameObject> m_activeObjects;
 
 	[Tooltip("The object to pool")]
 	public GameObject m_object;
 
 	void Awake() 
 	{
-		if(GameObject.Find(gameObject.name) != gameObject) return;
-
 		SceneManager.sceneLoaded += OnSceneLoaded;
 
 		m_pool = new List<GameObject>();
