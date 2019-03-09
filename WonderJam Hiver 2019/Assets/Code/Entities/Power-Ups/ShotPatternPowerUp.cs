@@ -13,8 +13,11 @@ public class ShotPatternPowerUp : PowerUp
     {
 		m_pickupAudioEvent.Play(p_shooter.m_entity.m_audioSource);
 
+		p_shooter.StopShooting(p_shooter.GetCurrentPattern());
         p_shooter.AddShotPatternPowerUp(this);
     }
 
-    public override void End(Shooter p_shooter) { }
+    public override void End(Shooter p_shooter) {
+		p_shooter.StopShooting(m_powerUpPattern);
+	}
 }
