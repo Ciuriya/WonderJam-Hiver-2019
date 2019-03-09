@@ -29,6 +29,13 @@ public abstract class ProjectileMovementJob : MonoBehaviour
 	{
 		int id = ID++;
 
+		if(m_projectiles.ContainsKey(p_projectile))
+		{
+			RemoveProjectile(p_projectile);
+
+			Debug.Log("Would've gotten the shooting bug, but fixed");
+		}
+
 		m_projectiles.Add(p_projectile, id);
 		m_transforms.Add(p_projectile.transform);
 		m_dataList.Add(CreateData(p_projectile, p_behaviour, id));
