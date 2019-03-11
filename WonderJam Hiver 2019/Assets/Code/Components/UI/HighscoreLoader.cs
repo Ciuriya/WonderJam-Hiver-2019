@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.IO;
 
 public class HighscoreLoader : MonoBehaviour
 {
@@ -30,14 +31,18 @@ public class HighscoreLoader : MonoBehaviour
 	private List<LeaderboardScore> GetScores(bool p_local) 
 	{
 		List<LeaderboardScore> scores = new List<LeaderboardScore>();
-		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/" + (p_local ? "Local" : "Online") + "Leaderboard.JSON");
+        string path = Application.dataPath + "/Data/" + (p_local ? "Local" : "Online") + "Leaderboard.JSON";
 
-		for (string json = Reader.ReadLine(); json != null && json.Length > 0; json = Reader.ReadLine())
+        if(!LeaderboardLoader.CheckPath(path)) return scores;
+        
+        StreamReader reader = new StreamReader(path);
+
+		for(string json = reader.ReadLine(); json != null && json.Length > 0; json = reader.ReadLine())
 		{
 			scores.Add(JsonUtility.FromJson<LeaderboardScore>(json));
 		}
 
-		Reader.Close();
+		reader.Close();
 
 		return scores;
 	}

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.IO;
 
 public class LeaderboardNetworkHandler : MonoBehaviour
 {
@@ -15,11 +16,14 @@ public class LeaderboardNetworkHandler : MonoBehaviour
 
 	public string ConvertFileToJSON() 
 	{
-		System.IO.StreamReader Reader = new System.IO.StreamReader(Application.dataPath + "/Data/OnlineLeaderboard.JSON");
+        string path = Application.dataPath + "/Data/OnlineLeaderboard.JSON";
 
-		string full = "";
+        if(!LeaderboardLoader.CheckPath(path)) return "";
 
-		for(string json = Reader.ReadLine(); json != null; json = Reader.ReadLine())
+        StreamReader reader = new StreamReader(path);
+        string full = "";
+
+		for(string json = reader.ReadLine(); json != null; json = reader.ReadLine())
 		{
 			full += json;
 		}
